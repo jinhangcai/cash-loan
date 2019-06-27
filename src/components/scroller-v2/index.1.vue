@@ -1,0 +1,123 @@
+<template>
+
+       <div class="scroll-container">
+        <scroller ref="scroll" :data="lists" :pullDownRefresh="true" :pullUpLoad="true" @pullingDown="onPullingDown" @pullingUp="onPullingUp">
+         <div v-for="item in lists">
+         {{item.carNumber}}
+       </div>
+        <div v-for="item in lists">
+         {{item.carNumber}}
+       </div>
+        <div v-for="item in lists">
+         {{item.carNumber}}
+       </div>
+        </scroller>
+       </div>
+</template>
+
+<script>
+import Scroller from '../scroller'
+import Scroll from '../scroll'
+import axios from 'axios'
+
+  export default {
+    data() {
+      return {
+        lists:[],
+        pageIndex: 1,
+        pageSize: 10,
+
+      }
+    },
+    props:{
+      scrollData:{
+        pageIndex:'page',
+        pageSize:'page_size'
+
+
+      }
+    },
+    components:{
+      Scroller,
+      Scroll
+    },
+    mounted() {
+      this.getList();
+
+    },
+    methods:{
+      onPullingDown(){
+         // 刷新数据
+      console.log("刷新");
+      this.startTime = new Date().getTime();
+      this.pageIndex = 1;
+      this.getList();
+      // 刷新用户信息
+      // this.userInfo = xiaoge.user.get();
+      // 刷新统计数据
+      if (this.userInfo.fuid) {
+        this.getDetail();
+      }
+      },
+      onPullingUp(){
+        // 加载数据
+      console.log("加载");
+      if (this.pageCount === this.pageIndex) {
+        this.lists = this.lists.concat([]);
+        return
+      }
+      this.startTime = new Date().getTime();
+      this.pageIndex++;
+      this.getList();
+
+      },
+      async getList() {
+      let { data } = await axios({
+        url: 'http://www.kaixinbt.com/wego2' + "/Financial/GetPlanPages",
+        method:'get',
+        data: {
+          pageIndex: this.pageIndex,
+          pageSize: this.pageSize
+        },
+        error: data => {
+          this.$warn("数据读取错误(GetPlanPages)");
+        }
+      });
+      if (data.code === 10000) {
+        // var interval = new Date().getTime() - this.startTime;
+        // if (interval < 1000) {
+        //   setTimeout(() => {
+        //     if (this.pageIndex === 1) {
+        //       this.lists = data.content.list;
+        //     } else {
+        //       this.lists = this.lists.concat(data.content.list);
+        //     }
+        //     this.pageCount = data.content.pageCount;
+        //   }, 1000 - interval);
+        // } else {
+          if (this.pageIndex === 1) {
+            this.lists = data.content.list;
+          } else {
+            this.lists = this.lists.concat(data.content.list);
+          }
+          this.pageCount = data.content.pageCount;
+        // }
+      } else {
+        this.$warn(data.message);
+      }
+    },
+
+    }
+  }
+</script>
+<style scoped lang="scss">
+.scroll-container{
+  position: absolute;
+  left:0;
+  top:36px;
+  bottom:0px;
+  width:100%;
+}
+</style>
+
+
