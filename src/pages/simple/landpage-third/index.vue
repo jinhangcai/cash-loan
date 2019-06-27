@@ -402,7 +402,7 @@
   // 表单
   .form
     position absolute
-    top px(390)
+    top px(800)
     left 0
     right 0
     margin px(30) px(60) 0
@@ -413,19 +413,21 @@
     display flex
     margin px(30) px(25.5)
     padding px(10) px(28)
-    background #fff
+    background rgba(255,255,255,0.6);
+    border-radius px(20)
 
   .form-areacode
     flex none
     font-size: px(26);
     line-height: px(60);
-    color: #b6b6b6;
+    color: #000;
 
   .form-input
     flex auto
     height px(61)
     font-size px(28)
     color #333
+    background none
     &::-webkit-input-placeholder
       color #aaaaad
 
@@ -445,20 +447,21 @@
     padding 0 px(20)
     border-radius px(30)
     color #fff
-    background #ccc
+    background #878787
     &.-active
       color #fff
-      background-color #FFAA37
+      background-color #5d60ff
 
   .form-submit
     width 92%
-    height px(75)
+    height px(85)
     margin px(30) auto 0
     font-size px(32)
-    line-height px(75)
+    line-height px(85)
     text-align center
-    background:#FFAA37;
-    color #fff
+    background:#ffffff;
+    color #5d60ff
+    border-radius px(20)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
 
   .form-tip

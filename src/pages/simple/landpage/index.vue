@@ -60,8 +60,8 @@
 </template>
 
 <script>
-import BMap from "BMap";
-import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
+// import BMap from "BMap";
+// import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
 
 // import { getPosition } from "./lnglat";
 export default {
@@ -283,14 +283,16 @@ export default {
   .landing_form {
     position: relative;
     z-index: 9;
-    padding: Px(65) Px(0);
+    padding: Px(65) Px(0) Px(0);
     margin: Px(-27) auto 0;
     width: Px(580);
     height: auto;
-    margin-top: Px(-106);
+    margin-top: Px(240);
     & .landing_item {
       position: relative;
       overflow: hidden;
+      background :rgba(255,255,255,0.6);
+      border-radius :Px(20);
       .mobile {
         position: absolute;
         display: block;
@@ -299,7 +301,7 @@ export default {
         left: 0;
         font-size: Px(26);
         line-height: Px(80);
-        color: #b6b6b6;
+        color: #000;
         text-align: center;
         &::after {
           content: "";
@@ -317,6 +319,7 @@ export default {
         padding-left: Px(28);
         width: 100%;
         height: Px(80);
+        background: none;
       }
       input::-webkit-input-placeholder {
         color: #b6b6b6;
@@ -353,8 +356,8 @@ export default {
         font-size: Px(22);
         line-height: Px(60);
         text-align: center;
-        color: #FFAA37;
-        border-left: #FFAA37 Px(2) solid;
+        color: #5d60ff;
+        border-left: #5d60ff Px(2) solid;
         &:hover,
         &:active {
           opacity: 0.7;
@@ -366,11 +369,12 @@ export default {
     margin-top: Px(30);
     width: auto;
     height: Px(88);
-    color: #fff;
-    background: #FFAA37;
+    color: #5d60ff;
+    background: #fff;
     font-size: Px(26);
     line-height: Px(88);
     text-align: center;
+    border-radius: Px(20);
   }
   .rights {
     margin-top: Px(32);
