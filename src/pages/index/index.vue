@@ -13,7 +13,7 @@
         </div> -->
         <div class="scroll-container" :style="`transform:translate(0, ${native.statusBarHeight})`">
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
-            <!--<header-bar title="三千首放"></header-bar>-->
+            <!--<header-bar title="蓝天贷"></header-bar>-->
             <!--<img  src="./index/indeximg.png" width="100%">-->
             <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
               <!--客服中心-->
