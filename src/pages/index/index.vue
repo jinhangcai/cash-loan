@@ -19,38 +19,112 @@
               <!--客服中心-->
               <!--<p>如有问题及时反馈 ></p>-->
             <!--</div>-->
-            <div class="box_">
+            <div class="box">
+
               <div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">
-                　首放三千
-                <!--<a @click="$router.push('/set')"></a>-->
-              </div>
-              <div class="box_1">
-                <div class="box_left">
-                  <h3>最高可借(元)</h3>
-                  <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
-                </div>
-                <div class="box_right">
-                  <em><img  src="./index/Group1.png" width="100%">7天/14天<br> <img  src="./index/Group2.png" width="100%">起借金额:2000元</em>
-                </div>
-
-                <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
+                <!--<a @click="$router.push('/my')">-->
+                <group title="set position">
+                <a title="left(56% width)"@click="show8s" v-model="show8"></a>
+                </group>
+                 <a @click="$router.push('/set')"></a>
               </div>
 
+              <img  src="./index/indeximgs.png" width="100%">
+              <div class="box_">
+                <!--<div class="title" >-->
+                  <!--　蓝天贷-->
+                  <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
+                <!--</div>-->
+                <div class="box_1">
+                  <div class="box_left">
+
+                      <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
+                      <h3>最高可借(元)</h3>
+                    </div>
+                    <div class="box_right">
+                      <!--<em><img  src="./index/Group1.png" width="100%">7天/14天<br> <img  src="./index/Group2.png" width="100%">起借金额:2000元</em>-->
+                    </div>
+
+                    <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
+                  </div>
+               </div>
+              <section class="message-box flex-center">
+                <div class="icon-message2"><img src="./index/icon_message.png" alt=""></div>
+                <scroll-line ref="scrollLineRef" class="scroll-box flex-1">
+                  <div class="swiper-slide">蒋先生已经通过同花顺下款3000.00元!!!</div>
+                  <div class="swiper-slide">李先生已经通过同花顺下款2000.00元!!!</div>
+                  <div class="swiper-slide">黎女士已经通过同花顺下款4000.00元!!!</div>
+                  <div class="swiper-slide">蔡先生已经通过同花顺下款1000.00元!!!</div>
+                </scroll-line>
+              </section>
+              <!--<ul class="box_s">-->
+                <!--<li @click="$router.push('/loan/record')">-->
+                  <!--<img  src="./index/index_icon1.png" >-->
+                  <!--<h5>我的借款</h5>-->
+                  <!--<p>查看账单</p>-->
+                  <!--<i></i>-->
+                <!--</li>-->
+                <!--<li @click="$router.push('/memb/info')">-->
+                  <!--<img  src="./index/index_icon2.png" >-->
+                  <!--<h5>实名认证</h5>-->
+                  <!--<p>提升额度</p>-->
+                  <!--<i></i>-->
+                <!--</li>-->
+              <!--</ul>-->
+              <div class="infotab_">
+                <h3 class="title_h3">
+                  还款信息
+                </h3>
+                <div class="infotab">
+                  <div class="tabCenter">
+                    <div class="paymentInfo" style="text-align: center;">
+                      <div class="otherInfo flex-between">
+                        <div>
+                          <p>近日待还（元）</p>
+                          <span>最近还款日{{timestampToTime(paymentInformation.recentDay)}}<br>剩余待还笔数{{paymentInformation.repayNum}}笔</span>
+
+                        </div>
+
+                      </div>
+                    </div>
+                    <p class="paymentSum">{{paymentInformation.allMoney || 0}}</p>
+                    <div  class="payBtn"  @click="$router.push('/repay')">立即还款</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="personaltab">
+                <div class="tabCenter">
+                  <div class="data" @click="$router.push('/memb/info')">
+                    <div class="left">
+                      <div class="personalicon"></div>
+                      <div><h3>个人信息</h3>信用资料填写</div>
+                    </div>
+                    <div class="right">
+                      <div class="unfinish" v-if="!attestation" style="display:flex;align-items: center;">
+                        <x-icon type="ios-information" size="16"></x-icon>
+                        <span>未完成</span>
+                      </div>
+                      <div class="finish" v-else style="display:flex;align-items: center;">
+                        <x-icon type="ios-checkmark" size="16"></x-icon>
+                        <span>已完成</span>
+                      </div>
+                      <div class="enterBtn"></div>
+                    </div>
+                  </div>
             </div>
-            <ul class="box_s">
-              <li @click="$router.push('/loan/record')">
-                <img  src="./index/index_icon1.png" >
-                <h5>我的借款</h5>
-                <p>查看账单</p>
-                <i></i>
-              </li>
-              <li @click="$router.push('/memb/info')">
-                <img  src="./index/index_icon2.png" >
-                <h5>实名认证</h5>
-                <p>提升额度</p>
-                <i></i>
-              </li>
-            </ul>
+
+                <!--<div class="data" style="border-top:1px solid #eaebee" @click="goLoan">-->
+                <!--<div class="left">-->
+                <!--<div class="recordicon"></div>-->
+                <!--<div>提现记录</div>-->
+                <!--</div>-->
+                <!--<div class="right">-->
+                <!--<div class="enterBtn"></div>-->
+                <!--</div>-->
+                <!--</div>-->
+              </div>
+            </div>
             <!-- <div class="payBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</div> -->
 
 
@@ -97,14 +171,55 @@
             <img class="alipay-img" :src="codeUrl">
           </div>
         </div>
+      <div v-transfer-dom>
+        <popup v-model="show8" position="left" width="56%">
+          <div class="position-horizontal-demo">
+            <div class="mys">
+              <div class="info-box_">
+                <img src="./index/denglu.png">
+                <div v-if="userInfo.vid">
+                  <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
+                  <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
+                </div>
+                <div  v-else>
+                  <div>您好！请先登录</div>
+                </div>
+              </div>
+              <ul class="info-box_s">
+                <li @click="$router.push('/loan')">
+                  提现记录<i></i>
+                </li>
+                <li @click="$router.push('/loan/record')">
+                  我的借款<i></i>
+                </li>
+                <li @click="goFeedback">
+                  用户反馈<i></i>
+                </li>
+                <li @click="goMyBank">
+                  我的银行卡<i></i>
+                </li>
+                <li @click="$web2app('phone',{number: customPhone})">
+                  联系客服<i></i>
+                </li>
+                <li @click="$router.push('/set')">
+                  设置<i></i>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </popup>
+      </div>
     </div>
+
+
 </template>
 <script>
 import HeaderBar from './header'
 import LeftMenu from './menu'
 import Scroller from '../../components/scroller'
-// import ScrollLine from '../../components/ScrollLine'
-import { XHeader,Tab,TabItem,Popover,Divider,Alert,Range } from 'vux'
+import ScrollLine from '../../components/ScrollLine'
+import { XHeader,Tab,TabItem,Popover,Divider,Alert,Range,Popup } from 'vux'
 import {getString} from '../../utils/getString.js'
 import { setTimeout } from 'timers'
   export default {
@@ -118,7 +233,9 @@ import { setTimeout } from 'timers'
       Divider,
       Scroller,
       Alert,
-      Range
+      Range,
+      ScrollLine,
+      Popup
     },
     data() {
       return {
@@ -155,6 +272,7 @@ import { setTimeout } from 'timers'
         quota: 0 , // 借款金额
         interest: 0 , // 借款利息
         days: 0 , // 借款天数
+        show8: false
       }
     },
     created() {
@@ -169,7 +287,7 @@ import { setTimeout } from 'timers'
     async mounted() {
         //解决支付完成，状态栏还存在问题
         // await this.$web2app('')
-      //this.$refs.scrollLineRef.initSwiper('.scroll-box')
+      this.$refs.scrollLineRef.initSwiper('.scroll-box');
       if (this.pay_result) {
         if (this.pay_result == 1) {
           this.popups = 1;
@@ -221,6 +339,12 @@ import { setTimeout } from 'timers'
       }
     },
     methods:{
+      goMyBank() {
+        this.$router.push('memb/my/bank')
+      },
+      goFeedback() {
+        this.$router.push('/memb/feedback/list')
+      },
       setCookie: function (cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -336,12 +460,12 @@ import { setTimeout } from 'timers'
         timestampToTime(timestamp) {
             if (timestamp != 0 && timestamp != null && timestamp != "") {
                 var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
-                var Y = date.getFullYear() + ' ';
-                var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '.';
-                var D = date.getDate() + ' ';
+                var Y = date.getFullYear() + '-';
+                var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                var D = date.getDate() ;
                 return Y+M+D;
             } else {
-                return "";
+                return "---";
             }
         },
         getcustomPhone(){
@@ -492,10 +616,53 @@ import { setTimeout } from 'timers'
                 })
             }
         },
+      show8s() {
+        this.show8=!this.show8;
+      }
     }
   }
 </script>
 <style lang="scss" scoped>
+    .mys{
+      .info-box_{
+        text-align: center;
+        padding:Px(100) 0 0;
+        img{
+          width: Px(94);
+          height: Px(94);
+        }
+        >div{
+          color: #ffffff;
+          opacity: 0.74;
+          font-size: Px(30);
+          line-height: Px(71);
+        }
+      }
+      .info-box_s{
+        width: Px(286);
+        margin: 0 auto;
+        li{
+          width: Px(286);
+          height: Px(90);
+          line-height: Px(90);
+          color: #fff;
+          font-size: Px(30);
+          text-align: center;
+          position: relative;
+          border-bottom: #a396fb Px(2) solid;
+          i{
+            display: block;
+            width: Px(17);
+            height: Px(30);
+            position: absolute;
+            right: 0;
+            top:Px(30);
+            background:url('./index/rows1.png')no-repeat;
+            background-size: 100% auto;
+          }
+        }
+      }
+    }
     .refuseBg{
         position: fixed;
         left: 0;
@@ -642,13 +809,12 @@ import { setTimeout } from 'timers'
     .message-box{
         margin: 0.5rem .4rem .0rem;
         padding-bottom: .3rem;
-        border-bottom: #ebebeb 1px solid;
         .icon-message2{
             margin-right: .3rem;
 
             img{
                 display: block;
-                height: Px(40);
+                height: Px(30);
                 width: auto;
             }
         }
@@ -656,8 +822,8 @@ import { setTimeout } from 'timers'
             height: .8rem;
             line-height: .8rem;
             overflow: hidden;
-            font-size: .34rem;
-            color: #333333;
+            font-size: Px(18);
+            color: #282828;
         }
     }
     .tabs-box{
@@ -675,24 +841,53 @@ import { setTimeout } from 'timers'
         }
     }
     .personaltab{
-        width: Px(640);
+        width: Px(672);
+      border-left: #054fe5 Px(16) solid;
         border-radius: Px(8);
-        background: linear-gradient(to right, #b278fa, #cd8cfb);
+        background:#fff;
+        box-shadow: 0 0 4px 2px rgba(#000, .06);
         margin: Px(30) auto;
-        padding: Px(30);
-        box-shadow: 0 0 4px 1px rgba(#000, .06);
-        color: #fff;
+        color: #222222;
+      font-size: Px(30);
+      h3{
+        padding-left: Px(12);
+        color: #515151;
+        font-size: Px(30);
+        display: inline-block;
+        margin-right: Px(100);
+      }
+      span{
+        color:#999999;
+      }
+    }
+    .infotab_{
+      padding: Px(30);
+      /*width: Px(700);*/
+      /*margin:Px(24) auto;*/
+      /*background: #fff;*/
+      /*border-radius: Px(25);*/
+      /*padding-top: Px(12);*/
+      /*text-align: center;*/
+      /*overflow: hidden;*/
+      /*box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.06);*/
+      h3{
+        color:#282828;
+        font-size:Px(28);
+        line-height: Px(64);
+        font-weight: normal;
+      }
     }
     .infotab{
+        border-left: #054fe5 Px(16) solid;
         border-radius: Px(14);
-        background:#ffffff url("./index/pic_bg2.png") no-repeat 0 0;
-        background-size: 100%;
         margin: Px(30) auto 0;
-        width: Px(700);
-        padding-bottom: Px(30);
+        width: Px(672);
         box-shadow: 0 0 4px 2px rgba(#000, .06);
         // background: url('./index/pic_bg2.png') center no-repeat;
         // background-size: 100% 100%;
+      .tabCenter{
+        overflow: hidden;
+      }
         .tabTitle{
            padding: Px(30) Px(30) Px(10);
            color: #333;
@@ -703,13 +898,13 @@ import { setTimeout } from 'timers'
         height: 1.5rem;
     }
     .vux-x-icon {
-        fill: #fff;
+        fill: #999;
     }
     .unfinish .vux-x-icon {
-        fill: #fff;
+        fill: #999;
     }
     .finish .vux-x-icon{
-        fill: #fff;
+        fill:#999;
     }
     .tabTitle{
         position: relative;
@@ -778,20 +973,21 @@ import { setTimeout } from 'timers'
         color: #999999;
     }
     .borrowingBtn{
-        display: block;
-         width: Px(470);
-        height: Px(90);
-        margin:Px(50) auto 0;
-        border-radius: Px(45);
+        height: Px(46);
+        border-radius: Px(23);
         cursor: pointer;
-        font-size: Px(36);
-        line-height: Px(70);
+        font-size: Px(24);
+        line-height: Px(46);
         color: #fff;
         text-align: center;
         outline: none;
         border: none;
         align-self: center;
-        background: #FFB635;
+        background: #473eff;
+       float: left;
+       margin-left: Px(60);
+       padding: 0 Px(38);
+      display: inline-flex;
 
     }
     .tabBottom{
@@ -892,26 +1088,44 @@ import { setTimeout } from 'timers'
         background-size: 100% 100%;
         margin-left:Px(20)
     }
+    .paymentSum{
+      width:Px(200);
+      font-size:Px(80);
+      text-align: center;
+      color: #222222;
+      float: left;
+      line-height: Px(135);
+      white-space: nowrap;
+      // font-weight: bold;
+    }
     .paymentInfo{
-
+        width: Px(250);
+        height:Px(135);
         color: #333;
         font-size:Px(24);
         padding-top: Px(0);
-        margin: 0 Px(30);
-        .paymentSum{
-            font-size:1.4rem;
-            text-align: center;
-            line-height: 1.4rem;
-            color: #ff9b1a;
-            // font-weight: bold;
-        }
+        float: left;
+
 
         .otherInfo{
             font-size:Px(26);
-            text-align: center;
-            padding: Px(10) Px(30);
-            padding-bottom:Px(15);
+            text-align: left;
+            padding: Px(10) 0 0 Px(12);
+
+
             >div{
+              overflow: hidden;
+              p{
+                color: #282828;
+                font-size: Px(30);
+                line-height: Px(46);
+              }
+              span{
+                color: #515151;
+                font-size: Px(18);
+                line-height: Px(30);
+
+              }
               >div {
                 border: #ffc390 .1rem solid;
                 border-radius: 50%;
@@ -1091,18 +1305,21 @@ import { setTimeout } from 'timers'
       z-index: 100;
     }
 .payBtn{
-  width: 60%;
-  height: Px(56);
+  height: Px(44);
   text-align: center;
-  border-radius: Px(40);
-  margin: .3rem auto;
-  line-height: Px(56);
+  border-radius: Px(22);
+  line-height: Px(44);
   color: #fff;
-  padding: .2rem;
-  background: linear-gradient(to right, #f45e04, #ff8e1a);
+  padding:0 Px(20);
+  background:#473eff;
+  border: #3750e0 Px(1) solid;
 //   background-color: #fff;
-  font-size: .4rem;
+  font-size:Px(24);
   margin-bottom: 0.2rem;
+  display: grid;
+  float:right;
+  margin-right:Px(30);
+  margin-top: Px(44);
 }
 .alipay {
   position: absolute;
@@ -1250,18 +1467,55 @@ import { setTimeout } from 'timers'
       }
     }
   }
-    .title{
-      text-align: center!important;
-      padding-top: Px(60);
-      position: relative;
-      color: #fff;
-      font-size: Px(38);
+    .box {
+      background: #fff url('./index/indeximg.png') no-repeat;
+      background-size: 100%;
+      padding-bottom: Px(25);
+      min-height: Px(385);
+
+      .titles {
+        height: Px(50);
+        line-height: Px(50);
+        color: #fff;
+        font-size: Px(21);
+        text-align: center;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.33);
+      }
+
+      .title {
+        // width: 100%;
+        text-align: center;
+        line-height: Px(31);
+        margin-bottom: Px(40);
+        color: #fff;
+        // background-color: #fff;
+        padding: Px(15) Px(30) 0;
+        // font-weight: bold;
+        font-size: Px(32);
+        letter-spacing: 1px;
+      overflow: hidden;
+        a:nth-child(1) {
+          display: block;
+          width: Px(34);
+          height: Px(31);
+          float: right;
+          background: url('./index/shezhi1.png') no-repeat;
+          background-size: 100%;
+
+        }
+
+        a:nth-child(2) {
+          display: block;
+          width: Px(34);
+          height: Px(31);
+          float: right;
+          background: url('./index/shezhi2.png') no-repeat;
+          background-size: 100%;
+          margin-right: Px(30);
+        }
+      }
     }
-    .title>img{
-      width: Px(99);
-    }
-    .title em{ float: right; position: absolute; right: 0; top:Px(55);}
-    .title em img{width: Px(40); margin-right: Px(40)}
     .box_s{
       text-align: left;
       margin:Px(27)auto;
@@ -1325,7 +1579,6 @@ import { setTimeout } from 'timers'
       position: relative;
       text-align: center;
       overflow: hidden;
-      background: #333;
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1336,40 +1589,40 @@ import { setTimeout } from 'timers'
       .box_1{
         text-align: center;
         overflow: hidden;
-        margin:Px(25) Px(40);
+        margin:Px(0) Px(34);
         background:url(./index/indexbg.png) no-repeat ;
         background-size: 100% 100%;
-        height: Px(313);
-        margin-bottom: Px(37);
+        height: Px(360);
+        margin-bottom: Px(0);
         /*box-shadow: 0 0 .2rem 1px rgba(#000, .1);*/
         /*border-radius: Px(15);*/
         .box_left{
           width: 50%;
           float: left;
-          margin-bottom: Px(40);
+          margin-bottom: Px(29);
           overflow: hidden;
         }
         .box_right{
           width: 50%;
           float: right;
           padding-top: Px(70);
+          height:Px(250);
         }
         h3{
           font-style: normal;
-          font-size: Px(28);
-          color:#FFFFFF;
-          margin-left: Px(45);
-          margin-top: Px(38);
+          font-size: Px(30);
+          color:#354ede;
+          margin-left: Px(60);
           text-align: left;
-          line-height: Px(40);
+          line-height: Px(72);
           font-weight: normal;
         }
         p{
           font-style: normal;
-          font-size: Px(80);
-          color:#FFFFFF;
-          margin-left: Px(38);
-          margin-top: Px(0);
+          font-size: Px(68);
+          color:#354ede;
+          margin-left: Px(60);
+          margin-top: Px(65);
           text-align: left;
           line-height: Px(80);
           font-weight: normal;
@@ -1439,7 +1692,7 @@ import { setTimeout } from 'timers'
     border-right: 5px solid rgba(0, 0, 0, 0.39) !important;
   }
 
-  .personalicon{ width:  .5rem; height: .5rem; background: url('./index/indexicon1.png') no-repeat center / 100% 100%; margin-right: 0.15rem;}
+  /*.personalicon{ width:  .5rem; height: .5rem; background: url('./index/indexicon1.png') no-repeat center / 100% 100%; margin-right: 0.15rem;}*/
   .recordicon{ width:  .5rem; height:  .5rem; background: url('./index/indexicon2.png') no-repeat center / 100% 100%;  margin-right: 0.15rem;}
   body{
     background: #F6F6F6!important;
@@ -1479,3 +1732,38 @@ import { setTimeout } from 'timers'
   }
 </style>
 
+<style lang="less" scoped>
+
+  .popup0 {
+    padding-bottom:15px;
+    height:200px;
+  }
+  .popup1 {
+    width:100%;
+    height:100%;
+  }
+  .popup2 {
+    padding-bottom:15px;
+    height:400px;
+  }
+  .position-vertical-demo {
+    background-color: #ffe26d;
+    color: #000;
+    text-align: center;
+    padding: 15px;
+  }
+  .position-horizontal-demo {
+    position: relative;
+    height: 100%;
+    .vux-close {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(4);
+      color: #000;
+    }
+  }
+  .vux-popup-dialog{
+    background: -webkit-linear-gradient(90deg,#8371fa, #a582f6);
+  }
+</style>

@@ -4,7 +4,7 @@ import {AlertModule, ToastPlugin} from 'vux'
 var Qs = require('qs');
 import web2app from '../service/web2app'
 import native from '../service/native'
-const BASE_URL = native.isTest ? '/web' : 'https://sqsf.tj51.top'   // 'TODO 测试域名' : 'TODO 正式域名 '
+const BASE_URL = native.isTest ? '/web' : 'https://ltd.tsxdkz.cn'   // 'TODO 测试域名' : 'TODO 正式域名 '
 Vue.use(ToastPlugin);
 import { getAES, getDAes } from './crypto'
 

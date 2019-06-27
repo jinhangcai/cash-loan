@@ -43,43 +43,31 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'main',
+      name: 'index',
+      component: index,
+      meta: {
+        hideHeader: true,
+        cssNames: 'gray',
+        title: '首页'
+      }
+    }, {
+      path: '/index',
+      name: 'index',
+      component: index,
+      meta: {
+        hideHeader: true,
+        cssNames: 'gray',
+        title: '首页'
+      }
+    }, {
+      path: '/my',
+      name: 'my',
+      component: my,
       meta: {
         hideHeader: true,
         cssNames: 'gray',
         title: $appName
-      },
-      component: main,
-      children: [
-        {
-          path: '/',
-          name: 'index',
-          component: index,
-          meta: {
-            hideHeader: true,
-            cssNames: 'gray',
-            title: '首页'
-          }
-        }, {
-          path: '/index',
-          name: 'index',
-          component: index,
-          meta: {
-            hideHeader: true,
-            cssNames: 'gray',
-            title: '首页'
-          }
-        }, {
-          path: '/my',
-          name: 'my',
-          component: my,
-          meta: {
-            hideHeader: true,
-            cssNames: 'gray',
-            title: $appName
-          }
-        }
-      ]
+      }
     },{
       path: '/set',
       name: 'set',
@@ -99,7 +87,7 @@ const router = new Router({
       path: '/memb/info',
       name: 'info',
       meta:{
-        //hideHeader: true,
+        hideHeader: true,
         title: '完善资料'
       },
       component: info

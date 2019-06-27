@@ -3,54 +3,51 @@
     <!-- <div class="header">
       <div class="arrow"><img src="./img/row.png" alt=""></div>
       <div class="title">完善资料</div>
-    </div>-->
-    <!--<div class="title">温馨提示：请填写真实有效信息以获得更高信用额度</div>-->
-
+    </div> -->
+    <div class="box_top">
+      <div class="headerBar">
+        <header-bar title="我的认证"></header-bar>
+      </div>
+      <!--<h3>（完善更多信息借款额度更高）</h3>-->
+      <!--<div class="button" @click="btn">立即借款</div>-->
+    </div>
 
     <div class="content">
       <div class="information"  @click="card">
         <div class="icon">
           <img src="./img/rzicon2.png" alt="" >
         </div>
-        <span class="title">实名认证  <br><em>应国家政策要求，借款需上传身份证</em></span>
-        <span class="text" :class="{'cur':list.idCard==3}" v-html="list.idCard==3?'认证成功':list.idCard==2?'认证中':list.idCard==4&&list.idCardFail==1?'认证失败(身份证已被认证)':list.idCard==4?'认证失败':'未认证'">
-        </span>
-
-        <i></i>
+        <span class="title">实名认证</span>
+        <span class="text" :class="{'cur':list.idCard==3}" v-html="list.idCard==3?'认证成功':list.idCard==2?'认证中':list.idCard==4&&list.idCardFail==1?'认证失败(身份证已被认证)':list.idCard==4?'认证失败':'未认证'"></span>
       </div>
       <div class="information" @click="base">
         <div class="icon">
           <img src="./img/rzicon5.png" alt="" >
         </div>
-        <span class="title">基础信息  <br><em>更全面的评估，最高提升到2万额度</em></span>
-        <span class="text" :class="{'cur':list.baseInfo==3}" v-html="list.baseInfo==4&&list.idCardFail==1?'认证失败':list.baseInfo==3?'认证成功':list.baseInfo==2?'认证中':'未认证'">
-        </span>
-        <i></i>
+        <span class="title">基础信息</span>
+        <span class="text" :class="{'cur':list.baseInfo==3}" v-html="list.baseInfo==4&&list.idCardFail==1?'认证失败':list.baseInfo==3?'认证成功':list.baseInfo==2?'认证中':'未认证'"></span>
       </div>
       <div class="information" @click="linkman">
         <div class="icon phone">
           <img src="./img/rzicon4.png" alt="" >
         </div>
-        <span class="title">联系人认证  <br><em>防范他人操作，防止账号冒用</em></span>
+        <span class="title">联系人认证</span>
         <span class="text" :class="{'cur':list.contact==3}" v-html="list.contact==4?'认证失败()':list.contact==3?'认证成功':list.contact==2?'认证中':'未认证'"></span>
-        <i></i>
       </div>
       <div class="information" @click="bank">
         <div class="icon">
           <img src="./img/rzicon3.png" alt="">
         </div>
-        <span class="title">银行卡认证  <br><em>认证个人银行卡，方便极速下款</em></span>
+        <span class="title">银行卡认证</span>
         <span class="text" :class="{'cur':list.bank==3}" v-html="list.bank==4?'认证失败':list.bank==3?'认证成功':list.bank==2?'认证中':'未认证'"></span>
-        <i></i>
       </div>
 
       <div class="information" @click="mobile">
         <div class="icon">
           <img src="./img/rzicon1.png" alt="" >
         </div>
-        <span class="title">手机认证  <br><em>提高审核通过率</em></span>
+        <span class="title">手机认证</span>
         <span class="text" :class="{'cur':list.mobOperator==3}" v-html="list.mobOperator==4?'认证失败':list.mobOperator==3?'认证成功':(list.mobOperator==2 || authing == 1)?'认证中':'未认证'"></span>
-        <i></i>
       </div>
     </div>
     <!--<div class="button">立即借款</div>-->
@@ -413,9 +410,13 @@
   .box{
     width: 100%;
     height: 100%;
-    background: #f6f4f7;
     overflow: hidden;
-
+    .box_top{
+      width: 100%;
+      height: Px(372);
+      background: url('./img/infobg.png') no-repeat;
+      background-size: 100%;
+    }
 
     .tits{
       text-align: center;
@@ -479,79 +480,74 @@
   }
   .content{
     overflow: hidden;
-    margin:0;
-    margin: Px(30);
+    margin:Px(28);
+    background: #fff;
+    padding-top: Px(50);
+    padding-bottom: Px(80)!important;
     overflow: hidden;
     margin-bottom: Px(100);
+    padding: Px(30) 0;
+    border-radius: Px(20);
+    overflow: hidden;
     .information{
       display: block;
       align-items: center;
       height: Px(116);
       width:100%;
-      background: #fdfcfd;
       float: left;
       position: relative;
-      margin-bottom: Px(20);
-      border-radius: Px(15);
+      border-bottom: #eeeeee Px(2) solid;
       .icon{
-        height: Px(61);
+        height: Px(52);
         position: absolute;
-        left: Px(20);
-        top: Px(28);
+        left: Px(30);
+        display: none;
+        top: Px(34);
         img{
           display: block;
           margin: auto;
           width: auto;
-          width: Px(52);
+          height: Px(42);
         }
       }
       .phone{
-        img{
-          height: auto;
-        }
+
       }
       i{
-
-        width: Px(13);
-        height: Px(23);
-        display: block;
-        position: absolute;
-        right: Px(20);
-        top: Px(36);
-        background: url(./img/row2.png) no-repeat;
-        background-size: 100% 100%;
+        // margin-top: Px(47);
+        /*margin-right: Px(20);*/
+        /*width: Px(12);*/
+        /*height: Px(21);*/
+        /*background: url(./img/row2.png) no-repeat;*/
+        /*background-size: 100% 100%;*/
       }
       .title{
         flex: 1;
         //  width: Px(215);
         color: #000000;
         font-size: Px(28);
-        text-align: left;
-        line-height: Px(45);
-        margin-left: Px(100);
-        display: block;
-        margin-top: Px(20);
-        margin-bottom: Px(21);
-        em{
-          color: #999999;
-          font-size: Px(26);
-        }
+        text-align: right;
+        line-height: Px(116);
+        margin-left: Px(45);
       }
       .text{
         flex: 1;
-        color: #999999;
-        background: none;
-        font-size: Px(24);
-        line-height: Px(40);
-        height: Px(40);
+        color: #fff;
+        font-size: Px(22);
+        line-height: Px(48);
+        height: Px(48);
         padding:0 Px(25);
+        border: #c6c6c6 Px(2) solid;
         position: absolute;
-        right: Px(35);
-        top: Px(27);
-        border-radius: Px(20);
+        right: Px(45);
+        bottom: Px(31);
+        border-radius: Px(8);
+        background: #c6c6c6;
       }
       .cur{
-        color: #55BFF7;
+        color: #354ede;
+        border: #354ede Px(2) solid;
+        background: none;
       }
     }
   }
@@ -567,9 +563,10 @@
     background: #ffffff;
   }
   .header{border: none!important;}
+
 </style>
 <style>
-  .unchange{
-    background: #f6f4f7!important;
+  body{
+    background: #fff!important;
   }
 </style>

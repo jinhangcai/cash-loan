@@ -214,8 +214,7 @@ export default {
     },
     goMyBank() {
         this.$router.push('memb/my/bank')
-    }
-    ,
+    },
     goLogin() {
       this.$router.push('/login')
     },
