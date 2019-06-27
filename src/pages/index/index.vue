@@ -1292,7 +1292,7 @@ import { setTimeout } from 'timers'
       position: absolute;
       left:0;
       top: 0;
-      bottom: 60px;
+      bottom:0;
       width:100%;
     }
     .mask {
