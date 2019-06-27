@@ -15,42 +15,50 @@
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
             <!--<header-bar title="三千首放"></header-bar>-->
             <!--<img  src="./index/indeximg.png" width="100%">-->
-            <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
-              <!--客服中心-->
-              <!--<p>如有问题及时反馈 ></p>-->
-            <!--</div>-->
+<!--            <div class="tips" @click="$web2app('phone',{number: customPhone})">-->
+<!--              客服中心-->
+<!--              <p>如有问题及时反馈 ></p>-->
+<!--            </div>-->
             <div class="box_">
-              <div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">
-                　首放三千
+              <div class="title" :style="`margin-top:${native.statusBarHeight + 10}px`">
+                　温馨提示：如有问题请联系客服
                 <!--<a @click="$router.push('/set')"></a>-->
               </div>
-              <div class="box_1">
-                <div class="box_left">
-                  <h3>最高可借(元)</h3>
-                  <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
-                </div>
-                <div class="box_right">
-                  <em><img  src="./index/Group1.png" width="100%">7天/14天<br> <img  src="./index/Group2.png" width="100%">起借金额:2000元</em>
-                </div>
+<!--              <div class="box_1">-->
+<!--                <div class="box_left">-->
+<!--                  <h3>最高可借(元)</h3>-->
+<!--                  <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>-->
+<!--                </div>-->
+<!--                <div class="box_right">-->
+<!--                  <em><img  src="./index/Group1.png" width="100%">7天/14天<br> <img  src="./index/Group2.png" width="100%">起借金额:2000元</em>-->
+<!--                </div>-->
 
-                <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
-              </div>
-
+<!--                <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>-->
+<!--              </div>-->
             </div>
-            <ul class="box_s">
-              <li @click="$router.push('/loan/record')">
-                <img  src="./index/index_icon1.png" >
-                <h5>我的借款</h5>
-                <p>查看账单</p>
-                <i></i>
-              </li>
-              <li @click="$router.push('/memb/info')">
-                <img  src="./index/index_icon2.png" >
-                <h5>实名认证</h5>
-                <p>提升额度</p>
-                <i></i>
-              </li>
-            </ul>
+            <div class="box-menymoney">
+                <h3>最高可借(元)</h3>
+                <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
+                <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
+            </div>
+            <div class="tips" @click="$web2app('phone',{number: customPhone})">
+              客服中心
+              <p>如有问题及时反馈 ></p>
+            </div>
+<!--            <ul class="box_s">-->
+<!--              <li @click="$router.push('/loan/record')">-->
+<!--                <img  src="./index/index_icon1.png" >-->
+<!--                <h5>我的借款</h5>-->
+<!--                <p>查看账单</p>-->
+<!--                <i></i>-->
+<!--              </li>-->
+<!--              <li @click="$router.push('/memb/info')">-->
+<!--                <img  src="./index/index_icon2.png" >-->
+<!--                <h5>实名认证</h5>-->
+<!--                <p>提升额度</p>-->
+<!--                <i></i>-->
+<!--              </li>-->
+<!--            </ul>-->
             <!-- <div class="payBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</div> -->
 
 
@@ -779,9 +787,9 @@ import { setTimeout } from 'timers'
     }
     .borrowingBtn{
         display: block;
-         width: Px(470);
-        height: Px(90);
-        margin:Px(50) auto 0;
+         width: Px(347);
+        height: Px(70);
+        margin:Px(70) auto 0;
         border-radius: Px(45);
         cursor: pointer;
         font-size: Px(36);
@@ -791,7 +799,7 @@ import { setTimeout } from 'timers'
         outline: none;
         border: none;
         align-self: center;
-        background: #FFB635;
+        background: #d91833;
 
     }
     .tabBottom{
@@ -1251,11 +1259,25 @@ import { setTimeout } from 'timers'
     }
   }
     .title{
-      text-align: center!important;
-      padding-top: Px(60);
+      text-align: left!important;
+      /*padding-top: Px(63);*/
       position: relative;
       color: #fff;
-      font-size: Px(38);
+      font-size: Px(21);
+      height:Px(50);
+      line-height:Px(50);
+      padding-left:Px(45);
+      background: rgba(255, 255, 255, 0.3);
+      &:before{
+        content: '';
+        background: url("./index/index-icon.png") no-repeat;
+        background-size: 100%;
+        width:Px(21);
+        height:Px(21);
+        position:absolute;
+        left:Px(36);
+        top:Px(15);
+      }
     }
     .title>img{
       width: Px(99);
@@ -1325,7 +1347,9 @@ import { setTimeout } from 'timers'
       position: relative;
       text-align: center;
       overflow: hidden;
-      background: #333;
+      background:url("./index/indeximg1.png") no-repeat ;
+      background-size: 100%;
+      height: Px(474);
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1412,6 +1436,26 @@ import { setTimeout } from 'timers'
         margin-bottom: Px(15);
       }
 
+    }
+    .box-menymoney{
+      background: #fff;
+      width: 100%;
+      padding-bottom:Px(57);
+      margin-bottom:Px(12);
+      h3{
+        color:#d91833;
+        font-size:Px(28);
+        text-align: center;
+        padding-top:Px(70);
+        line-height:1;
+      }
+      p{
+        padding-top:Px(45);
+        font-size:Px(84);
+        color:#d91833;
+        text-align: center;
+        line-height:1;
+      }
     }
     .tips{
       padding-left: Px(22);

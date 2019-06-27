@@ -2,11 +2,11 @@
   <div class="content">
       <div class="body">
           <div class="top">
-        <!-- <img class="icon-logo" src="./img/icon_logo.png" alt=""> -->
+<!--         <img class="icon-logo" src="./img/icon_logo.png" alt=""> -->
         <!-- <img src="./img/pic_top.png" alt=""> -->
         <div class="title" :style="`padding-top:${native.statusBarHeight + 15}px`">
           　我的
-          <!--<a @click="$router.push('/set')"></a>-->
+          <a @click="$router.push('/set')"></a>
         </div>
 
         <!--<div class="info-box_">-->
@@ -21,8 +21,8 @@
               <!--</li>-->
             <!--</ul>-->
         <!--</div>-->
-            <div class="info-box_">
-              <img src="./img/denglu.png">
+            <div class="info-box">
+              <img src="../my/img/login.png">
               <div v-if="userInfo.vid">
                 <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
                 <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
@@ -30,23 +30,55 @@
               <div  v-else>
                 <div>您好！请先登录</div>
               </div>
-              <!--<a @click="$router.push('/memb/info')">-->
-                <!--<img  src="./img/icon1.png" alt="">-->
-                <!--<p>我的认证</p>-->
-              <!--</a>-->
-              <!--<a @click="$router.push('/repay')">-->
-                <!--<img  src="./img/icon2.png" alt="">-->
-                <!--<p>我的还款</p>-->
-              <!--</a>-->
-              <!--<a @click="goMyBank">-->
-                <!--<img  src="./img/icon3.png" alt="">-->
-                <!--<p>我的银行卡</p>-->
-              <!--</a>-->
             </div>
+<!--            <div class="info-box_">-->
+<!--              <div v-if="userInfo.vid">-->
+<!--                <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>-->
+<!--                &lt;!&ndash;<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>&ndash;&gt;-->
+<!--              </div>-->
+<!--              <div  v-else>-->
+<!--                <div>您好！请先登录</div>-->
+<!--              </div>-->
+<!--              &lt;!&ndash;<a @click="$router.push('/memb/info')">&ndash;&gt;-->
+<!--                &lt;!&ndash;<img  src="./img/icon1.png" alt="">&ndash;&gt;-->
+<!--                &lt;!&ndash;<p>我的认证</p>&ndash;&gt;-->
+<!--              &lt;!&ndash;</a>&ndash;&gt;-->
+<!--              &lt;!&ndash;<a @click="$router.push('/repay')">&ndash;&gt;-->
+<!--                &lt;!&ndash;<img  src="./img/icon2.png" alt="">&ndash;&gt;-->
+<!--                &lt;!&ndash;<p>我的还款</p>&ndash;&gt;-->
+<!--              &lt;!&ndash;</a>&ndash;&gt;-->
+<!--              &lt;!&ndash;<a @click="goMyBank">&ndash;&gt;-->
+<!--                &lt;!&ndash;<img  src="./img/icon3.png" alt="">&ndash;&gt;-->
+<!--                &lt;!&ndash;<p>我的银行卡</p>&ndash;&gt;-->
+<!--              &lt;!&ndash;</a>&ndash;&gt;-->
+<!--            </div>-->
+        </div>
+        <div class="box-list-cen">
+          <div class="box-list-cen1">
+            <a href="javascript:;" @click="$router.push('/memb/info')">我的认证</a>
+            <a href="javascript:;"  @click="$web2app('phone',{number: customPhone})">客服中心</a>
+          </div>
         </div>
         <group class="group-box">
-          <cell is-link title="实名认证" @click.native="$router.push('/memb/info')">
-          <img class="icon-box icon-index" slot="icon" src="./img/icon1.png" alt="">
+
+          <cell is-link title="提现记录"  @click.native="$router.push('/loan')">
+            <img class="icon-box icon-index" slot="icon" src="./img/icon1.png" alt="">
+          </cell>
+          <cell is-link title="我的还款" @click.native="gorepayback">
+            <img class="icon-box" slot="icon" src="./img/icon2.png" alt="">
+          </cell>
+          <cell is-link title="用户反馈" @click.native="goFeedback">
+            <img class="icon-box" slot="icon" src="./img/icon3.png" alt="">
+          </cell>
+          <cell is-link title="我的银行卡" @click.native="goMyBank">
+            <img class="icon-box icon-bank" slot="icon" src="./img/icon4.png" alt="">
+          </cell>
+          <cell is-link title="联系客服" @click.native="$web2app('phone',{number: customPhone})">
+          <img class="icon-box" slot="icon" src="./img/icon5.png" alt="">
+          </cell>
+
+          <!--          <cell is-link title="实名认证" @click.native="$router.push('/memb/info')">-->
+<!--          <img class="icon-box icon-index" slot="icon" src="./img/icon1.png" alt="">-->
           <!--<div class="unfinish" v-if="!attestation" style="display:flex;align-items: center;">-->
           <!--<x-icon type="ios-information" size="16"></x-icon>-->
           <!--<span class="label-right">未完成</span>-->
@@ -56,13 +88,10 @@
           <!--<span class="label-right">已完成</span>-->
           <!--</div>-->
           <!-- <div class="enterBtn"></div> -->
-          </cell>
-          <cell is-link title="我的借款"  @click.native="$router.push('/loan/record')">
-          <img class="icon-box icon-index" slot="icon" src="./img/icon_datas.png" alt="">
-          </cell>
-          <cell is-link title="我的银行卡" @click.native="goMyBank">
-            <img class="icon-box icon-bank" slot="icon" src="./img/icon3.png" alt="">
-          </cell>
+<!--          </cell>-->
+<!--          <cell is-link title="我的借款"  @click.native="$router.push('/loan/record')">-->
+<!--          <img class="icon-box icon-index" slot="icon" src="./img/icon_datas.png" alt="">-->
+<!--          </cell>-->
 
 
 
@@ -71,24 +100,20 @@
           <!--</cell>-->
 
         </group>
-        <group class="group-box">
-          <cell is-link title="提现记录"  @click.native="$router.push('/loan')">
-            <img class="icon-box icon-index" slot="icon" src="./img/icon_data.png" alt="">
-          </cell>
+<!--        <group class="group-box">-->
+<!--          <cell is-link title="联系客服" @click.native="$web2app('phone',{number: customPhone})">-->
+<!--            <img class="icon-box" slot="icon" src="./img/icon_service.png" alt="">-->
+<!--          </cell>-->
+<!--          <cell is-link title="用户反馈" @click.native="goFeedback">-->
+<!--            <img class="icon-box" slot="icon" src="./img/feedback.png" alt="">-->
+<!--          </cell>-->
 
-          <cell is-link title="联系客服" @click.native="$web2app('phone',{number: customPhone})">
-            <img class="icon-box" slot="icon" src="./img/icon_service.png" alt="">
-          </cell>
-          <cell is-link title="用户反馈" @click.native="goFeedback">
-            <img class="icon-box" slot="icon" src="./img/feedback.png" alt="">
-          </cell>
-
-        </group>
-        <group class="group-box">
-        <cell is-link  title="设置" @click.native="$router.push('/set')">
-          <img class="icon-box" slot="icon" src="./img/pwd.png" alt="">
-        </cell>
-        </group>
+<!--        </group>-->
+<!--        <group class="group-box">-->
+<!--        <cell is-link  title="设置" @click.native="$router.push('/set')">-->
+<!--          <img class="icon-box" slot="icon" src="./img/pwd.png" alt="">-->
+<!--        </cell>-->
+<!--        </group>-->
 
         <!--<group class="group-box">-->
           <!--&lt;!&ndash;<cell is-link title="联系客服" @click.native="$web2app('phone',{number: customPhone})">&ndash;&gt;-->
@@ -212,6 +237,9 @@ export default {
     goAbout(){
       this.$router.push("about")
     },
+    gorepayback() {
+      this.$router.push("/repay")
+    },
     goMyBank() {
         this.$router.push('memb/my/bank')
     }
@@ -246,13 +274,13 @@ export default {
     width: 100%;
 }
 .top{
-  /*background:#fff url('./img/pic_top.png') 0 0 no-repeat;*/
+  background:#fff url('./img/pic_top.jpg') 0 0 no-repeat;
   background-size: 100% auto;
-  background:#333333;
   position: relative;
   width: 100%;
-  padding-bottom: Px(200);
-  margin-bottom: Px(70);
+  height:Px(426);
+  /*padding-bottom: Px(200);*/
+  /*margin-bottom: Px(70);*/
   .info-box_{
     width: Px(744);
     height: Px(247);
@@ -337,23 +365,25 @@ export default {
     border-radius: .2rem;
     text-align: center;
     color: #fff;
-    text-align: center;
     font-size: .32rem;
     min-height: 1.6rem;
     position: relative;
     margin: Px(0) auto 0;
     img{
-      width: Px(60); position: absolute; left:Px(40); top: Px(0);
-
+      width: Px(105);
+      text-align: center;
+      margin: Px(20) auto 0;
     }
     >div{
-      position: absolute;
-      left: Px(120);
-      top: Px(6);
-      text-align: left;
+      /*position: absolute;*/
+      /*left: Px(120);*/
+      /*top: Px(6);*/
+      /*text-align: left;*/
       line-height: Px(56);
+      text-align: center;
       color: #fff;
       font-size: Px(40);
+      margin-top:Px(30);
       >a{
          color: #ff3c00;
          float: left;
@@ -402,10 +432,30 @@ export default {
     }
   }
 }
-
+.box-list-cen{
+  background: #fff;
+  width:100%;
+  padding-bottom:Px(20);
+  .box-list-cen1{
+    width:Px(710);
+    background: #fff;
+    border-radius:Px(30);
+    box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    line-height:Px(70);
+    height:Px(70);
+    margin:0 auto;
+    a{
+      width:49.3%;
+      text-align: center;
+      color:#F13123;
+      display:inline-block;
+      text-decoration: black;
+    }
+  }
+}
 
 .group-box{
-  margin: .3rem 0rem .3rem;
+  margin: 0rem 0rem .3rem;
   overflow: hidden;
   border-radius: .1rem;
   //   box-shadow: 0 0px 10px 1px rgba(#000, .1);

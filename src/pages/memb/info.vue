@@ -1,56 +1,51 @@
 <template>
   <div class="box">
-    <!-- <div class="header">
-      <div class="arrow"><img src="./img/row.png" alt=""></div>
-      <div class="title">完善资料</div>
-    </div> -->
+<!--    <div class="header">-->
+<!--      <div class="arrow"><img src="./img/row.png" alt=""></div>-->
+<!--      <div class="title">完善资料</div>-->
+<!--    </div>-->
+    <div class="headerBar">
+      <header-bar title="完善资料"></header-bar>
+    </div>
     <!--<div class="title">温馨提示：请填写真实有效信息以获得更高信用额度</div>-->
 
 
     <div class="content">
       <div class="information"  @click="card">
         <div class="icon">
-          <img src="./img/rzicon2.png" alt="" >
+          <img src="./img/my-icon3.png" alt="" >
         </div>
-        <span class="title">实名认证  <br><em>应国家政策要求，借款需上传身份证</em></span>
-        <span class="text" :class="{'cur':list.idCard==3}" v-html="list.idCard==3?'认证成功':list.idCard==2?'认证中':list.idCard==4&&list.idCardFail==1?'认证失败(身份证已被认证)':list.idCard==4?'认证失败':'未认证'">
-        </span>
-
-        <i></i>
+        <span class="title">实名认证</span>
+        <span class="text" :class="{'cur':list.idCard==3}" v-html="list.idCard==3?'认证成功':list.idCard==2?'认证中':list.idCard==4&&list.idCardFail==1?'认证失败(身份证已被认证)':list.idCard==4?'认证失败':'未认证'"></span>
       </div>
       <div class="information" @click="base">
         <div class="icon">
-          <img src="./img/rzicon5.png" alt="" >
+          <img src="./img/my-icon2.png" alt="" >
         </div>
-        <span class="title">基础信息  <br><em>更全面的评估，最高提升到2万额度</em></span>
-        <span class="text" :class="{'cur':list.baseInfo==3}" v-html="list.baseInfo==4&&list.idCardFail==1?'认证失败':list.baseInfo==3?'认证成功':list.baseInfo==2?'认证中':'未认证'">
-        </span>
-        <i></i>
+        <span class="title">基础信息</span>
+        <span class="text" :class="{'cur':list.baseInfo==3}" v-html="list.baseInfo==4&&list.idCardFail==1?'认证失败':list.baseInfo==3?'认证成功':list.baseInfo==2?'认证中':'未认证'"></span>
       </div>
       <div class="information" @click="linkman">
         <div class="icon phone">
-          <img src="./img/rzicon4.png" alt="" >
+          <img src="./img/my-icon4.png" alt="" >
         </div>
-        <span class="title">联系人认证  <br><em>防范他人操作，防止账号冒用</em></span>
+        <span class="title">联系人认证</span>
         <span class="text" :class="{'cur':list.contact==3}" v-html="list.contact==4?'认证失败()':list.contact==3?'认证成功':list.contact==2?'认证中':'未认证'"></span>
-        <i></i>
       </div>
       <div class="information" @click="bank">
         <div class="icon">
-          <img src="./img/rzicon3.png" alt="">
+          <img src="./img/my-icon5.png" alt="">
         </div>
-        <span class="title">银行卡认证  <br><em>认证个人银行卡，方便极速下款</em></span>
+        <span class="title">银行卡认证</span>
         <span class="text" :class="{'cur':list.bank==3}" v-html="list.bank==4?'认证失败':list.bank==3?'认证成功':list.bank==2?'认证中':'未认证'"></span>
-        <i></i>
       </div>
 
-      <div class="information" @click="mobile">
+      <div class="information" @click="mobile1">
         <div class="icon">
-          <img src="./img/rzicon1.png" alt="" >
+          <img src="./img/my-icon1.png" alt="" >
         </div>
-        <span class="title">手机认证  <br><em>提高审核通过率</em></span>
+        <span class="title">手机认证</span>
         <span class="text" :class="{'cur':list.mobOperator==3}" v-html="list.mobOperator==4?'认证失败':list.mobOperator==3?'认证成功':(list.mobOperator==2 || authing == 1)?'认证中':'未认证'"></span>
-        <i></i>
       </div>
     </div>
     <!--<div class="button">立即借款</div>-->
@@ -160,7 +155,7 @@
           }
         }
       },
-      mobile(){
+      mobile1(){
         if(this.list.bank == 3){
           if(this.list.mobOperator != 2 && this.authing != 1 &&  this.list.mobOperator != 3){
             // this.$router.push({path: '/memb/mobile'});
@@ -410,6 +405,12 @@
 </script>
 
 <style lang="scss" scoped>
+  .headerBar{
+    width: 100%;
+    background: url("./img/headerBar-bg.png") no-repeat;
+    height:Px(406);
+    background-size: 100%;
+  }
   .box{
     width: 100%;
     height: 100%;
@@ -491,8 +492,8 @@
       background: #fdfcfd;
       float: left;
       position: relative;
-      margin-bottom: Px(20);
-      border-radius: Px(15);
+      margin-bottom: Px(2);
+      /*border-radius: Px(15);*/
       .icon{
         height: Px(61);
         position: absolute;
@@ -539,19 +540,23 @@
       }
       .text{
         flex: 1;
-        color: #999999;
-        background: none;
-        font-size: Px(24);
-        line-height: Px(40);
-        height: Px(40);
+        color: #fff;
+        background: #c6c6c6;
+        font-size: Px(21);
+        line-height: Px(49);
         padding:0 Px(25);
         position: absolute;
         right: Px(35);
         top: Px(27);
         border-radius: Px(20);
+        width:Px(116);
+        height:Px(49);
+        text-align: center;
       }
       .cur{
-        color: #55BFF7;
+        color: #fa3532;
+        border: 1px solid #fa3532;
+        background: #fff;
       }
     }
   }

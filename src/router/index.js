@@ -78,6 +78,14 @@ const router = new Router({
             cssNames: 'gray',
             title: $appName
           }
+        }, {
+          path: '/loan/record',
+          name: 'loanRecord',
+          component: loanRecord,
+          meta: {
+            cssNames: 'gray',
+            title: '借款记录'
+          }
         }
       ]
     },{
@@ -99,7 +107,7 @@ const router = new Router({
       path: '/memb/info',
       name: 'info',
       meta:{
-        //hideHeader: true,
+        hideHeader: true,
         title: '完善资料'
       },
       component: info
