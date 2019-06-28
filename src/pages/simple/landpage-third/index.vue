@@ -1,6 +1,6 @@
 <template lang="pug">
   .page-landpage-third(:class="pageLandpageThirdClassNames")
-    img(src="./img/bg.png")
+    img(src="./img/bg1.png")
     //- .scroll-box.flex-center
       i.icon-messages
       marquee.flex-1(scrollamount="5")
@@ -363,11 +363,10 @@
     top 0
     bottom 0
     overflow auto
-    background #46464A
+    background #fff
     img{
       display block;
       width 100%;
-      margin-bottom px(750)
     }
   // &.-ddbt
   //   background rgba(27,66,211,1) url(./img/bg.png) 50% 0 no-repeat
@@ -402,18 +401,20 @@
   // 表单
   .form
     position absolute
-    top px(390)
+    top px(890)
     left 0
     right 0
-    margin px(30) px(60) 0
+    //margin px(30) px(60) 0
     border-radius px(14)
-    padding px(46) 0 px(46)
+    //padding px(46) 0 px(46)
 
   .form-item
     display flex
     margin px(30) px(25.5)
     padding px(10) px(28)
     background #fff
+    border-radius:px(15)
+    border: 1px solid #d91833
 
   .form-areacode
     flex none
@@ -445,20 +446,21 @@
     padding 0 px(20)
     border-radius px(30)
     color #fff
-    background #ccc
+    background #d91833
     &.-active
       color #fff
       background-color #FFAA37
 
   .form-submit
     width 92%
-    height px(75)
+    height px(80)
     margin px(30) auto 0
     font-size px(32)
-    line-height px(75)
+    line-height px(80)
     text-align center
-    background:#FFAA37;
+    background:#d91833
     color #fff
+    border-radius:px(15)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
 
   .form-tip
