@@ -4,10 +4,7 @@
           <div class="top">
         <!-- <img class="icon-logo" src="./img/icon_logo.png" alt=""> -->
         <!-- <img src="./img/pic_top.png" alt=""> -->
-        <div class="title" :style="`padding-top:${native.statusBarHeight + 15}px`">
-          　我的
-          <!--<a @click="$router.push('/set')"></a>-->
-        </div>
+        <div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">我的<!--<a @click="$router.push('/set')"></a>--></div>
 
         <!--<div class="info-box_">-->
             <!--<ul>-->
@@ -64,14 +61,6 @@
             <img class="icon-box icon-bank" slot="icon" src="./img/icon3.png" alt="">
           </cell>
 
-
-
-          <!--<cell is-link title="常见问题" @click.native="$router.push('/my/news')">-->
-          <!--<img class="icon-box icon-bank" slot="icon" src="./img/icon2.png" alt="">-->
-          <!--</cell>-->
-
-        </group>
-        <group class="group-box">
           <cell is-link title="提现记录"  @click.native="$router.push('/loan')">
             <img class="icon-box icon-index" slot="icon" src="./img/icon_data.png" alt="">
           </cell>
@@ -82,13 +71,16 @@
           <cell is-link title="用户反馈" @click.native="goFeedback">
             <img class="icon-box" slot="icon" src="./img/feedback.png" alt="">
           </cell>
+          <cell is-link  title="设置" @click.native="$router.push('/set')">
+            <img class="icon-box" slot="icon" src="./img/pwd.png" alt="">
+          </cell>
+
+          <!--<cell is-link title="常见问题" @click.native="$router.push('/my/news')">-->
+          <!--<img class="icon-box icon-bank" slot="icon" src="./img/icon2.png" alt="">-->
+          <!--</cell>-->
 
         </group>
-        <group class="group-box">
-        <cell is-link  title="设置" @click.native="$router.push('/set')">
-          <img class="icon-box" slot="icon" src="./img/pwd.png" alt="">
-        </cell>
-        </group>
+
 
         <!--<group class="group-box">-->
           <!--&lt;!&ndash;<cell is-link title="联系客服" @click.native="$web2app('phone',{number: customPhone})">&ndash;&gt;-->
@@ -251,33 +243,22 @@ export default {
   background:#333333;
   position: relative;
   width: 100%;
-  padding-bottom: Px(200);
-  margin-bottom: Px(70);
+  padding-bottom: Px(30);
   .info-box_{
-    width: Px(744);
-    height: Px(247);
-    position: absolute;
-    left: Px(3);
-    bottom:Px(-75);
-    background:url('./img/mybg.png')no-repeat;
-    background-size: 100% auto;
     z-index: 999;
     text-align: center;
+    overflow: hidden;
     img{
-      width: Px(128);
-      display: inline-block;
-      position: absolute;
-      left: Px(37);
-      top:Px(39)
+      width: Px(90);
+      display: block;
+      margin: Px(5) auto;
+      margin-top: Px(10);
     }
     >div{
-      text-align: left;
       display: inline-block;
-      position: absolute;
-      left: Px(203);
-      top:Px(56);
       font-size: Px(40);
-      color: #333;
+      color: #fff;
+      line-height: Px(70);
     }
     a{
       height: Px(140);
@@ -412,11 +393,10 @@ export default {
   background-color: #f6f4f7!important;
   h3{ color: #121212; font-size: Px(28); font-weight: normal; margin-bottom: Px(20)}
   .icon-box{
-    margin-left: Px(35);
-    margin-right: .4rem;
     display: block;
     width: auto;
     height: Px(50);
+    margin: 0 auto Px(15);
     &.icon-bank{
       width: Px(50);
       height: auto;
@@ -424,6 +404,7 @@ export default {
     &.icon-index{
       width: Px(50);
       height: auto;
+
     }
   }
 
@@ -462,10 +443,13 @@ export default {
 <style lang="scss">
   .group-box{
     .weui-cell{
-      padding-left: .4rem !important;
-      padding-right: .4rem !important;
-      padding:Px(30) 0 !important;;
+      padding:Px(30) 0 0!important;;
       border-top: none!important;
+      width: 25%;
+      height: Px(141);
+      float: left;
+      text-align: center;
+      display: block;
     }
     .weui-cells{
       margin: 0 !important;
@@ -474,17 +458,30 @@ export default {
     .weui-cells:before{
       height: 0 !important;
       border: none;
+      display: none!important;
     }
     .weui-cells:after{
       border: none;
+      display: none!important;
+    }
+    .weui-cell:before{
+      display: none;
     }
     .vux-label{
       font-size:Px(30)!important;
       color: #000000!important;
+      display:block;
+      width: 100%;
     }
     .weui-cell_access .weui-cell__ft:after{
       border-color: #999 !important;
       right:Px(35)!important;
+      display: none;
+    }
+    .weui-cell__hd{
+      width: 100%;
+      display:block;
+      text-align: center;
     }
   }
 </style>

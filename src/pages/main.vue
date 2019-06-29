@@ -4,13 +4,13 @@
     <div class="bottom-tabs">
       <tabbar v-model="activIndex" @on-index-change="toggleTabs">
         <tabbar-item>
-          <img class="icon" slot="icon" src="./img/icon_index.png">
-          <img class="icon" slot="icon-active" src="./img/icon_index_active.png" alt="">
+          <img class="icon" slot="icon" src="./img/icon_index_active.png">
+          <img class="icon" slot="icon-active" src="./img/icon_index.png" alt="">
           <span slot="label">首页</span>
         </tabbar-item>
         <tabbar-item>
-          <img class="icon" slot="icon" src="./img/icon_my.png">
-          <img class="icon" slot="icon-active" src="./img/icon_my_active.png" alt="">
+          <img class="icon" slot="icon" src="./img/icon_my_active.png">
+          <img class="icon" slot="icon-active" src="./img/icon_my.png" alt="">
           <span slot="label">我的</span>
         </tabbar-item>
       </tabbar>
@@ -72,8 +72,7 @@
   .weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon,
   .weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon > i,
   .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label{
-    color: $maincolor;
-    color: #ffbb3f!important;
+    color: $maincolor!important;
   }
   .bottom-tabs{
     height: 65px;

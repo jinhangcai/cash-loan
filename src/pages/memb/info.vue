@@ -12,7 +12,7 @@
         <div class="icon">
           <img src="./img/rzicon2.png" alt="" >
         </div>
-        <span class="title">实名认证  <br><em>应国家政策要求，借款需上传身份证</em></span>
+        <span class="title">实名认证</span>
         <span class="text" :class="{'cur':list.idCard==3}" v-html="list.idCard==3?'认证成功':list.idCard==2?'认证中':list.idCard==4&&list.idCardFail==1?'认证失败(身份证已被认证)':list.idCard==4?'认证失败':'未认证'">
         </span>
 
@@ -22,7 +22,7 @@
         <div class="icon">
           <img src="./img/rzicon5.png" alt="" >
         </div>
-        <span class="title">基础信息  <br><em>更全面的评估，最高提升到2万额度</em></span>
+        <span class="title">基础信息</span>
         <span class="text" :class="{'cur':list.baseInfo==3}" v-html="list.baseInfo==4&&list.idCardFail==1?'认证失败':list.baseInfo==3?'认证成功':list.baseInfo==2?'认证中':'未认证'">
         </span>
         <i></i>
@@ -31,7 +31,7 @@
         <div class="icon phone">
           <img src="./img/rzicon4.png" alt="" >
         </div>
-        <span class="title">联系人认证  <br><em>防范他人操作，防止账号冒用</em></span>
+        <span class="title">联系人认证</span>
         <span class="text" :class="{'cur':list.contact==3}" v-html="list.contact==4?'认证失败()':list.contact==3?'认证成功':list.contact==2?'认证中':'未认证'"></span>
         <i></i>
       </div>
@@ -39,7 +39,7 @@
         <div class="icon">
           <img src="./img/rzicon3.png" alt="">
         </div>
-        <span class="title">银行卡认证  <br><em>认证个人银行卡，方便极速下款</em></span>
+        <span class="title">银行卡认证</span>
         <span class="text" :class="{'cur':list.bank==3}" v-html="list.bank==4?'认证失败':list.bank==3?'认证成功':list.bank==2?'认证中':'未认证'"></span>
         <i></i>
       </div>
@@ -48,7 +48,7 @@
         <div class="icon">
           <img src="./img/rzicon1.png" alt="" >
         </div>
-        <span class="title">手机认证  <br><em>提高审核通过率</em></span>
+        <span class="title">手机认证</span>
         <span class="text" :class="{'cur':list.mobOperator==3}" v-html="list.mobOperator==4?'认证失败':list.mobOperator==3?'认证成功':(list.mobOperator==2 || authing == 1)?'认证中':'未认证'"></span>
         <i></i>
       </div>
@@ -480,29 +480,25 @@
   .content{
     overflow: hidden;
     margin:0;
-    margin: Px(30);
     overflow: hidden;
     margin-bottom: Px(100);
+    background: #FFFEFE;
     .information{
       display: block;
       align-items: center;
-      height: Px(116);
-      width:100%;
-      background: #fdfcfd;
+      height: Px(190);
+      width:33.3333%;
+      background: #FFFEFE;
       float: left;
       position: relative;
-      margin-bottom: Px(20);
-      border-radius: Px(15);
+      text-align: center;
       .icon{
-        height: Px(61);
-        position: absolute;
-        left: Px(20);
-        top: Px(28);
+        text-align: center;
         img{
           display: block;
-          margin: auto;
+          margin:Px(20) auto;
           width: auto;
-          width: Px(52);
+          width: Px(60);
         }
       }
       .phone{
@@ -514,7 +510,7 @@
 
         width: Px(13);
         height: Px(23);
-        display: block;
+        display: none;
         position: absolute;
         right: Px(20);
         top: Px(36);
@@ -524,14 +520,12 @@
       .title{
         flex: 1;
         //  width: Px(215);
-        color: #000000;
-        font-size: Px(28);
-        text-align: left;
-        line-height: Px(45);
-        margin-left: Px(100);
+        color: #333333;
+        font-size: Px(30);
+        text-align: center;
+        line-height: Px(30);
         display: block;
-        margin-top: Px(20);
-        margin-bottom: Px(21);
+        margin-bottom: Px(8);
         em{
           color: #999999;
           font-size: Px(26);
@@ -542,13 +536,9 @@
         color: #999999;
         background: none;
         font-size: Px(24);
-        line-height: Px(40);
-        height: Px(40);
-        padding:0 Px(25);
-        position: absolute;
-        right: Px(35);
-        top: Px(27);
-        border-radius: Px(20);
+        line-height: Px(24);
+        height: Px(24);
+
       }
       .cur{
         color: #55BFF7;

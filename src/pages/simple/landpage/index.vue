@@ -243,7 +243,7 @@ export default {
   min-height: 100%;
   top: 0;
   left: 0;
-  background:#46464A url('../images/pic_land_back.png') top no-repeat;
+  background:#444854 url('../images/pic_land_back.png') top no-repeat;
 	background-size:100%;
 
   .land_img {
@@ -281,6 +281,8 @@ export default {
 		}
   }
   .landing_form {
+
+    overflow: hidden;
     position: relative;
     z-index: 9;
     padding: Px(65) Px(0);
@@ -316,6 +318,7 @@ export default {
       input {
         padding-left: Px(28);
         width: 100%;
+        border-radius: Px(4);
         height: Px(80);
       }
       input::-webkit-input-placeholder {
@@ -353,8 +356,8 @@ export default {
         font-size: Px(22);
         line-height: Px(60);
         text-align: center;
-        color: #FFAA37;
-        border-left: #FFAA37 Px(2) solid;
+        color: #2DA1FF;
+        border-left: #2DA1FF Px(2) solid;
         &:hover,
         &:active {
           opacity: 0.7;
@@ -367,7 +370,9 @@ export default {
     width: auto;
     height: Px(88);
     color: #fff;
-    background: #FFAA37;
+    background: none;
+    border-radius: Px(4);
+    border: #fff Px(2) solid;
     font-size: Px(26);
     line-height: Px(88);
     text-align: center;

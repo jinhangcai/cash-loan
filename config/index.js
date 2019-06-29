@@ -12,7 +12,7 @@ module.exports = {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/m.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'sqsf_static',
+    assetsSubDirectory: 'hta_static',
     assetsPublicPath: './',
     productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
@@ -36,7 +36,7 @@ module.exports = {
     autoOpenBrowser: true,
     proxyTable: {
       '/web': {
-        target: 'https://sqsf.tj51.top',
+        target: 'https://hta.arbid.cn',
         changeOrigin: true,
         pathRewrite: {
           '^/web': '/'

@@ -30,6 +30,7 @@
       .form-submit(@click="login") 点击开始借钱
       // .form-tip 注册即同意
       //   em.txt_blue 《{{ $appName }}服务协议》
+      img.imgs(src="./img/bgs.png")
 
     //- 下载弹窗
     .download(v-if="downloadShow" @click="download")
@@ -299,9 +300,9 @@
       iosDownload () {
         switch (this.app) {
           case 'ddbt':
-            const url = 'https://sqsf.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
+            const url = 'https://heitaoaaa.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
             //   window.location.href = `itms-services://?action=download-manifest&url=${url}`
-            window.location.href = `itms-services://?action=download-manifest&url=https://sqsf.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
+            window.location.href = `itms-services://?action=download-manifest&url=https://heitaoaaa.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
             break
           default:
             break
@@ -313,15 +314,15 @@
         if(this.sendCodeTime==0){
           switch (this.app) {
             case 'ddbt':
-              window.self.location = 'https://sqsf.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
+              window.self.location = 'https://heitaoaaa.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
               break
             default:
               break
           }
         }
 
-      },
-    },
+      }
+    }
   }
 </script>
 
@@ -363,11 +364,15 @@
     top 0
     bottom 0
     overflow auto
-    background #46464A
+    background #444854
     img{
       display block;
       width 100%;
       margin-bottom px(750)
+    }
+    .imgs{
+      width px(520)
+      margin px(100) auto 0
     }
   // &.-ddbt
   //   background rgba(27,66,211,1) url(./img/bg.png) 50% 0 no-repeat
@@ -414,6 +419,7 @@
     margin px(30) px(25.5)
     padding px(10) px(28)
     background #fff
+    border-radius px(4)
 
   .form-areacode
     flex none
@@ -448,7 +454,7 @@
     background #ccc
     &.-active
       color #fff
-      background-color #FFAA37
+      background-color #2DA1FF
 
   .form-submit
     width 92%
@@ -457,8 +463,10 @@
     font-size px(32)
     line-height px(75)
     text-align center
-    background:#FFAA37;
+    background:none;
+    border #fff px(2) solid
     color #fff
+    border-radius px(4)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
 
   .form-tip
@@ -574,9 +582,11 @@
     width px(270 * 1.5)
     height px(189 * 1.5)
     background url(./img/masklayer.png) 50%/ 100% 100% no-repeat
+
+
 </style>
 <style>
   body{
-    background :#46464A!important;
+    background :#444854!important;
   }
 </style>

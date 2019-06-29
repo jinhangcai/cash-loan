@@ -13,26 +13,21 @@
         </div> -->
         <div class="scroll-container" :style="`transform:translate(0, ${native.statusBarHeight})`">
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
-            <!--<header-bar title="三千首放"></header-bar>-->
+            <!--<header-bar title="黑桃A"></header-bar>-->
             <!--<img  src="./index/indeximg.png" width="100%">-->
             <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
               <!--客服中心-->
               <!--<p>如有问题及时反馈 ></p>-->
             <!--</div>-->
             <div class="box_">
-              <div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">
-                　首放三千
-                <!--<a @click="$router.push('/set')"></a>-->
-              </div>
+              <!--<div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">-->
+                <!--　黑桃A-->
+                <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
+              <!--</div>-->
               <div class="box_1">
-                <div class="box_left">
                   <h3>最高可借(元)</h3>
                   <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
-                </div>
-                <div class="box_right">
-                  <em><img  src="./index/Group1.png" width="100%">7天/14天<br> <img  src="./index/Group2.png" width="100%">起借金额:2000元</em>
-                </div>
-
+                  <em><img  src="./index/Group1.png" width="100%">7天/14天   <img  src="./index/Group2.png" width="100%">起借金额:2000元</em>
                 <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
               </div>
 
@@ -779,19 +774,18 @@ import { setTimeout } from 'timers'
     }
     .borrowingBtn{
         display: block;
-         width: Px(470);
+         width: Px(600);
         height: Px(90);
-        margin:Px(50) auto 0;
-        border-radius: Px(45);
+        margin:Px(20) auto 0;
         cursor: pointer;
         font-size: Px(36);
-        line-height: Px(70);
+        line-height: Px(90);
         color: #fff;
         text-align: center;
         outline: none;
         border: none;
         align-self: center;
-        background: #FFB635;
+        background: #464A56;
 
     }
     .tabBottom{
@@ -1264,7 +1258,7 @@ import { setTimeout } from 'timers'
     .title em img{width: Px(40); margin-right: Px(40)}
     .box_s{
       text-align: left;
-      margin:Px(27)auto;
+      margin:Px(35)auto;
       width:Px(705);
       overflow: hidden;
         li{
@@ -1324,8 +1318,10 @@ import { setTimeout } from 'timers'
     .box_{
       position: relative;
       text-align: center;
-      overflow: hidden;
-      background: #333;
+      background:url(./index/indexbgs.png) no-repeat ;
+      background-size: 100% 100%;
+      height: Px(470);
+      margin-bottom: Px(180);
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1336,52 +1332,40 @@ import { setTimeout } from 'timers'
       .box_1{
         text-align: center;
         overflow: hidden;
-        margin:Px(25) Px(40);
-        background:url(./index/indexbg.png) no-repeat ;
-        background-size: 100% 100%;
-        height: Px(313);
-        margin-bottom: Px(37);
+        background:#fff;
+        height: Px(350);
+        width: Px(710);
         /*box-shadow: 0 0 .2rem 1px rgba(#000, .1);*/
         /*border-radius: Px(15);*/
-        .box_left{
-          width: 50%;
-          float: left;
-          margin-bottom: Px(40);
-          overflow: hidden;
-        }
-        .box_right{
-          width: 50%;
-          float: right;
-          padding-top: Px(70);
-        }
+        position: absolute;
+        bottom:Px(-158);
+        left: Px(20);
         h3{
           font-style: normal;
           font-size: Px(28);
-          color:#FFFFFF;
+          color:#333333;
           margin-left: Px(45);
           margin-top: Px(38);
-          text-align: left;
+          text-align: center;
           line-height: Px(40);
           font-weight: normal;
         }
         p{
           font-style: normal;
           font-size: Px(80);
-          color:#FFFFFF;
+          color:#333333;
           margin-left: Px(38);
           margin-top: Px(0);
-          text-align: left;
+          text-align:  center;
           line-height: Px(80);
           font-weight: normal;
           margin-bottom: 0;
         }
         em{
-          color: #fff;
+          color: #333333;
           font-size: Px(24);
-          text-align: left;
+          text-align:  center;
           line-height: Px(40);
-          float: left;
-          margin-left: Px(45);
 
           img{
             width: Px(24);
