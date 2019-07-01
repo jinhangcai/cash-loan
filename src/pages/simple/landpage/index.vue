@@ -49,9 +49,9 @@
       </div>
       <!-- landing_item -->
       <div class="landing_btn" @click="register">注册领钱</div>
-      <p class="register_txt txt_center">点击领取即同意
-        <em class="">《服务协议》</em>
-      </p>
+<!--      <p class="register_txt txt_center">点击领取即同意-->
+<!--        <em class="">《服务协议》</em>-->
+<!--      </p>-->
     </div>
     <!-- landing_form -->
     <!--<p class="txt_center rights">Copyright © 2018 人人快贷 All right reserved</p>-->
@@ -243,7 +243,7 @@ export default {
   min-height: 100%;
   top: 0;
   left: 0;
-  background:#46464A url('../images/pic_land_back.png') top no-repeat;
+  background:#fff url('../images/bg1.png') top no-repeat;
 	background-size:100%;
 
   .land_img {
@@ -284,13 +284,15 @@ export default {
     position: relative;
     z-index: 9;
     padding: Px(65) Px(0);
-    margin: Px(-27) auto 0;
+    margin: Px(310) auto 0;
     width: Px(580);
     height: auto;
-    margin-top: Px(-106);
+    //margin-top: Px(-106);
     & .landing_item {
       position: relative;
       overflow: hidden;
+      border-radius:Px(15);
+      border: 1px solid #d91833;
       .mobile {
         position: absolute;
         display: block;
@@ -353,8 +355,8 @@ export default {
         font-size: Px(22);
         line-height: Px(60);
         text-align: center;
-        color: #FFAA37;
-        border-left: #FFAA37 Px(2) solid;
+        color: #d91833;
+        border-left: #d91833 Px(2) solid;
         &:hover,
         &:active {
           opacity: 0.7;
@@ -367,9 +369,10 @@ export default {
     width: auto;
     height: Px(88);
     color: #fff;
-    background: #FFAA37;
+    background: #d91833;
     font-size: Px(26);
     line-height: Px(88);
+    border-radius:Px(15);
     text-align: center;
   }
   .rights {
