@@ -16,7 +16,7 @@
         <div class="box">
           <div class="title_" >
             <div class="titles">
-            温馨提示：请认准官方客服,其他方式（百度）搜索到的客服都是骗子;
+            请认准官方客服,其他方式（百度）搜索到的客服都是骗子;
             </div>
             <div class="title">
               <a @click="$router.push('/my/news')" style="position:relative;z-index:9999;"></a>
@@ -99,11 +99,11 @@
                 <div class="right">
                   <div class="unfinish" v-if="!attestation" style="display:flex;align-items: center;">
                     <x-icon type="ios-information" size="16"></x-icon>
-                    <span>未完成</span>
+                    <span style="color:#ec4351;">未完成</span>
                   </div>
                   <div class="finish" v-else style="display:flex;align-items: center;">
                     <x-icon type="ios-checkmark" size="16"></x-icon>
-                    <span>已完成</span>
+                    <span style="color:#ec4351;">已完成</span>
                   </div>
                   <div class="enterBtn"></div>
                 </div>
@@ -861,6 +861,7 @@
     margin-top:Px(30);
     margin-bottom:Px(30);
     background: url(./index/indeximg3.png) no-repeat;
+    background-size: 100% 100%;
     width:Px(625);
     height:Px(257);
     .paymentSum{
@@ -1615,7 +1616,7 @@
       opacity: 0.6;
     }
   }
-  .personalicon{ width:Px(28); height: Px(32);  background: url('./index/indexicon1.png') no-repeat center / 100% 100%; margin-right: 0.15rem; margin-left: 0.15rem;}
+  .personalicon{ width:Px(31); height: Px(30);  background: url('./index/indexicon3.png') no-repeat center / 100% 100%; margin-right: 0.15rem; margin-left: 0.15rem;}
 </style>
 <style>
   .vux-popover{

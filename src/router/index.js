@@ -38,56 +38,36 @@ const mobileSuccess = r => require.ensure([], () => r(require('../pages/memb/mob
 
 Vue.use(Router)
 
-const $appName = '大可乐'
+const $appName = '蓝天贷'
 const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'main',
+      name: 'index',
+      component: index,
+      meta: {
+        hideHeader: true,
+        cssNames: 'gray',
+        title: '首页'
+      }
+    }, {
+      path: '/index',
+      name: 'index',
+      component: index,
+      meta: {
+        hideHeader: true,
+        cssNames: 'gray',
+        title: '首页'
+      }
+    }, {
+      path: '/my',
+      name: 'my',
+      component: my,
       meta: {
         hideHeader: true,
         cssNames: 'gray',
         title: $appName
-      },
-      component: main,
-      children: [
-        {
-          path: '/',
-          name: 'index',
-          component: index,
-          meta: {
-            hideHeader: true,
-            cssNames: 'gray',
-            title: '首页'
-          }
-        }, {
-          path: '/index',
-          name: 'index',
-          component: index,
-          meta: {
-            hideHeader: true,
-            cssNames: 'gray',
-            title: '首页'
-          }
-        }, {
-          path: '/my',
-          name: 'my',
-          component: my,
-          meta: {
-            hideHeader: true,
-            cssNames: 'gray',
-            title: $appName
-          }
-        }, {
-          path: '/loan/record',
-          name: 'loanRecord',
-          component: loanRecord,
-          meta: {
-            cssNames: 'gray',
-            title: '借款记录'
-          }
-        }
-      ]
+      }
     },{
       path: '/set',
       name: 'set',
