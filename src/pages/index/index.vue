@@ -20,7 +20,10 @@
             </div>
             <div class="title">
               <a @click="$router.push('/my/news')" style="position:relative;z-index:9999;"></a>
-              <a @click="$router.push('/my')" style="position:relative;z-index:9999;"></a>
+              <group title="set position">
+                <a title="left(56% width)" v-model="!show8"></a>
+              </group>
+<!--              <a @click="$router.push('/my')" style="position:relative;z-index:9999;"></a>-->
             </div>
           </div>
           <div class="box_">
@@ -35,6 +38,45 @@
             <!--&lt;!&ndash;温馨提示：除了加客服微信扣扣外,其余(百度)公众号添加都是骗子;&ndash;&gt;-->
             <!--请认准官方客服,其他方式(百度)搜索到的客服都是骗子;-->
           <!--</div>-->
+        </div>
+        <div v-transfer-dom>
+          <popup v-model="show8" position="left" width="56%">
+            <div class="position-horizontal-demo">
+              <div class="mys">
+                <div class="info-box_">
+                  <img src="./index/denglu.png">
+                  <div v-if="userInfo.vid">
+                    <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
+                    <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
+                  </div>
+                  <div  v-else>
+                    <div>您好！请先登录</div>
+                  </div>
+                </div>
+                <ul class="info-box_s">
+                  <li @click="$router.push('/loan')">
+                    提现记录<i></i>
+                  </li>
+                  <li @click="$router.push('/loan/record')">
+                    我的借款<i></i>
+                  </li>
+                  <li @click="goFeedback">
+                    用户反馈<i></i>
+                  </li>
+                  <li @click="goMyBank">
+                    我的银行卡<i></i>
+                  </li>
+                  <li @click="$web2app('phone',{number: customPhone})">
+                    联系客服<i></i>
+                  </li>
+                  <li @click="$router.push('/set')">
+                    设置<i></i>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </popup>
         </div>
         <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
         <!--客服中心-->
@@ -204,7 +246,7 @@
   import LeftMenu from './menu'
   import Scroller from '../../components/scroller'
   // import ScrollLine from '../../components/ScrollLine'
-  import { XHeader,Tab,TabItem,Popover,Divider,Alert,Range } from 'vux'
+  import { XHeader,Tab,TabItem,Popover,Divider,Alert,Range,Popup } from 'vux'
   import {getString} from '../../utils/getString.js'
   import { setTimeout } from 'timers'
   export default {
@@ -218,14 +260,16 @@
       Divider,
       Scroller,
       Alert,
-      Range
+      Range,
+      Popup
     },
     data() {
       return {
+        show8: false,
         alipayShow: false,
         navShow: false,
         iconShow: false,
-        show:false,
+        show: false,
         details: this.$store.state.details,
         paymentInformation:{
           recentDay: 0,
@@ -1617,6 +1661,38 @@
     }
   }
   .personalicon{ width:Px(31); height: Px(30);  background: url('./index/indexicon3.png') no-repeat center / 100% 100%; margin-right: 0.15rem; margin-left: 0.15rem;}
+  .popup0 {
+    padding-bottom:15px;
+    height:200px;
+  }
+  .popup1 {
+    width:100%;
+    height:100%;
+  }
+  .popup2 {
+    padding-bottom:15px;
+    height:400px;
+  }
+  .position-vertical-demo {
+    background-color: #ffe26d;
+    color: #000;
+    text-align: center;
+    padding: 15px;
+  }
+  .position-horizontal-demo {
+    position: relative;
+    height: 100%;
+    .vux-close {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(4);
+      color: #000;
+    }
+  }
+  .vux-popup-dialog{
+    background: -webkit-linear-gradient(90deg,#8371fa, #a582f6);
+  }
 </style>
 <style>
   .vux-popover{
@@ -1667,3 +1743,7 @@
   }
 </style>
 
+<style lang="less" scoped>
+
+
+</style>

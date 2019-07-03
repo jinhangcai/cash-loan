@@ -148,7 +148,6 @@
             } else {
               that.recentDay = lately(res.data.data.recentDay);
             }
-            
             that.repayNum = res.data.data.repayNum;
             that.lateNum = res.data.data.lateNum;
             console.log(JSON.stringify(that.list));
