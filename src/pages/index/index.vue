@@ -678,7 +678,7 @@
           position: absolute;
           right: 0;
           top:Px(30);
-          /*background:url('./index/rows1.png')no-repeat;*/
+          background:url('./index/rows1.png')no-repeat;
           background-size: 100% auto;
         }
       }
@@ -1737,7 +1737,7 @@
     }
   }
   .vux-popup-dialog{
-    background: -webkit-linear-gradient(90deg,#8371fa, #a582f6);
+    background:#fff;
   }
 </style>
 <style>
