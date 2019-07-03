@@ -205,7 +205,7 @@
         <div class="position-horizontal-demo">
           <div class="mys">
             <div class="info-box_">
-<!--              <img src="./index/denglu.png">-->
+              <img src="./index/bg.png">
               <div v-if="userInfo.vid">
                 <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
                 <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
@@ -216,21 +216,27 @@
             </div>
             <ul class="info-box_s">
               <li @click="$router.push('/loan')">
+                <img src="./index/icon1.png">
                 提现记录<i></i>
               </li>
               <li @click="$router.push('/loan/record')">
+                <img src="./index/icon2.png">
                 我的借款<i></i>
               </li>
               <li @click="goFeedback">
+                <img src="./index/icon3.png">
                 用户反馈<i></i>
               </li>
               <li @click="goMyBank">
+                <img src="./index/icon4.png">
                 我的银行卡<i></i>
               </li>
               <li @click="$web2app('phone',{number: customPhone})">
+                <img src="./index/icon5.png">
                 联系客服<i></i>
               </li>
               <li @click="$router.push('/set')">
+                <img src="./index/icon6.png">
                 设置<i></i>
               </li>
             </ul>
@@ -647,10 +653,8 @@
   .mys{
     .info-box_{
       text-align: center;
-      padding:Px(100) 0 0;
       img{
-        width: Px(94);
-        height: Px(94);
+        width: 100%;
       }
       >div{
         color: #ffffff;
@@ -666,11 +670,19 @@
         width: Px(286);
         height: Px(90);
         line-height: Px(90);
-        color: #fff;
-        font-size: Px(30);
+        color: #615A55;
+        font-size: Px(25);
         text-align: center;
         position: relative;
-        border-bottom: #a396fb Px(2) solid;
+        border-bottom: #d6d4d3 Px(1) solid;
+        position:relative;
+        img{
+          width:Px(33);
+          height:Px(35);
+          position:absolute;
+          left:0;
+          top:Px(30);
+        }
         i{
           display: block;
           width: Px(17);
