@@ -644,6 +644,46 @@
   }
 </script>
 <style lang="scss" scoped>
+  .mys{
+    .info-box_{
+      text-align: center;
+      padding:Px(100) 0 0;
+      img{
+        width: Px(94);
+        height: Px(94);
+      }
+      >div{
+        color: #ffffff;
+        opacity: 0.74;
+        font-size: Px(30);
+        line-height: Px(71);
+      }
+    }
+    .info-box_s{
+      width: Px(286);
+      margin: 0 auto;
+      li{
+        width: Px(286);
+        height: Px(90);
+        line-height: Px(90);
+        color: #fff;
+        font-size: Px(30);
+        text-align: center;
+        position: relative;
+        border-bottom: #a396fb Px(2) solid;
+        i{
+          display: block;
+          width: Px(17);
+          height: Px(30);
+          position: absolute;
+          right: 0;
+          top:Px(30);
+          /*background:url('./index/rows1.png')no-repeat;*/
+          background-size: 100% auto;
+        }
+      }
+    }
+  }
   .refuseBg{
     position: fixed;
     left: 0;
