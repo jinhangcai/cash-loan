@@ -19,9 +19,9 @@
             请认准官方客服,其他方式（百度）搜索到的客服都是骗子;
             </div>
             <div class="title">
-              <a @click="$router.push('/my/news')" style="position:relative;z-index:9999;"></a>
+              <a class="title-img1" @click="$router.push('/my/news')" style="position:relative;z-index:9999;"></a>
               <group title="set position">
-                <a title="left(56% width)" v-model="!show8"></a>
+                <a class="title-img2" title="left(56% width)" @click="show8s" v-model="show8"></a>
               </group>
 <!--              <a @click="$router.push('/my')" style="position:relative;z-index:9999;"></a>-->
             </div>
@@ -38,45 +38,6 @@
             <!--&lt;!&ndash;温馨提示：除了加客服微信扣扣外,其余(百度)公众号添加都是骗子;&ndash;&gt;-->
             <!--请认准官方客服,其他方式(百度)搜索到的客服都是骗子;-->
           <!--</div>-->
-        </div>
-        <div v-transfer-dom>
-          <popup v-model="show8" position="left" width="56%">
-            <div class="position-horizontal-demo">
-              <div class="mys">
-                <div class="info-box_">
-                  <img src="./index/denglu.png">
-                  <div v-if="userInfo.vid">
-                    <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
-                    <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
-                  </div>
-                  <div  v-else>
-                    <div>您好！请先登录</div>
-                  </div>
-                </div>
-                <ul class="info-box_s">
-                  <li @click="$router.push('/loan')">
-                    提现记录<i></i>
-                  </li>
-                  <li @click="$router.push('/loan/record')">
-                    我的借款<i></i>
-                  </li>
-                  <li @click="goFeedback">
-                    用户反馈<i></i>
-                  </li>
-                  <li @click="goMyBank">
-                    我的银行卡<i></i>
-                  </li>
-                  <li @click="$web2app('phone',{number: customPhone})">
-                    联系客服<i></i>
-                  </li>
-                  <li @click="$router.push('/set')">
-                    设置<i></i>
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </popup>
         </div>
         <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
         <!--客服中心-->
@@ -239,6 +200,45 @@
         <img class="alipay-img" :src="codeUrl">
       </div>
     </div>
+    <div v-transfer-dom>
+      <popup v-model="show8" position="left" width="56%">
+        <div class="position-horizontal-demo">
+          <div class="mys">
+            <div class="info-box_">
+<!--              <img src="./index/denglu.png">-->
+              <div v-if="userInfo.vid">
+                <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
+                <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
+              </div>
+              <div  v-else>
+                <div>您好！请先登录</div>
+              </div>
+            </div>
+            <ul class="info-box_s">
+              <li @click="$router.push('/loan')">
+                提现记录<i></i>
+              </li>
+              <li @click="$router.push('/loan/record')">
+                我的借款<i></i>
+              </li>
+              <li @click="goFeedback">
+                用户反馈<i></i>
+              </li>
+              <li @click="goMyBank">
+                我的银行卡<i></i>
+              </li>
+              <li @click="$web2app('phone',{number: customPhone})">
+                联系客服<i></i>
+              </li>
+              <li @click="$router.push('/set')">
+                设置<i></i>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </popup>
+    </div>
   </div>
 </template>
 <script>
@@ -305,10 +305,10 @@
       // this.$vux.loading.show({
       //     text: '加载中'
       // })
-      this.getSystemData()
-      this.getcustomPhone()
-      this.getCodeUrl()
-      this.getList()
+      // this.getSystemData()
+      // this.getcustomPhone()
+      // this.getCodeUrl()
+      // this.getList()
     },
     async mounted() {
       //解决支付完成，状态栏还存在问题
@@ -365,6 +365,10 @@
       //   }
     },
     methods:{
+      show8s() {
+        console.log('111')
+        this.show8=!this.show8;
+      },
       setCookie: function (cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -1423,7 +1427,7 @@
       // font-weight: bold;
       font-size:Px(32);
       letter-spacing: 1px;
-      a:nth-child(1){
+      .title-img1{
         display: block;
         width: Px(31);
         height: Px(41);
@@ -1431,7 +1435,7 @@
         background: url('./index/shezhi4.png') no-repeat;
         background-size: 100%;
       }
-      a:nth-child(2){
+      .title-img2{
         display: block;
         width: Px(29);
         height: Px(39);
