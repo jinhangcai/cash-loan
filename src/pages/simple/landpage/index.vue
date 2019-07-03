@@ -48,7 +48,7 @@
         <span class="code_btn" @click="sendcode">{{ msg }}</span>
       </div>
       <!-- landing_item -->
-      <div class="landing_btn" @click="register">注册领钱</div>
+      <div class="landing_btn" @click="register">立即拿钱</div>
 <!--      <p class="register_txt txt_center">点击领取即同意-->
 <!--        <em class="">《服务协议》</em>-->
 <!--      </p>-->
@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import BMap from "BMap";
+// import BMap from "BMap";
 // import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
 
 // import { getPosition } from "./lnglat";
@@ -284,16 +284,18 @@ export default {
     position: relative;
     z-index: 9;
     padding: Px(65) Px(0);
-    margin: Px(310) auto 0;
+    margin: Px(50) auto 0;
     width: Px(580);
     height: auto;
     //margin-top: Px(-106);
     & .landing_item {
       position: relative;
       overflow: hidden;
+      background: #f7bac2;
       border-radius:Px(15);
-      border: 1px solid #d91833;
+      width: Px(500);
       .mobile {
+        background: #f7bac2;
         position: absolute;
         display: block;
         width: Px(100);
@@ -301,7 +303,7 @@ export default {
         left: 0;
         font-size: Px(26);
         line-height: Px(80);
-        color: #b6b6b6;
+        color: #000;
         text-align: center;
         &::after {
           content: "";
@@ -317,11 +319,13 @@ export default {
       }
       input {
         padding-left: Px(28);
-        width: 100%;
+        width: Px(500);
         height: Px(80);
+        background: #f7bac2;
+        color:#000;
       }
       input::-webkit-input-placeholder {
-        color: #b6b6b6;
+        color: #000;
       }
       .user_mobile {
         padding-left: Px(100);
@@ -355,8 +359,10 @@ export default {
         font-size: Px(22);
         line-height: Px(60);
         text-align: center;
-        color: #d91833;
-        border-left: #d91833 Px(2) solid;
+        color: #fff;
+        background: #e4112f;
+        border-radius:Px(15);
+        /*border-left: #000 Px(2) solid;*/
         &:hover,
         &:active {
           opacity: 0.7;
@@ -365,8 +371,9 @@ export default {
     }
   }
   .landing_btn {
-    margin-top: Px(30);
-    width: auto;
+    margin: Px(30) auto 0;
+    /*margin-top: Px(30);*/
+    width: Px(500);
     height: Px(88);
     color: #fff;
     background: #d91833;
@@ -382,7 +389,8 @@ export default {
     color: #fff;
   }
   .mt24 {
-    margin-bottom: Px(24);
+    /*margin-bottom: Px(24);*/
+    margin: 0 auto Px(24);
   }
   .register_txt {
     margin-top: Px(20);

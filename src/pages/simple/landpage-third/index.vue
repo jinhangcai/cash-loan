@@ -299,9 +299,9 @@
       iosDownload () {
         switch (this.app) {
           case 'ddbt':
-            const url = 'https://dakele.oss-cn-hongkong.aliyuncs.com/manifest.plist'
+            const url = 'https://dongporou.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
             //   window.location.href = `itms-services://?action=download-manifest&url=${url}`
-            window.location.href = `itms-services://?action=download-manifest&url=https://dakele.oss-cn-hongkong.aliyuncs.com/manifest.plist`
+            window.location.href = `itms-services://?action=download-manifest&url=https://dongporou.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
             break
           default:
             break
@@ -313,7 +313,7 @@
         if(this.sendCodeTime==0){
           switch (this.app) {
             case 'ddbt':
-              window.self.location = 'https://dakele.oss-cn-hongkong.aliyuncs.com/embedded.mobileprovision'
+              window.self.location = 'https://dongporou.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
               break
             default:
               break
@@ -401,7 +401,7 @@
   // 表单
   .form
     position absolute
-    top px(890)
+    top px(620)
     left 0
     right 0
     //margin px(30) px(60) 0
@@ -410,36 +410,38 @@
 
   .form-item
     display flex
-    margin px(30) px(25.5)
     padding px(10) px(28)
-    background #fff
+    width:px(538);
+    margin: px(30) auto;
     border-radius:px(15)
-    border: 1px solid #d91833
+    background:#f7bac2
 
   .form-areacode
     flex none
     font-size: px(26);
     line-height: px(60);
-    color: #b6b6b6;
+    color: #000;
 
   .form-input
     flex auto
     height px(61)
     font-size px(28)
     color #333
+    background:#f7bac2
     &::-webkit-input-placeholder
-      color #aaaaad
+      color #000
 
   .form-separator
     flex none
     width 1px
     height px(30)
     margin px(17) px(13) 0 px(14)
-    background-color #e2e2e2
+    background-color #f7bac2
+    color:#000
 
   .form-sendcode
     flex none
-    margin-left px(20)
+    margin-left px(-40)
     margin-right -.2rem;
     font-size px(26)
     line-height px(60)
@@ -452,7 +454,8 @@
       background-color #FFAA37
 
   .form-submit
-    width 92%
+    width px(530)
+    margin: 0 auto
     height px(80)
     margin px(30) auto 0
     font-size px(32)

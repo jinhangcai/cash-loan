@@ -13,28 +13,28 @@
     <div class="content">
       <div class="information"  @click="card">
         <div class="icon">
-          <img src="./img/my-icon3.png" alt="" >
+          <img src="./img/icon1.png" alt="" >
         </div>
         <span class="title">实名认证</span>
         <span class="text" :class="{'cur':list.idCard==3}" v-html="list.idCard==3?'认证成功':list.idCard==2?'认证中':list.idCard==4&&list.idCardFail==1?'认证失败(身份证已被认证)':list.idCard==4?'认证失败':'未认证'"></span>
       </div>
       <div class="information" @click="base">
         <div class="icon">
-          <img src="./img/my-icon2.png" alt="" >
+          <img src="./img/icon2.png" alt="" >
         </div>
         <span class="title">基础信息</span>
         <span class="text" :class="{'cur':list.baseInfo==3}" v-html="list.baseInfo==4&&list.idCardFail==1?'认证失败':list.baseInfo==3?'认证成功':list.baseInfo==2?'认证中':'未认证'"></span>
       </div>
       <div class="information" @click="linkman">
         <div class="icon phone">
-          <img src="./img/my-icon4.png" alt="" >
+          <img src="./img/icon3.png" alt="" >
         </div>
         <span class="title">联系人认证</span>
         <span class="text" :class="{'cur':list.contact==3}" v-html="list.contact==4?'认证失败()':list.contact==3?'认证成功':list.contact==2?'认证中':'未认证'"></span>
       </div>
       <div class="information" @click="bank">
         <div class="icon">
-          <img src="./img/my-icon5.png" alt="">
+          <img src="./img/icon4.png" alt="">
         </div>
         <span class="title">银行卡认证</span>
         <span class="text" :class="{'cur':list.bank==3}" v-html="list.bank==4?'认证失败':list.bank==3?'认证成功':list.bank==2?'认证中':'未认证'"></span>
@@ -42,7 +42,7 @@
 
       <div class="information" @click="mobile1">
         <div class="icon">
-          <img src="./img/my-icon1.png" alt="" >
+          <img src="./img/icon5.png" alt="" >
         </div>
         <span class="title">手机认证</span>
         <span class="text" :class="{'cur':list.mobOperator==3}" v-html="list.mobOperator==4?'认证失败':list.mobOperator==3?'认证成功':(list.mobOperator==2 || authing == 1)?'认证中':'未认证'"></span>
@@ -407,8 +407,8 @@
 <style lang="scss" scoped>
   .headerBar{
     width: 100%;
-    background: url("./img/headerBar-bg.png") no-repeat;
-    height:Px(406);
+    background: url("./img/bg.png") no-repeat;
+    height:Px(397);
     background-size: 100%;
   }
   .box{
@@ -503,7 +503,7 @@
           display: block;
           margin: auto;
           width: auto;
-          width: Px(52);
+          width: Px(47);
         }
       }
       .phone{

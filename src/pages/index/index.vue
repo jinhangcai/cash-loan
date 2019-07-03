@@ -311,10 +311,10 @@
       // this.$vux.loading.show({
       //     text: '加载中'
       // })
-      // this.getSystemData()
-      // this.getcustomPhone()
-      // this.getCodeUrl()
-      // this.getList()
+      this.getSystemData()
+      this.getcustomPhone()
+      this.getCodeUrl()
+      this.getList()
     },
     async mounted() {
       //解决支付完成，状态栏还存在问题
@@ -371,6 +371,12 @@
       //   }
     },
     methods:{
+      goMyBank() {
+        this.$router.push('memb/my/bank')
+      },
+      goFeedback() {
+        this.$router.push('/memb/feedback/list')
+      },
       show8s() {
         console.log('111')
         this.show8 = !this.show8;
@@ -1799,9 +1805,4 @@
     background: #fb8e3b!important;
     top: -0.2rem!important;
   }
-</style>
-
-<style lang="less" scoped>
-
-
 </style>

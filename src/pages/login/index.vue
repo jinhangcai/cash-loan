@@ -15,7 +15,7 @@
     <div class="register-btn" @click="registe">
               登录
     </div>
-    <p class="title">登录即同意《大可乐服务协议》</p>
+    <p class="title">登录即同意《东坡肉服务协议》</p>
   </div>
 </template>
 
