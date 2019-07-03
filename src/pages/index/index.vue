@@ -367,7 +367,7 @@
     methods:{
       show8s() {
         console.log('111')
-        this.show8=!this.show8;
+        this.show8 = !this.show8;
       },
       setCookie: function (cname, cvalue, exdays) {
         var d = new Date();
@@ -1440,6 +1440,8 @@
         width: Px(29);
         height: Px(39);
         float: left;
+        position:relative;
+        z-index:222;
         background: url('./index/shezhi3.png') no-repeat;
         background-size: 100%;
       }
