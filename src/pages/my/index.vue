@@ -76,6 +76,10 @@
           <cell is-link title="联系客服" @click.native="$web2app('phone',{number: customPhone})">
           <img class="icon-box" slot="icon" src="./img/icon5.png" alt="">
           </cell>
+          <cell is-link title="我的借款"  @click.native="$router.push('/loan/record')">
+          <img class="icon-box icon-index" slot="icon" src="./img/icon6.png" alt="">
+          </cell>
+
 
           <!--          <cell is-link title="实名认证" @click.native="$router.push('/memb/info')">-->
 <!--          <img class="icon-box icon-index" slot="icon" src="./img/icon1.png" alt="">-->
@@ -274,11 +278,11 @@ export default {
     width: 100%;
 }
 .top{
-  background:#fff url('./img/pic_top.jpg') 0 0 no-repeat;
+  background:#fff url('./img/pic_top.png') 0 0 no-repeat;
   background-size: 100% auto;
   position: relative;
   width: 100%;
-  height:Px(426);
+  height:Px(403);
   /*padding-bottom: Px(200);*/
   /*margin-bottom: Px(70);*/
   .info-box_{
@@ -447,7 +451,7 @@ export default {
     a{
       width:49.3%;
       text-align: center;
-      color:#F13123;
+      color:#00a8e8;
       display:inline-block;
       text-decoration: black;
     }

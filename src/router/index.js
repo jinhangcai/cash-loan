@@ -38,7 +38,7 @@ const mobileSuccess = r => require.ensure([], () => r(require('../pages/memb/mob
 
 Vue.use(Router)
 
-const $appName = '大可乐'
+const $appName = '白掌柜'
 const router = new Router({
   routes: [
     {
@@ -77,14 +77,6 @@ const router = new Router({
             hideHeader: true,
             cssNames: 'gray',
             title: $appName
-          }
-        }, {
-          path: '/loan/record',
-          name: 'loanRecord',
-          component: loanRecord,
-          meta: {
-            cssNames: 'gray',
-            title: '借款记录'
           }
         }
       ]

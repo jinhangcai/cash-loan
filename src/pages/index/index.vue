@@ -13,14 +13,14 @@
         </div> -->
         <div class="scroll-container" :style="`transform:translate(0, ${native.statusBarHeight})`">
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
-            <!--<header-bar title="大可乐"></header-bar>-->
+            <!--<header-bar title="白掌柜"></header-bar>-->
             <!--<img  src="./index/indeximg.png" width="100%">-->
 <!--            <div class="tips" @click="$web2app('phone',{number: customPhone})">-->
 <!--              客服中心-->
 <!--              <p>如有问题及时反馈 ></p>-->
 <!--            </div>-->
             <div class="box_">
-              <div class="title" :style="`margin-top:${native.statusBarHeight + 10}px`">
+              <div class="title" :style="`margin-top:${native.statusBarHeight + 20}px`">
                 　温馨提示：如有问题请联系客服
                 <!--<a @click="$router.push('/set')"></a>-->
               </div>
@@ -787,8 +787,9 @@ import { setTimeout } from 'timers'
     }
     .borrowingBtn{
         display: block;
-         width: Px(347);
+         /*width: Px(347);*/
         height: Px(70);
+        padding: 0 Px(40);
         margin:Px(70) auto 0;
         border-radius: Px(45);
         cursor: pointer;
@@ -799,7 +800,7 @@ import { setTimeout } from 'timers'
         outline: none;
         border: none;
         align-self: center;
-        background: #d91833;
+        background: #00a8e8;
 
     }
     .tabBottom{
@@ -1347,9 +1348,9 @@ import { setTimeout } from 'timers'
       position: relative;
       text-align: center;
       overflow: hidden;
-      background:url("./index/indeximg1.png") no-repeat ;
+      background: #fff url("./index/indeximg1.png") no-repeat ;
       background-size: 100%;
-      height: Px(474);
+      height: Px(437);
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1443,16 +1444,16 @@ import { setTimeout } from 'timers'
       padding-bottom:Px(57);
       margin-bottom:Px(12);
       h3{
-        color:#d91833;
+        color:#00a8e8;
         font-size:Px(28);
         text-align: center;
-        padding-top:Px(70);
+        padding-top:Px(100);
         line-height:1;
       }
       p{
         padding-top:Px(45);
         font-size:Px(84);
-        color:#d91833;
+        color:#00a8e8;
         text-align: center;
         line-height:1;
       }
@@ -1465,6 +1466,9 @@ import { setTimeout } from 'timers'
       font-size: Px(30);
       background: #fff;
       overflow: hidden;
+      width:Px(710);
+      margin: 0 auto;
+      border-radius: Px(15);
       p{
         float: right;
         color: #000000;

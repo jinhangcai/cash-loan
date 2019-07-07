@@ -9,11 +9,6 @@
           <span slot="label">首页</span>
         </tabbar-item>
         <tabbar-item>
-          <img class="icon" slot="icon" src="./img/icon_my.png">
-          <img class="icon" slot="icon-active" src="./img/icon6.png" alt="">
-          <span slot="label">借款</span>
-        </tabbar-item>
-        <tabbar-item>
           <img class="icon" slot="icon" src="./img/icon_my_active1.png">
           <img class="icon" slot="icon-active" src="./img/icon_my_active.png" alt="">
           <span slot="label">我的</span>
@@ -48,9 +43,10 @@
     },
     methods: {
       toggleTabs(index) {
+        // if (index === 1) {
+        //   this.$router.replace('/loan/record')
+        // } else
         if (index === 1) {
-          this.$router.replace('/loan/record')
-        } else if (index === 2) {
           this.$router.replace('/my')
         }else {
           this.$router.replace('/')
@@ -59,10 +55,12 @@
     },watch:{
       $route(){
         if (this.$route.fullPath === '/my') {
-          this.activIndex = 2
-        } else if(this.$route.fullPath === '/loan/record') {
           this.activIndex = 1
-        } else {
+        }
+        // else if(this.$route.fullPath === '/loan/record') {
+        //   this.activIndex = 1
+        // }
+        else {
           this.activIndex = 0
         }
       }
@@ -82,14 +80,14 @@
   .weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon > i,
   .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label{
     color: $maincolor;
-    color: #d91833!important;
+    color: #00a8e8!important;
   }
   .bottom-tabs{
     height: 65px;
     .icon{
       display: block;
       margin: .1rem auto 0;
-      height: .65rem;
+      height: Px(44);
       width: auto;
     }
   }

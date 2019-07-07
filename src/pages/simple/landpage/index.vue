@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import BMap from "BMap";
+// import BMap from "BMap";
 // import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
 
 // import { getPosition } from "./lnglat";
@@ -243,7 +243,7 @@ export default {
   min-height: 100%;
   top: 0;
   left: 0;
-  background:#fff url('../images/bg1.png') top no-repeat;
+  background:#488eff url('../images/bg1.jpg') top no-repeat;
 	background-size:100%;
 
   .land_img {
@@ -291,8 +291,8 @@ export default {
     & .landing_item {
       position: relative;
       overflow: hidden;
-      border-radius:Px(15);
-      border: 1px solid #d91833;
+      border-radius:Px(30);
+      border: 1px solid #fff;
       .mobile {
         position: absolute;
         display: block;
@@ -301,7 +301,7 @@ export default {
         left: 0;
         font-size: Px(26);
         line-height: Px(80);
-        color: #b6b6b6;
+        color: #fff;
         text-align: center;
         &::after {
           content: "";
@@ -311,7 +311,7 @@ export default {
           display: block;
           width: 1px;
           height: Px(32);
-          background: #b6b6b6;
+          background: #fff;
           transform: translate3d(0, -50%, 0);
         }
       }
@@ -319,9 +319,11 @@ export default {
         padding-left: Px(28);
         width: 100%;
         height: Px(80);
+        background: none;
+        color:#fff;
       }
       input::-webkit-input-placeholder {
-        color: #b6b6b6;
+        color: #fff;
       }
       .user_mobile {
         padding-left: Px(100);
@@ -355,8 +357,10 @@ export default {
         font-size: Px(22);
         line-height: Px(60);
         text-align: center;
-        color: #d91833;
-        border-left: #d91833 Px(2) solid;
+        color: #fff;
+        /*border-left: #d91833 Px(2) solid;*/
+        background: #ffb80c;
+        border-radius:Px(30);
         &:hover,
         &:active {
           opacity: 0.7;
@@ -367,12 +371,12 @@ export default {
   .landing_btn {
     margin-top: Px(30);
     width: auto;
-    height: Px(88);
+    height: Px(80);
     color: #fff;
-    background: #d91833;
-    font-size: Px(26);
-    line-height: Px(88);
-    border-radius:Px(15);
+    background: #ffb80c;
+    font-size: Px(38);
+    line-height: Px(80);
+    border-radius:Px(30);
     text-align: center;
   }
   .rights {

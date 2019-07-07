@@ -1,6 +1,6 @@
 <template lang="pug">
   .page-landpage-third(:class="pageLandpageThirdClassNames")
-    img(src="./img/bg1.png")
+    img(src="./img/bg1.jpg")
     //- .scroll-box.flex-center
       i.icon-messages
       marquee.flex-1(scrollamount="5")
@@ -412,23 +412,24 @@
     display flex
     margin px(30) px(25.5)
     padding px(10) px(28)
-    background #fff
-    border-radius:px(15)
-    border: 1px solid #d91833
+    background none
+    border-radius:px(30)
+    border: 1px solid #fff
 
   .form-areacode
     flex none
     font-size: px(26);
     line-height: px(60);
-    color: #b6b6b6;
+    color: #fff;
 
   .form-input
     flex auto
     height px(61)
     font-size px(28)
-    color #333
+    color #fff
+    background none
     &::-webkit-input-placeholder
-      color #aaaaad
+      color #fff
 
   .form-separator
     flex none
@@ -446,7 +447,7 @@
     padding 0 px(20)
     border-radius px(30)
     color #fff
-    background #d91833
+    background #ffb80c
     &.-active
       color #fff
       background-color #FFAA37
@@ -458,9 +459,9 @@
     font-size px(32)
     line-height px(80)
     text-align center
-    background:#d91833
+    background:#ffb80c
     color #fff
-    border-radius:px(15)
+    border-radius:px(30)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
 
   .form-tip
