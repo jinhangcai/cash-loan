@@ -240,10 +240,9 @@
   .top{
     /*background:#fff url('./img/pic_top.png') 0 0 no-repeat;*/
     background-size: 100% auto;
-    background:url("./img/pic_top.png") bottom no-repeat;
+    background:#fff url("./img/pic_top.png") bottom no-repeat;
     position: relative;
     width: 100%;
-    padding-bottom: Px(30);
     .info-box_{
       z-index: 999;
       text-align: center;
@@ -259,6 +258,7 @@
         font-size: Px(40);
         color: #fff;
         line-height: Px(70);
+        margin-bottom: Px(30);
       }
       a{
         height: Px(140);
@@ -386,11 +386,12 @@
 
 
   .group-box{
-    margin: .3rem 0rem .3rem;
+    margin: 0rem 0rem .3rem;
     overflow: hidden;
     border-radius: .1rem;
     //   box-shadow: 0 0px 10px 1px rgba(#000, .1);
-    background-color: #f6f4f7!important;
+    background-color: #fff!important;
+    padding-top: Px(30);
     h3{ color: #121212; font-size: Px(28); font-weight: normal; margin-bottom: Px(20)}
     .icon-box{
       display: block;
