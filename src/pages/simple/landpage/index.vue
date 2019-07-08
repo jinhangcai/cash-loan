@@ -243,7 +243,7 @@ export default {
   min-height: 100%;
   top: 0;
   left: 0;
-  background:#46464A url('../images/pic_land_back.png') top no-repeat;
+  background:#fff url('../images/pic_land_back.png') top no-repeat;
 	background-size:100%;
 
   .land_img {
@@ -284,13 +284,15 @@ export default {
     position: relative;
     z-index: 9;
     padding: Px(65) Px(0);
-    margin: Px(-27) auto 0;
+    margin: Px(185) auto 0;
     width: Px(580);
     height: auto;
-    margin-top: Px(-106);
     & .landing_item {
       position: relative;
       overflow: hidden;
+      background:#E0E0E0;
+      border:px(1) solid rgba(224,224,224,1);
+      border-radius:Px(44);
       .mobile {
         position: absolute;
         display: block;
@@ -299,7 +301,7 @@ export default {
         left: 0;
         font-size: Px(26);
         line-height: Px(80);
-        color: #b6b6b6;
+        color: #333;
         text-align: center;
         &::after {
           content: "";
@@ -309,7 +311,7 @@ export default {
           display: block;
           width: 1px;
           height: Px(32);
-          background: #b6b6b6;
+          background: #333;
           transform: translate3d(0, -50%, 0);
         }
       }
@@ -317,9 +319,10 @@ export default {
         padding-left: Px(28);
         width: 100%;
         height: Px(80);
+        background: none;
       }
       input::-webkit-input-placeholder {
-        color: #b6b6b6;
+        color: #fff;
       }
       .user_mobile {
         padding-left: Px(100);
@@ -353,8 +356,8 @@ export default {
         font-size: Px(22);
         line-height: Px(60);
         text-align: center;
-        color: #FFAA37;
-        border-left: #FFAA37 Px(2) solid;
+        color: #2DA1FF;
+        border-left: #2DA1FF Px(2) solid;
         &:hover,
         &:active {
           opacity: 0.7;
@@ -367,10 +370,11 @@ export default {
     width: auto;
     height: Px(88);
     color: #fff;
-    background: #FFAA37;
+    background:linear-gradient(to right, #FD8AB5, #CDC9FD);
     font-size: Px(26);
     line-height: Px(88);
     text-align: center;
+    border-radius: Px(44);
   }
   .rights {
     margin-top: Px(32);

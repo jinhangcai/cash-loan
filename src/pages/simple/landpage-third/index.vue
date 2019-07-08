@@ -363,7 +363,7 @@
     top 0
     bottom 0
     overflow auto
-    background #46464A
+    background #fff
     img{
       display block;
       width 100%;
@@ -402,7 +402,7 @@
   // 表单
   .form
     position absolute
-    top px(390)
+    top 9.2rem
     left 0
     right 0
     margin px(30) px(60) 0
@@ -413,21 +413,24 @@
     display flex
     margin px(30) px(25.5)
     padding px(10) px(28)
-    background #fff
+    background #E0E0E0
+    border px(1) solid rgba(224,224,224,1);
+    border-radius:px(44);
 
   .form-areacode
     flex none
     font-size: px(26);
     line-height: px(60);
-    color: #b6b6b6;
+    color: #333;
 
   .form-input
     flex auto
     height px(61)
     font-size px(28)
     color #333
+    background none
     &::-webkit-input-placeholder
-      color #aaaaad
+      color #fff
 
   .form-separator
     flex none
@@ -448,17 +451,18 @@
     background #ccc
     &.-active
       color #fff
-      background-color #FFAA37
+      background-color #2DA1FF
 
   .form-submit
     width 92%
-    height px(75)
+    height px(88)
     margin px(30) auto 0
     font-size px(32)
-    line-height px(75)
+    line-height px(88)
     text-align center
-    background:#FFAA37;
+    background: linear-gradient(to right, #FD8AB5, #CDC9FD);
     color #fff
+    border-radius px(44)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
 
   .form-tip
@@ -575,8 +579,4 @@
     height px(189 * 1.5)
     background url(./img/masklayer.png) 50%/ 100% 100% no-repeat
 </style>
-<style>
-  body{
-    background :#46464A!important;
-  }
-</style>
+
