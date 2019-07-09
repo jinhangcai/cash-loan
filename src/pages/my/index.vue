@@ -449,7 +449,7 @@ export default {
     height:Px(70);
     margin:0 auto;
     a{
-      width:49.3%;
+      width:49.2%;
       text-align: center;
       color:#00a8e8;
       display:inline-block;
