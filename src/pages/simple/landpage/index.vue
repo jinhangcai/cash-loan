@@ -243,7 +243,7 @@ export default {
   min-height: 100%;
   top: 0;
   left: 0;
-  background:#488eff url('../images/bg1.jpg') top no-repeat;
+  background:#fff url('../images/bg1.png') top no-repeat;
 	background-size:100%;
 
   .land_img {
@@ -291,8 +291,8 @@ export default {
     & .landing_item {
       position: relative;
       overflow: hidden;
-      border-radius:Px(30);
-      border: 1px solid #fff;
+      /*border-radius:Px(30);*/
+      border-bottom: 1px solid #d3cccc;
       .mobile {
         position: absolute;
         display: block;
@@ -301,7 +301,7 @@ export default {
         left: 0;
         font-size: Px(26);
         line-height: Px(80);
-        color: #fff;
+        color: #999;
         text-align: center;
         &::after {
           content: "";
@@ -311,7 +311,7 @@ export default {
           display: block;
           width: 1px;
           height: Px(32);
-          background: #fff;
+          background: #999;
           transform: translate3d(0, -50%, 0);
         }
       }
@@ -320,10 +320,10 @@ export default {
         width: 100%;
         height: Px(80);
         background: none;
-        color:#fff;
+        color:#999;
       }
       input::-webkit-input-placeholder {
-        color: #fff;
+        color: #999;
       }
       .user_mobile {
         padding-left: Px(100);
@@ -357,10 +357,10 @@ export default {
         font-size: Px(22);
         line-height: Px(60);
         text-align: center;
-        color: #fff;
+        color: #f6584c;
         /*border-left: #d91833 Px(2) solid;*/
-        background: #ffb80c;
-        border-radius:Px(30);
+        /*background: #ffb80c;*/
+        /*border-radius:Px(30);*/
         &:hover,
         &:active {
           opacity: 0.7;
@@ -374,6 +374,8 @@ export default {
     height: Px(80);
     color: #fff;
     background: #ffb80c;
+    background: -webkit-linear-gradient(left, #f7594c, #fc8368);
+    background: linear-gradient(to right, #f7594c, #fc8368);
     font-size: Px(38);
     line-height: Px(80);
     border-radius:Px(30);

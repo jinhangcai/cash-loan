@@ -1,6 +1,6 @@
 <template lang="pug">
   .page-landpage-third(:class="pageLandpageThirdClassNames")
-    img(src="./img/bg1.jpg")
+    img(src="./img/bg1.png")
     //- .scroll-box.flex-center
       i.icon-messages
       marquee.flex-1(scrollamount="5")
@@ -413,30 +413,30 @@
     margin px(30) px(25.5)
     padding px(10) px(28)
     background none
-    border-radius:px(30)
-    border: 1px solid #fff
+    //border-radius:px(30)
+    border-bottom: 1px solid #d3cccc
 
   .form-areacode
     flex none
     font-size: px(26);
     line-height: px(60);
-    color: #fff;
+    color: #999;
 
   .form-input
     flex auto
     height px(61)
     font-size px(28)
-    color #fff
+    color #999
     background none
     &::-webkit-input-placeholder
-      color #fff
+      color #999
 
   .form-separator
     flex none
     width 1px
     height px(30)
     margin px(17) px(13) 0 px(14)
-    background-color #e2e2e2
+    background-color #999
 
   .form-sendcode
     flex none
@@ -445,9 +445,9 @@
     font-size px(26)
     line-height px(60)
     padding 0 px(20)
-    border-radius px(30)
-    color #fff
-    background #ffb80c
+    //border-radius px(30)
+    color #F6584C
+    /*background #ffb80c*/
     &.-active
       color #fff
       background-color #FFAA37
@@ -460,6 +460,8 @@
     line-height px(80)
     text-align center
     background:#ffb80c
+    background: -webkit-linear-gradient(left, #f7594c, #fc8368)
+    background: linear-gradient(to right, #f7594c, #fc8368)
     color #fff
     border-radius:px(30)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
