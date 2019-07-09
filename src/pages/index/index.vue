@@ -801,6 +801,8 @@ import { setTimeout } from 'timers'
         border: none;
         align-self: center;
         background: #00a8e8;
+        background: -webkit-linear-gradient(left, #f15140, #fa6844);
+        background: linear-gradient(to right, #f15140, #fa6844);
 
     }
     .tabBottom{
@@ -1350,7 +1352,7 @@ import { setTimeout } from 'timers'
       overflow: hidden;
       background: #fff url("./index/indeximg1.png") no-repeat ;
       background-size: 100%;
-      height: Px(437);
+      height: Px(438);
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1444,7 +1446,7 @@ import { setTimeout } from 'timers'
       padding-bottom:Px(57);
       margin-bottom:Px(12);
       h3{
-        color:#00a8e8;
+        color:#ff3838;
         font-size:Px(28);
         text-align: center;
         padding-top:Px(100);
@@ -1453,7 +1455,7 @@ import { setTimeout } from 'timers'
       p{
         padding-top:Px(45);
         font-size:Px(84);
-        color:#00a8e8;
+        color:#ff3838;
         text-align: center;
         line-height:1;
       }
