@@ -282,7 +282,7 @@ export default {
   background-size: 100% auto;
   position: relative;
   width: 100%;
-  height:Px(403);
+  height:Px(438);
   /*padding-bottom: Px(200);*/
   /*margin-bottom: Px(70);*/
   .info-box_{
@@ -437,9 +437,12 @@ export default {
   }
 }
 .box-list-cen{
-  background: #fff;
+  /*background: #fff;*/
   width:100%;
   padding-bottom:Px(20);
+  margin-top:Px(-40);
+  z-index:2;
+  position:relative;
   .box-list-cen1{
     width:Px(710);
     background: #fff;
@@ -449,9 +452,9 @@ export default {
     height:Px(70);
     margin:0 auto;
     a{
-      width:49.3%;
+      width:49.2%;
       text-align: center;
-      color:#00a8e8;
+      color:#ff3838;
       display:inline-block;
       text-decoration: black;
     }
@@ -470,13 +473,13 @@ export default {
     margin-right: .4rem;
     display: block;
     width: auto;
-    height: Px(50);
+    height: Px(44);
     &.icon-bank{
-      width: Px(50);
+      width: Px(44);
       height: auto;
     }
     &.icon-index{
-      width: Px(50);
+      width: Px(44);
       height: auto;
     }
   }
@@ -545,6 +548,6 @@ export default {
 
 <style>
   body{
-    background: #F8F9F9!important;
+    background: #fff !important;
   }
 </style>

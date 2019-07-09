@@ -408,7 +408,7 @@
   .headerBar{
     width: 100%;
     background: url("./img/headerBar-bg.png") no-repeat;
-    height:Px(350);
+    height:Px(438);
     background-size: 100%;
   }
   .box{
@@ -480,7 +480,7 @@
   }
   .content{
     overflow: hidden;
-    margin: Px(-80) auto 0;
+    margin: Px(-140) auto 0;
     overflow: hidden;
     margin-bottom: Px(100);
     border-radius:Px(15);
@@ -493,7 +493,8 @@
       background: #fdfcfd;
       float: left;
       position: relative;
-      margin-bottom: Px(2);
+      border-bottom: 2px solid #eeeeee;
+      /*margin-bottom: Px(2);*/
       /*border-radius: Px(15);*/
       .icon{
         height: Px(61);
