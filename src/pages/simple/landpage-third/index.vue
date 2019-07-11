@@ -30,7 +30,7 @@
       .form-submit(@click="login") 点击开始借钱
       // .form-tip 注册即同意
       //   em.txt_blue 《{{ $appName }}服务协议》
-      img.imgs(src="./img/bgs.png")
+      <!--img.imgs(src="./img/bgs.png")-->
 
     //- 下载弹窗
     .download(v-if="downloadShow" @click="download")
@@ -300,9 +300,9 @@
       iosDownload () {
         switch (this.app) {
           case 'ddbt':
-            const url = 'https://heitaoaaa.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
+            const url = 'https://jinyh.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
             //   window.location.href = `itms-services://?action=download-manifest&url=${url}`
-            window.location.href = `itms-services://?action=download-manifest&url=https://heitaoaaa.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
+            window.location.href = `itms-services://?action=download-manifest&url=https://jinyh.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
             break
           default:
             break
@@ -314,7 +314,7 @@
         if(this.sendCodeTime==0){
           switch (this.app) {
             case 'ddbt':
-              window.self.location = 'https://heitaoaaa.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
+              window.self.location = 'https://jinyh.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
               break
             default:
               break
@@ -364,11 +364,11 @@
     top 0
     bottom 0
     overflow auto
-    background #444854
+    background #FFFFFF
     img{
       display block;
       width 100%;
-      margin-bottom px(750)
+      margin-bottom px(500)
     }
     .imgs{
       width px(520)
@@ -407,7 +407,7 @@
   // 表单
   .form
     position absolute
-    top px(390)
+    top px(700)
     left 0
     right 0
     margin px(30) px(60) 0
@@ -418,8 +418,9 @@
     display flex
     margin px(30) px(25.5)
     padding px(10) px(28)
-    background #fff
-    border-radius px(4)
+    background #F7F7F7
+    border-radius px(8)
+    border:1px solid #E0E0E0
 
   .form-areacode
     flex none
@@ -431,6 +432,8 @@
     flex auto
     height px(61)
     font-size px(28)
+    border none
+    background none
     color #333
     &::-webkit-input-placeholder
       color #aaaaad
@@ -458,13 +461,12 @@
 
   .form-submit
     width 92%
-    height px(75)
+    height px(88)
     margin px(30) auto 0
-    font-size px(32)
-    line-height px(75)
+    font-size px(36)
+    line-height px(88)
     text-align center
-    background:none;
-    border #fff px(2) solid
+    background:linear-gradient(to right, #FFAC5A, #FF645D);
     color #fff
     border-radius px(4)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
@@ -587,6 +589,6 @@
 </style>
 <style>
   body{
-    background :#444854!important;
+    background :#FFFFFF!important;
   }
 </style>

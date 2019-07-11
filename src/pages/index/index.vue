@@ -13,7 +13,7 @@
         </div> -->
         <div class="scroll-container" :style="`transform:translate(0, ${native.statusBarHeight})`">
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
-            <!--<header-bar title="黑桃A"></header-bar>-->
+            <!--<header-bar title="金银花"></header-bar>-->
             <!--<img  src="./index/indeximg.png" width="100%">-->
             <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
               <!--客服中心-->
@@ -21,31 +21,32 @@
             <!--</div>-->
             <div class="box_">
               <!--<div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">-->
-                <!--　黑桃A-->
+                <!--　金银花-->
                 <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
               <!--</div>-->
               <div class="box_1">
-                  <h3>最高可借(元)</h3>
-                  <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
-                  <em><img  src="./index/Group1.png" width="100%">7天/14天   <img  src="./index/Group2.png" width="100%">起借金额:2000元</em>
+                <ul class="box_s">
+                  <li @click="$router.push('/loan/record')">
+                    <img  src="./index/index_icon1.png" >
+                    <h5>我的借款</h5>
+                    <p>查看账单</p>
+                    <i></i>
+                  </li>
+                  <li @click="$router.push('/memb/info')">
+                    <img  src="./index/index_icon2.png" >
+                    <h5>实名认证</h5>
+                    <p>提升额度</p>
+                    <i></i>
+                  </li>
+                </ul>
+                  <h3>最高可借</h3>
+                  <p>￥{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
+                  <!--<em><img  src="./index/Group1.png" width="100%">7天/14天   <img  src="./index/Group2.png" width="100%">起借金额:2000元</em>-->
                 <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
               </div>
 
             </div>
-            <ul class="box_s">
-              <li @click="$router.push('/loan/record')">
-                <img  src="./index/index_icon1.png" >
-                <h5>我的借款</h5>
-                <p>查看账单</p>
-                <i></i>
-              </li>
-              <li @click="$router.push('/memb/info')">
-                <img  src="./index/index_icon2.png" >
-                <h5>实名认证</h5>
-                <p>提升额度</p>
-                <i></i>
-              </li>
-            </ul>
+
             <!-- <div class="payBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</div> -->
 
 
@@ -785,7 +786,7 @@ import { setTimeout } from 'timers'
         outline: none;
         border: none;
         align-self: center;
-        background: #464A56;
+        background:linear-gradient(to right, #FFAC5A, #FF645D);
 
     }
     .tabBottom{
@@ -1256,72 +1257,14 @@ import { setTimeout } from 'timers'
     }
     .title em{ float: right; position: absolute; right: 0; top:Px(55);}
     .title em img{width: Px(40); margin-right: Px(40)}
-    .box_s{
-      text-align: left;
-      margin:Px(35)auto;
-      width:Px(705);
-      overflow: hidden;
-        li{
-          float: left;
-          width:Px(705);
-          height:Px(143);
-          background: #fff;
-          position: relative;
-          margin-bottom: Px(22);
-          overflow:hidden;
-          img{
-            position: absolute;
-            left: Px(16);
-            top: Px(32);
-            width: Px(80);
-          }
-          h5{
-            padding-left: Px(120);
-            color: #313134;
-            font-size: Px(30);
-            font-weight: normal;
-            line-height:Px(50);
-            margin-top: Px(24);
-          }
-          p{
-            padding-left: Px(120);
-            font-style: normal;
-            color: #b7b7bd;
-            font-size: Px(21);
-            line-height:Px(50);
-          }
-          i{
-            // margin-top: Px(47);
 
-            position: absolute;
-            right: Px(19);
-            top: Px(61);
-            width: Px(12);
-            height: Px(21);
-            background: url(./index/row2.png) no-repeat;
-            background-size: 100% 100%;
-          }
-        }
-      em{
-        display: block;
-        color: #ffffff;
-        font-size: Px(32);
-        background: #fb8e3b;
-        width: Px(400);
-        height: Px(80);
-        line-height: Px(80);
-        border-radius: Px(15);
-        margin: Px(18) auto;
-        margin-bottom: Px(10);
-      }
-    }
     .box_{
       position: relative;
       text-align: center;
       background:url(./index/indexbgs.png) no-repeat ;
-      background-size: 100% 100%;
-      height: Px(470);
+      background-size: 100% auto;
       margin-bottom: Px(180);
+      padding-top:Px(546);;
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1333,27 +1276,28 @@ import { setTimeout } from 'timers'
         text-align: center;
         overflow: hidden;
         background:#fff;
-        height: Px(350);
         width: Px(710);
+        margin-top: Px(20);
+        margin-left: Px(20);
+        padding-bottom: Px(30);
         /*box-shadow: 0 0 .2rem 1px rgba(#000, .1);*/
         /*border-radius: Px(15);*/
-        position: absolute;
-        bottom:Px(-158);
-        left: Px(20);
+
         h3{
           font-style: normal;
           font-size: Px(28);
           color:#333333;
           margin-left: Px(45);
-          margin-top: Px(38);
+          margin-top: Px(20);
           text-align: center;
-          line-height: Px(40);
+          font-weight:bold;
+          line-height: Px(60);
           font-weight: normal;
         }
-        p{
+        >p{
           font-style: normal;
           font-size: Px(80);
-          color:#333333;
+          color:#FF665D;
           margin-left: Px(38);
           margin-top: Px(0);
           text-align:  center;
@@ -1361,7 +1305,7 @@ import { setTimeout } from 'timers'
           font-weight: normal;
           margin-bottom: 0;
         }
-        em{
+        >em{
           color: #333333;
           font-size: Px(24);
           text-align:  center;
@@ -1411,6 +1355,66 @@ import { setTimeout } from 'timers'
         font-size: Px(25);
         margin-right: Px(35);
         opacity: 0.6;
+      }
+    }
+
+    .box_s{
+      text-align: left;
+      margin:Px(35)auto 0;
+      width:Px(705);
+      overflow: hidden;
+      li{
+        float: left;
+        width:Px(705);
+        height:Px(143);
+        background: #fff;
+        position: relative;
+        margin-bottom: Px(22);
+        overflow:hidden;
+        img{
+          position: absolute;
+          left: Px(16);
+          top: Px(32);
+          width: Px(80);
+        }
+        h5{
+          padding-left: Px(120);
+          color: #313134;
+          font-size: Px(30);
+          font-weight: normal;
+          line-height:Px(50);
+          margin-top: Px(24);
+        }
+        p{
+          padding-left: Px(120);
+          font-style: normal;
+          color: #b7b7bd;
+          font-size: Px(21);
+          line-height:Px(50);
+        }
+        i{
+          // margin-top: Px(47);
+
+          position: absolute;
+          right: Px(19);
+          top: Px(61);
+          width: Px(12);
+          height: Px(21);
+          background: url(./index/row2.png) no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+      em{
+        display: block;
+        color: #ffffff;
+        font-size: Px(32);
+        background: #fb8e3b;
+        width: Px(400);
+        height: Px(80);
+        line-height: Px(80);
+        border-radius: Px(15);
+        margin: Px(18) auto;
+        margin-bottom: Px(10);
       }
     }
 </style>

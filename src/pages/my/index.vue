@@ -39,7 +39,9 @@
                 <!--<img  src="./img/icon3.png" alt="">-->
                 <!--<p>我的银行卡</p>-->
               <!--</a>-->
+              <em @click="$router.push('/set')">设置</em>
             </div>
+
         </div>
         <group class="group-box">
           <cell is-link title="实名认证" @click.native="$router.push('/memb/info')">
@@ -71,9 +73,9 @@
           <cell is-link title="用户反馈" @click.native="goFeedback">
             <img class="icon-box" slot="icon" src="./img/feedback.png" alt="">
           </cell>
-          <cell is-link  title="设置" @click.native="$router.push('/set')">
-            <img class="icon-box" slot="icon" src="./img/pwd.png" alt="">
-          </cell>
+          <!--<cell is-link  title="设置" @click.native="$router.push('/set')">-->
+            <!--<img class="icon-box" slot="icon" src="./img/pwd.png" alt="">-->
+          <!--</cell>-->
 
           <!--<cell is-link title="常见问题" @click.native="$router.push('/my/news')">-->
           <!--<img class="icon-box icon-bank" slot="icon" src="./img/icon2.png" alt="">-->
@@ -240,24 +242,31 @@ export default {
 .top{
   /*background:#fff url('./img/pic_top.png') 0 0 no-repeat;*/
   background-size: 100% auto;
-  background:#333333;
+  background:linear-gradient(to right, #FFAC5A, #FF645D);
   position: relative;
   width: 100%;
-  padding-bottom: Px(30);
+  padding-bottom: Px(150);
+  margin-bottom: Px(100);
   .info-box_{
+    box-shadow: 0 0 .2rem 1px rgba(#000, .1);
     z-index: 999;
     text-align: center;
     overflow: hidden;
+    position:absolute;
+    bottom: Px(-83);
+    width: Px(682);
+    height: Px(227);
+    background: #fff;
+    left: Px(33);
     img{
       width: Px(90);
       display: block;
-      margin: Px(5) auto;
-      margin-top: Px(10);
+      margin: Px(35) auto Px(10);
     }
     >div{
       display: inline-block;
       font-size: Px(40);
-      color: #fff;
+      color: #333333;
       line-height: Px(70);
     }
     a{
@@ -278,6 +287,18 @@ export default {
         font-weight: normal;
         line-height: Px(20);
       }
+    }
+    em{
+      color: #333333;
+      font-size: Px(26);
+      display: block;
+      width: Px(102);
+      height: Px(90);
+      line-height:Px(90);
+      text-align: center;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
   .icon-logo{
@@ -445,7 +466,7 @@ export default {
     .weui-cell{
       padding:Px(30) 0 0!important;;
       border-top: none!important;
-      width: 25%;
+      width: 33.333%;
       height: Px(141);
       float: left;
       text-align: center;

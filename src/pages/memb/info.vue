@@ -48,7 +48,7 @@
         <div class="icon">
           <img src="./img/rzicon1.png" alt="" >
         </div>
-        <span class="title">手机认证</span>
+        <span class="title">手机认证 </span>
         <span class="text" :class="{'cur':list.mobOperator==3}" v-html="list.mobOperator==4?'认证失败':list.mobOperator==3?'认证成功':(list.mobOperator==2 || authing == 1)?'认证中':'未认证'"></span>
         <i></i>
       </div>
@@ -480,25 +480,29 @@
   .content{
     overflow: hidden;
     margin:0;
+    margin: Px(30);
     overflow: hidden;
     margin-bottom: Px(100);
-    background: #FFFEFE;
     .information{
       display: block;
       align-items: center;
-      height: Px(190);
-      width:33.3333%;
-      background: #FFFEFE;
+      height: Px(116);
+      width:100%;
+      background: #fdfcfd;
       float: left;
       position: relative;
-      text-align: center;
+      margin-bottom: Px(20);
+      border-radius: Px(15);
       .icon{
-        text-align: center;
+        height: Px(70);
+        position: absolute;
+        left: Px(20);
+        top: Px(22);
         img{
           display: block;
-          margin:Px(20) auto;
+          margin: auto;
           width: auto;
-          width: Px(60);
+          width: Px(70);
         }
       }
       .phone{
@@ -510,22 +514,24 @@
 
         width: Px(13);
         height: Px(23);
-        display: none;
+        display: block;
         position: absolute;
         right: Px(20);
-        top: Px(36);
+        top: Px(43);
         background: url(./img/row2.png) no-repeat;
         background-size: 100% 100%;
       }
       .title{
         flex: 1;
         //  width: Px(215);
-        color: #333333;
-        font-size: Px(30);
-        text-align: center;
-        line-height: Px(30);
+        color: #000000;
+        font-size: Px(28);
+        text-align: left;
+        line-height: Px(45);
+        margin-left: Px(100);
         display: block;
-        margin-bottom: Px(8);
+        margin-top: Px(35);
+        margin-bottom: Px(35);
         em{
           color: #999999;
           font-size: Px(26);
@@ -536,12 +542,16 @@
         color: #999999;
         background: none;
         font-size: Px(24);
-        line-height: Px(24);
-        height: Px(24);
-
+        line-height: Px(40);
+        height: Px(40);
+        padding:0 Px(25);
+        position: absolute;
+        right: Px(35);
+        top: Px(35);
+        border-radius: Px(20);
       }
       .cur{
-        color: #55BFF7;
+        color: #FF695D;
       }
     }
   }

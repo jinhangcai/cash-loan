@@ -243,7 +243,7 @@ export default {
   min-height: 100%;
   top: 0;
   left: 0;
-  background:#444854 url('../images/pic_land_back.png') top no-repeat;
+  background:#fff url('../images/pic_land_back.png') top no-repeat;
 	background-size:100%;
 
   .land_img {
@@ -289,10 +289,13 @@ export default {
     margin: Px(-27) auto 0;
     width: Px(580);
     height: auto;
-    margin-top: Px(-106);
+    margin-top: Px(200);
     & .landing_item {
       position: relative;
       overflow: hidden;
+      background: #F7F7F7;
+      border:1px solid #E0E0E0;
+      border-radius:Px(8);
       .mobile {
         position: absolute;
         display: block;
@@ -320,6 +323,8 @@ export default {
         width: 100%;
         border-radius: Px(4);
         height: Px(80);
+        background: none;
+        border: none;
       }
       input::-webkit-input-placeholder {
         color: #b6b6b6;
@@ -370,9 +375,8 @@ export default {
     width: auto;
     height: Px(88);
     color: #fff;
-    background: none;
     border-radius: Px(4);
-    border: #fff Px(2) solid;
+    background:linear-gradient(to right, #FFAC5A, #FF645D);
     font-size: Px(26);
     line-height: Px(88);
     text-align: center;
@@ -389,7 +393,7 @@ export default {
   .register_txt {
     margin-top: Px(20);
     font-size: Px(20);
-    color: #fff;
+    color: red;
     line-height: Px(30);
   }
 }
