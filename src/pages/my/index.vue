@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" id="my-index">
       <div class="body">
           <div class="top">
 <!--         <img class="icon-logo" src="./img/icon_logo.png" alt=""> -->
@@ -52,32 +52,33 @@
 <!--                &lt;!&ndash;<p>我的银行卡</p>&ndash;&gt;-->
 <!--              &lt;!&ndash;</a>&ndash;&gt;-->
 <!--            </div>-->
+            <div class="box-list-cen">
+              <div class="box-list-cen1">
+                <a href="javascript:;" @click="$router.push('/memb/info')">我的认证</a>
+                <a href="javascript:;"  @click="$web2app('phone',{number: customPhone})">客服中心</a>
+              </div>
+            </div>
         </div>
-        <div class="box-list-cen">
-          <div class="box-list-cen1">
-            <a href="javascript:;" @click="$router.push('/memb/info')">我的认证</a>
-            <a href="javascript:;"  @click="$web2app('phone',{number: customPhone})">客服中心</a>
-          </div>
-        </div>
+
         <group class="group-box">
 
           <cell is-link title="提现记录"  @click.native="$router.push('/loan')">
-            <img class="icon-box icon-index" slot="icon" src="./img/icon1.png" alt="">
+            <!--<img class="icon-box icon-index" slot="icon" src="./img/icon1.png" alt="">-->
           </cell>
           <cell is-link title="我的还款" @click.native="gorepayback">
-            <img class="icon-box" slot="icon" src="./img/icon2.png" alt="">
+            <!--<img class="icon-box" slot="icon" src="./img/icon2.png" alt="">-->
           </cell>
           <cell is-link title="用户反馈" @click.native="goFeedback">
-            <img class="icon-box" slot="icon" src="./img/icon3.png" alt="">
+            <!--<img class="icon-box" slot="icon" src="./img/icon3.png" alt="">-->
           </cell>
           <cell is-link title="我的银行卡" @click.native="goMyBank">
-            <img class="icon-box icon-bank" slot="icon" src="./img/icon4.png" alt="">
+            <!--<img class="icon-box icon-bank" slot="icon" src="./img/icon4.png" alt="">-->
           </cell>
           <cell is-link title="联系客服" @click.native="$web2app('phone',{number: customPhone})">
-          <img class="icon-box" slot="icon" src="./img/icon5.png" alt="">
+          <!--<img class="icon-box" slot="icon" src="./img/icon5.png" alt="">-->
           </cell>
           <cell is-link title="我的借款"  @click.native="$router.push('/loan/record')">
-          <img class="icon-box icon-index" slot="icon" src="./img/icon6.png" alt="">
+          <!--<img class="icon-box icon-index" slot="icon" src="./img/icon6.png" alt="">-->
           </cell>
 
 
@@ -278,11 +279,12 @@ export default {
     width: 100%;
 }
 .top{
-  background:#fff url('./img/pic_top.png') 0 0 no-repeat;
+  background: -webkit-linear-gradient(left, #ff6152, #ff5b4f);
+  background: linear-gradient(to right, #ff6152, #ff5b4f);
   background-size: 100% auto;
   position: relative;
   width: 100%;
-  height:Px(438);
+  height:Px(492);
   /*padding-bottom: Px(200);*/
   /*margin-bottom: Px(70);*/
   .info-box_{
@@ -376,7 +378,7 @@ export default {
     img{
       width: Px(105);
       text-align: center;
-      margin: Px(20) auto 0;
+      margin: Px(40) auto 0;
     }
     >div{
       /*position: absolute;*/
@@ -439,22 +441,23 @@ export default {
 .box-list-cen{
   /*background: #fff;*/
   width:100%;
-  padding-bottom:Px(20);
-  margin-top:Px(-40);
-  z-index:2;
+  /*padding-bottom:Px(20);*/
+  /*<!--margin-top:Px(-40);-->*/
+  /*z-index:2;*/
   position:relative;
   .box-list-cen1{
     width:Px(710);
-    background: #fff;
+    /*background: #fff;*/
     border-radius:Px(30);
-    box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    /*box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.1);*/
     line-height:Px(70);
     height:Px(70);
-    margin:0 auto;
+    margin:Px(80) auto 0;
+    color:#fff;
     a{
       width:49.2%;
       text-align: center;
-      color:#ff3838;
+      color:#fff;
       display:inline-block;
       text-decoration: black;
     }
@@ -549,5 +552,8 @@ export default {
 <style>
   body{
     background: #fff !important;
+  }
+  #my-index .vux-cell-primary p{
+    padding-left: 0.4rem;
   }
 </style>

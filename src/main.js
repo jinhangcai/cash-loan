@@ -24,7 +24,7 @@ Vue.prototype.$axios = axios; // 无需加密接口
 Vue.prototype.$qs = qs; // 无需加密接口
 
 Vue.prototype.$BScroll = BScroll;
-Vue.prototype.$appName = '钱票票';
+Vue.prototype.$appName = '小青椒';
 Vue.prototype.$isMashangjiebei = window.navigator.userAgent.indexOf('Zuyu_IOS_Mashangjiebei')
 
 import {AlertPlugin, ConfirmPlugin, ToastPlugin, LoadingPlugin} from 'vux'

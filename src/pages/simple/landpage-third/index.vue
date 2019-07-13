@@ -10,24 +10,25 @@
           em 3000元
     //- 表单
     .form(v-if="!downloadShow")
-      .form-item
-        .form-areacode +86
-        .form-separator
-        input.form-input(
-        ref="formInputPhone"
-        type="number" placeholder="请输入手机号" :value="phone"
-        @input="inputDigital($event, 'phone', 11)"
-        )
-      .form-item
-        input.form-input(
-        ref="formInputCode"
-        type="number" placeholder="请输入验证码" :value="code"
-        @input="inputDigital($event, 'code', 6)"
-        )
-        .form-sendcode(:class="{ '-active': canSendCode }")
-          span(v-if="sendCodeTime") 重新发送({{ sendCodeTime }})
-          span(v-else @click="sendCode") 获取验证码
-      .form-submit(@click="login") 点击开始借钱
+      .form-min
+        .form-item
+          .form-areacode +86
+          .form-separator
+          input.form-input(
+          ref="formInputPhone"
+          type="number" placeholder="请输入手机号" :value="phone"
+          @input="inputDigital($event, 'phone', 11)"
+          )
+        .form-item
+          input.form-input(
+          ref="formInputCode"
+          type="number" placeholder="请输入验证码" :value="code"
+          @input="inputDigital($event, 'code', 6)"
+          )
+          .form-sendcode(:class="{ '-active': canSendCode }")
+            span(v-if="sendCodeTime") 重新发送({{ sendCodeTime }})
+            span(v-else @click="sendCode") 获取验证码
+        .form-submit(@click="login") 点击开始借钱
       // .form-tip 注册即同意
       //   em.txt_blue 《{{ $appName }}服务协议》
 
@@ -299,9 +300,9 @@
       iosDownload () {
         switch (this.app) {
           case 'ddbt':
-            const url = 'https://dakele.oss-cn-hongkong.aliyuncs.com/manifest.plist'
+            const url = 'https://qianpp.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
             //   window.location.href = `itms-services://?action=download-manifest&url=${url}`
-            window.location.href = `itms-services://?action=download-manifest&url=https://dakele.oss-cn-hongkong.aliyuncs.com/manifest.plist`
+            window.location.href = `itms-services://?action=download-manifest&url=https://qianpp.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
             break
           default:
             break
@@ -313,7 +314,7 @@
         if(this.sendCodeTime==0){
           switch (this.app) {
             case 'ddbt':
-              window.self.location = 'https://dakele.oss-cn-hongkong.aliyuncs.com/embedded.mobileprovision'
+              window.self.location = 'https://qianpp.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
               break
             default:
               break
@@ -401,13 +402,21 @@
   // 表单
   .form
     position absolute
-    top px(890)
+    top px(790)
     left 0
     right 0
     //margin px(30) px(60) 0
     border-radius px(14)
     //padding px(46) 0 px(46)
-
+  .form-min
+    width:px(680)
+    margin: 0 auto;
+    background: #fff;
+    /*border-top-left-radius:2em;*/
+    border-top-right-radius:2em;
+    /*border-bottom-right-radius:2em;*/
+    border-bottom-left-radius:2em;
+    padding: px(65) px(0);
   .form-item
     display flex
     margin px(30) px(25.5)

@@ -13,14 +13,14 @@
         </div> -->
         <div class="scroll-container" :style="`transform:translate(0, ${native.statusBarHeight})`">
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
-            <!--<header-bar title="钱票票"></header-bar>-->
+            <!--<header-bar title="小青椒"></header-bar>-->
             <!--<img  src="./index/indeximg.png" width="100%">-->
 <!--            <div class="tips" @click="$web2app('phone',{number: customPhone})">-->
 <!--              客服中心-->
 <!--              <p>如有问题及时反馈 ></p>-->
 <!--            </div>-->
             <div class="box_">
-              <div class="title" :style="`margin-top:${native.statusBarHeight + 20}px`">
+              <div class="title" :style="`margin-top:${native.statusBarHeight + 25}px`">
                 　温馨提示：如有问题请联系客服
                 <!--<a @click="$router.push('/set')"></a>-->
               </div>
@@ -37,8 +37,10 @@
 <!--              </div>-->
             </div>
             <div class="box-menymoney">
+              <div class="box-money-bg">
                 <h3>最高可借(元)</h3>
                 <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
+              </div>
                 <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
             </div>
             <div class="tips" @click="$web2app('phone',{number: customPhone})">
@@ -1352,7 +1354,7 @@ import { setTimeout } from 'timers'
       overflow: hidden;
       background: #fff url("./index/indeximg1.png") no-repeat ;
       background-size: 100%;
-      height: Px(438);
+      height: Px(420);
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1445,17 +1447,26 @@ import { setTimeout } from 'timers'
       width: 100%;
       padding-bottom:Px(57);
       margin-bottom:Px(12);
+      margin-top:Px(35);
+      padding-top:Px(50);
+      .box-money-bg{
+        width:Px(518);
+        background:url(./index/money-bg.png) no-repeat ;
+        background-size: 100% 100%;
+        height: Px(293);
+        margin: 0 auto;
+      }
       h3{
-        color:#ff3838;
+        color:#000;
         font-size:Px(28);
         text-align: center;
-        padding-top:Px(100);
+        padding-top:Px(140);
         line-height:1;
       }
       p{
         padding-top:Px(45);
         font-size:Px(84);
-        color:#ff3838;
+        color:#000;
         text-align: center;
         line-height:1;
       }

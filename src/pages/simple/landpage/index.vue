@@ -30,28 +30,30 @@
       src="https://apis.map.qq.com/tools/geolocation?key=UNOBZ-LZHKD-62P4B-PLGRN-RNIRS-6KFJP&referer=rrkd-h5"
     ></iframe>
     <!-- land_img -->
-    <div class="landing_form">
-      <div class="landing_item mt24">
-        <i class="mobile txt_center">+86</i>
-        <input class="user_mobile" v-model="form.mobile" type="text" placeholder="请输入手机号码">
-      </div>
-      <!-- landing_item -->
-      <div class="landing_item mt24">
-        <input class="code" type="text" v-model="form.imgCode" placeholder="图形验证码">
-        <span @click="init" class="code_img">
+    <div class="landing_form-min">
+      <div class="landing_form">
+        <div class="landing_item mt24">
+          <i class="mobile txt_center">+86</i>
+          <input class="user_mobile" v-model="form.mobile" type="text" placeholder="请输入手机号码">
+        </div>
+        <!-- landing_item -->
+        <div class="landing_item mt24">
+          <input class="code" type="text" v-model="form.imgCode" placeholder="图形验证码">
+          <span @click="init" class="code_img">
           <img :src="imgsrc" alt>
         </span>
+        </div>
+        <!-- landing_item -->
+        <div class="landing_item mt24">
+          <input class="code" type="text" v-model="form.smsCode" placeholder="短信验证码">
+          <span class="code_btn" @click="sendcode">{{ msg }}</span>
+        </div>
+        <!-- landing_item -->
+        <div class="landing_btn" @click="register">点击开始借钱</div>
+        <!--      <p class="register_txt txt_center">点击领取即同意-->
+        <!--        <em class="">《服务协议》</em>-->
+        <!--      </p>-->
       </div>
-      <!-- landing_item -->
-      <div class="landing_item mt24">
-        <input class="code" type="text" v-model="form.smsCode" placeholder="短信验证码">
-        <span class="code_btn" @click="sendcode">{{ msg }}</span>
-      </div>
-      <!-- landing_item -->
-      <div class="landing_btn" @click="register">注册领钱</div>
-<!--      <p class="register_txt txt_center">点击领取即同意-->
-<!--        <em class="">《服务协议》</em>-->
-<!--      </p>-->
     </div>
     <!-- landing_form -->
     <!--<p class="txt_center rights">Copyright © 2018 人人快贷 All right reserved</p>-->
@@ -60,7 +62,7 @@
 </template>
 
 <script>
-import BMap from "BMap";
+// import BMap from "BMap";
 // import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
 
 // import { getPosition } from "./lnglat";
@@ -243,7 +245,7 @@ export default {
   min-height: 100%;
   top: 0;
   left: 0;
-  background:#fff url('../images/bg1.png') top no-repeat;
+  background:#fa4441 url('../images/bg1.png') top no-repeat;
 	background-size:100%;
 
   .land_img {
@@ -280,11 +282,21 @@ export default {
 			}
 		}
   }
+  .landing_form-min{
+    width:Px(680);
+    margin: 0 auto;
+    background: #fff;
+    /*border-top-left-radius:2em;*/
+    border-top-right-radius:2em;
+    /*border-bottom-right-radius:2em;*/
+    border-bottom-left-radius:2em;
+  }
   .landing_form {
+    background: #fff;
     position: relative;
     z-index: 9;
     padding: Px(65) Px(0);
-    margin: Px(310) auto 0;
+    margin: Px(250) auto 0;
     width: Px(580);
     height: auto;
     //margin-top: Px(-106);
