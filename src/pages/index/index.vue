@@ -13,32 +13,36 @@
         </div> -->
         <div class="scroll-container" :style="`transform:translate(0, ${native.statusBarHeight})`">
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
-            <!--<header-bar title="金银花"></header-bar>-->
-            <!--<img  src="./index/indeximg.png" width="100%">-->
+            <!--<header-bar title="恒享借"></header-bar>-->
+
             <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
               <!--客服中心-->
               <!--<p>如有问题及时反馈 ></p>-->
             <!--</div>-->
             <div class="box_">
               <!--<div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">-->
-                <!--　金银花-->
+                <!--　恒享借-->
                 <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
               <!--</div>-->
+              <div class="titles">
+                温馨提示:请认准APP中官方客服,其他(百度)搜索到的客服都是骗子
+              </div>
+              <img  src="./index/indexbgs.png" width="100%">
               <div class="box_1">
-                <ul class="box_s">
-                  <li @click="$router.push('/loan/record')">
-                    <img  src="./index/index_icon1.png" >
-                    <h5>我的借款</h5>
-                    <p>查看账单</p>
-                    <i></i>
-                  </li>
-                  <li @click="$router.push('/memb/info')">
-                    <img  src="./index/index_icon2.png" >
-                    <h5>实名认证</h5>
-                    <p>提升额度</p>
-                    <i></i>
-                  </li>
-                </ul>
+                <!--<ul class="box_s">-->
+                  <!--<li @click="$router.push('/loan/record')">-->
+                    <!--<img  src="./index/index_icon1.png" >-->
+                    <!--<h5>我的借款</h5>-->
+                    <!--<p>查看账单</p>-->
+                    <!--<i></i>-->
+                  <!--</li>-->
+                  <!--<li @click="$router.push('/memb/info')">-->
+                    <!--<img  src="./index/index_icon2.png" >-->
+                    <!--<h5>实名认证</h5>-->
+                    <!--<p>提升额度</p>-->
+                    <!--<i></i>-->
+                  <!--</li>-->
+                <!--</ul>-->
                   <h3>最高可借</h3>
                   <p>￥{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
                   <!--<em><img  src="./index/Group1.png" width="100%">7天/14天   <img  src="./index/Group2.png" width="100%">起借金额:2000元</em>-->
@@ -201,43 +205,45 @@ import { setTimeout } from 'timers'
       this.duesList();
       this.detail();
     //   this.getProduct();
-      var isElastic=this.getCookie('isElastic')
-      if(!isElastic || isElastic=='' || isElastic==undefined){
-        this.$vux.confirm.show({
-          title: '温馨提示',
-          content: '【注意】请认准APP中官方客服，其他方式（百度）搜索到的客服都是骗子，谨防被骗；申请即授予本平台管理您的贷后信息，包括但不限于：\n' +
-            '1.将逾期7天信息上传至征信平台。\n' +
-            '2.通知紧急联系人，告知本人还款事宜。',
-          showCancelButton:false,
-          confirmText:'知道了',
-          onConfirm:()=> {
-            this.setCookie('isElastic',true,1)
-          }
-        })
-      }
+
+
+    //   var isElastic=this.getCookie('isElastic')
+    //   if(!isElastic || isElastic=='' || isElastic==undefined){
+    //     this.$vux.confirm.show({
+    //       title: '温馨提示',
+    //       content: '【注意】请认准APP中官方客服，其他方式（百度）搜索到的客服都是骗子，谨防被骗；申请即授予本平台管理您的贷后信息，包括但不限于：\n' +
+    //         '1.将逾期7天信息上传至征信平台。\n' +
+    //         '2.通知紧急联系人，告知本人还款事宜。',
+    //       showCancelButton:false,
+    //       confirmText:'知道了',
+    //       onConfirm:()=> {
+    //         this.setCookie('isElastic',true,1)
+    //       }
+    //     })
+    //   }
     },
     methods:{
-      setCookie: function (cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
-        console.info(cname + "=" + cvalue + "; " + expires);
-        document.cookie = cname + "=" + cvalue + "; " + expires;
-        console.info(document.cookie);
-      },
-      //获取cookie
-      getCookie: function (cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) == ' ') c = c.substring(1);
-          if (c.indexOf(name) != -1){
-            return c.substring(name.length, c.length);
-          }
-        }
-        return "";
-      },
+      // setCookie: function (cname, cvalue, exdays) {
+      //   var d = new Date();
+      //   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      //   var expires = "expires=" + d.toUTCString();
+      //   console.info(cname + "=" + cvalue + "; " + expires);
+      //   document.cookie = cname + "=" + cvalue + "; " + expires;
+      //   console.info(document.cookie);
+      // },
+      // //获取cookie
+      // getCookie: function (cname) {
+      //   var name = cname + "=";
+      //   var ca = document.cookie.split(';');
+      //   for (var i = 0; i < ca.length; i++) {
+      //     var c = ca[i];
+      //     while (c.charAt(0) == ' ') c = c.substring(1);
+      //     if (c.indexOf(name) != -1){
+      //       return c.substring(name.length, c.length);
+      //     }
+      //   }
+      //   return "";
+      // },
       getList() {
         var that = this;
         that.$http({
@@ -487,11 +493,18 @@ import { setTimeout } from 'timers'
                     }
                 })
             }
-        },
+        }
     }
   }
 </script>
 <style lang="scss" scoped>
+  .titles{
+    color: #FF6A5D;
+    font-size: Px(24);
+    line-height: Px(60);
+    background: #fff;
+    text-align:center;
+  }
     .refuseBg{
         position: fixed;
         left: 0;
@@ -781,12 +794,13 @@ import { setTimeout } from 'timers'
         cursor: pointer;
         font-size: Px(36);
         line-height: Px(90);
+        border-radius: Px(45);
         color: #fff;
         text-align: center;
         outline: none;
         border: none;
         align-self: center;
-        background:linear-gradient(to right, #FFAC5A, #FF645D);
+        background:linear-gradient(to right, #FFC205, #FC660A);
 
     }
     .tabBottom{
@@ -1075,6 +1089,7 @@ import { setTimeout } from 'timers'
       top: 0;
       bottom: 60px;
       width:100%;
+
     }
     .mask {
       position: fixed;
@@ -1261,10 +1276,9 @@ import { setTimeout } from 'timers'
     .box_{
       position: relative;
       text-align: center;
-      background:url(./index/indexbgs.png) no-repeat ;
+      background:-webkit-linear-gradient(-90deg,#ffc105, #fc650a);
       background-size: 100% auto;
-      margin-bottom: Px(180);
-      padding-top:Px(546);;
+      padding-bottom:6.2rem;
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1275,10 +1289,10 @@ import { setTimeout } from 'timers'
       .box_1{
         text-align: center;
         overflow: hidden;
-        background:#fff;
-        width: Px(710);
-        margin-top: Px(20);
-        margin-left: Px(20);
+        background:url(./index/index_bc.png) no-repeat ;
+        background-size: 100% auto;
+        width: Px(750);
+        height: Px(411);
         padding-bottom: Px(30);
         /*box-shadow: 0 0 .2rem 1px rgba(#000, .1);*/
         /*border-radius: Px(15);*/
@@ -1287,21 +1301,18 @@ import { setTimeout } from 'timers'
           font-style: normal;
           font-size: Px(28);
           color:#333333;
-          margin-left: Px(45);
-          margin-top: Px(20);
+          margin-top: Px(80);
           text-align: center;
-          font-weight:bold;
           line-height: Px(60);
           font-weight: normal;
         }
         >p{
           font-style: normal;
           font-size: Px(80);
-          color:#FF665D;
-          margin-left: Px(38);
+          color:#000000;
           margin-top: Px(0);
           text-align:  center;
-          line-height: Px(80);
+          line-height: Px(95);
           font-weight: normal;
           margin-bottom: 0;
         }

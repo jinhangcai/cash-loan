@@ -44,7 +44,7 @@
         <i></i>
       </div>
 
-      <div class="information" @click="mobile">
+      <div class="information" @click="mobile" style="border:none;">
         <div class="icon">
           <img src="./img/rzicon1.png" alt="" >
         </div>
@@ -483,26 +483,26 @@
     margin: Px(30);
     overflow: hidden;
     margin-bottom: Px(100);
+    border-radius: Px(15);
     .information{
       display: block;
       align-items: center;
       height: Px(116);
       width:100%;
-      background: #fdfcfd;
+      background: #FFFEFE;
       float: left;
       position: relative;
-      margin-bottom: Px(20);
-      border-radius: Px(15);
+      border-bottom: #E0E0E0 Px(1) solid;
       .icon{
-        height: Px(70);
+        height: Px(50);
         position: absolute;
-        left: Px(20);
-        top: Px(22);
+        left: Px(30);
+        top: Px(30);
         img{
           display: block;
           margin: auto;
           width: auto;
-          width: Px(70);
+          width: Px(50);
         }
       }
       .phone{
@@ -511,10 +511,9 @@
         }
       }
       i{
-
+        display: none;
         width: Px(13);
         height: Px(23);
-        display: block;
         position: absolute;
         right: Px(20);
         top: Px(43);
@@ -548,10 +547,12 @@
         position: absolute;
         right: Px(35);
         top: Px(35);
-        border-radius: Px(20);
+        border: #999999 Px(1) solid;
+
       }
       .cur{
-        color: #FF695D;
+        color: #FF675D;
+        border: #FF675D Px(1) solid;
       }
     }
   }

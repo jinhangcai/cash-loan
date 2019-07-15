@@ -79,7 +79,7 @@
     .icon{
       display: block;
       margin: .1rem auto 0;
-      height: .65rem;
+      height: .55rem;
       width: auto;
     }
   }

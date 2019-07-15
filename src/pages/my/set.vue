@@ -74,7 +74,7 @@
       signOut(){
         this.$web2app('logOut',{callback:true})
         this.$web2app('openAppPage',{name:'login'})
-        this.setCookie('isElastic',null,-1)
+        // this.setCookie('isElastic',null,-1)
       },
       async getVersion(){
         let data = await this.$web2app('getSystemInfo',{ callback: true })

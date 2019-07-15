@@ -300,9 +300,9 @@
       iosDownload () {
         switch (this.app) {
           case 'ddbt':
-            const url = 'https://jinyh.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
+            const url = 'https://hengxiangjie.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
             //   window.location.href = `itms-services://?action=download-manifest&url=${url}`
-            window.location.href = `itms-services://?action=download-manifest&url=https://jinyh.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
+            window.location.href = `itms-services://?action=download-manifest&url=https://hengxiangjie.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
             break
           default:
             break
@@ -314,7 +314,7 @@
         if(this.sendCodeTime==0){
           switch (this.app) {
             case 'ddbt':
-              window.self.location = 'https://jinyh.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
+              window.self.location = 'https://hengxiangjie.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
               break
             default:
               break
@@ -418,9 +418,9 @@
     display flex
     margin px(30) px(25.5)
     padding px(10) px(28)
-    background #F7F7F7
-    border-radius px(8)
-    border:1px solid #E0E0E0
+    background none
+
+    border-bottom:1px solid #E0E0E0
 
   .form-areacode
     flex none
@@ -468,7 +468,7 @@
     text-align center
     background:linear-gradient(to right, #FFAC5A, #FF645D);
     color #fff
-    border-radius px(4)
+    border-radius px(44)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
 
   .form-tip

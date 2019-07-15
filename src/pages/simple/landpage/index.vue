@@ -293,9 +293,9 @@ export default {
     & .landing_item {
       position: relative;
       overflow: hidden;
-      background: #F7F7F7;
-      border:1px solid #E0E0E0;
-      border-radius:Px(8);
+      background: none;
+      border-bottom:1px solid #E0E0E0;
+      border-radius:Px(0);
       .mobile {
         position: absolute;
         display: block;
@@ -375,7 +375,7 @@ export default {
     width: auto;
     height: Px(88);
     color: #fff;
-    border-radius: Px(4);
+    border-radius: Px(44);
     background:linear-gradient(to right, #FFAC5A, #FF645D);
     font-size: Px(26);
     line-height: Px(88);
