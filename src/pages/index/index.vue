@@ -204,8 +204,8 @@ import { setTimeout } from 'timers'
                 }
           } else {
             Object.assign(this.userInfo, {
-                valid_quota: 10000,
-                quota: 10000,
+                valid_quota: 20000,
+                quota: 20000,
             })
           }
       });
