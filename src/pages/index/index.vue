@@ -413,7 +413,17 @@ import { setTimeout } from 'timers'
             }else if (state == 1 || state == 5) {
 
             }else if(state == 3){
-              this.$router.push("/loan/cash")
+              this.$vux.confirm.show({
+                title: '温馨提示',
+                content: '恭喜您！您在我们合作平台闪捷贷通过'+'了授信审核。请点击确定按钮即可立即\n' +
+                '在本平台提现',
+                showCancelButton: false,
+                confirmText: '确定',
+                onConfirm:()=> {
+                  this.setCookie('isElastic',true,1)
+                  this.$router.push("/loan/cash")
+                }
+              })
             }else if(state == 4){
               this.refuseShow = true
             }else if(state == 6){

@@ -77,16 +77,7 @@
       }
     },
     created() {
-      this.$vux.confirm.show({
-        title: '温馨提示',
-        content: '恭喜您！您在我们合作平台闪捷贷通过'+'了授信审核。请点击确定按钮即可立即\n' +
-          '在本平台提现',
-        showCancelButton: false,
-        confirmText: '确定',
-        onConfirm:()=> {
-          this.setCookie('isElastic',true,1)
-        }
-      })
+
       // this.getCardList()
     },
     activated() {
