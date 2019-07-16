@@ -29,8 +29,8 @@
           <div class="box_">
             <div class="box_1">
               <!--<h3 class="box-title">海贝钱包</h3>-->
+              <h3 class="box-money">最高可借额度(元)</h3>
               <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
-              <!--<h3 class="box-money">最高可借额度(元)</h3>-->
               <button class="borrowingBtn"  @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
             </div>
           </div>
@@ -38,6 +38,9 @@
             <!--&lt;!&ndash;温馨提示：除了加客服微信扣扣外,其余(百度)公众号添加都是骗子;&ndash;&gt;-->
             <!--请认准官方客服,其他方式(百度)搜索到的客服都是骗子;-->
           <!--</div>-->
+        </div>
+        <div class="bg3">
+          <img src="./index/bg3.png"  />
         </div>
         <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
         <!--客服中心-->
@@ -79,48 +82,49 @@
               <div class="infotab infotab1">
                 <div class="tabTitle">
                   <div>
-                    <p>近日待还（元）</p>
+                    <p style="color:#7A7A7A;">近日待还（元）</p>
                   </div>
                   <p class="paymentSum">{{paymentInformation.allMoney || 0}}</p>
                   <div  class="payBtn"  @click="$router.push('/repay')">立即还款</div>
-                  <p style="color:#fff;margin:0;overflow: hidden;" class="otherInfo otherInfoP">
-                    <span style="float:left;">最近还款日 {{timestampToTime(paymentInformation.recentDay)}}</span>
-                    <span style="color:#fff;float:right;">剩余待还笔数 {{paymentInformation.repayNum}} 笔</span>
-                  </p>
+
                 </div>
               </div>
+              <p style="color:#fff;overflow: hidden;" class="otherInfo otherInfoP">
+                <span style="float:left;color:#AAAAAA;">最近还款日 {{timestampToTime(paymentInformation.recentDay)}}</span>
+                <span style="color:#AAAAAA;float:right;">剩余待还笔数 {{paymentInformation.repayNum}} 笔</span>
+              </p>
             </div>
-            <h3 class="title-left-h3">
-              个人资料
-            </h3>
-            <div class="tabCenter">
-              <div class="data" @click="$router.push('/memb/info')">
-                <div class="left">
-                  <div class="personalicon"></div>
-                  <div>信用资料填写</div>
-                </div>
-                <div class="right">
-                  <div class="unfinish" v-if="!attestation" style="display:flex;align-items: center;">
-                    <x-icon type="ios-information" size="16"></x-icon>
-                    <span style="color:#ec4351;">未完成</span>
-                  </div>
-                  <div class="finish" v-else style="display:flex;align-items: center;">
-                    <x-icon type="ios-checkmark" size="16"></x-icon>
-                    <span style="color:#ec4351;">已完成</span>
-                  </div>
-                  <div class="enterBtn"></div>
-                </div>
-              </div>
-              <!--<div class="data" style="border-top:1px solid #eaebee" @click="goLoan">-->
-              <!--<div class="left">-->
-              <!--<div class="recordicon"></div>-->
-              <!--<div>提现记录</div>-->
+            <!--<h3 class="title-left-h3">-->
+              <!--个人资料-->
+            <!--</h3>-->
+            <!--<div class="tabCenter">-->
+              <!--<div class="data" @click="$router.push('/memb/info')">-->
+                <!--<div class="left">-->
+                  <!--<div class="personalicon"></div>-->
+                  <!--<div>信用资料填写</div>-->
+                <!--</div>-->
+                <!--<div class="right">-->
+                  <!--<div class="unfinish" v-if="!attestation" style="display:flex;align-items: center;">-->
+                    <!--<x-icon type="ios-information" size="16"></x-icon>-->
+                    <!--<span style="color:#ec4351;">未完成</span>-->
+                  <!--</div>-->
+                  <!--<div class="finish" v-else style="display:flex;align-items: center;">-->
+                    <!--<x-icon type="ios-checkmark" size="16"></x-icon>-->
+                    <!--<span style="color:#ec4351;">已完成</span>-->
+                  <!--</div>-->
+                  <!--<div class="enterBtn"></div>-->
+                <!--</div>-->
               <!--</div>-->
-              <!--<div class="right">-->
-              <!--<div class="enterBtn"></div>-->
-              <!--</div>-->
-              <!--</div>-->
-            </div>
+              <!--&lt;!&ndash;<div class="data" style="border-top:1px solid #eaebee" @click="goLoan">&ndash;&gt;-->
+              <!--&lt;!&ndash;<div class="left">&ndash;&gt;-->
+              <!--&lt;!&ndash;<div class="recordicon"></div>&ndash;&gt;-->
+              <!--&lt;!&ndash;<div>提现记录</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;<div class="right">&ndash;&gt;-->
+              <!--&lt;!&ndash;<div class="enterBtn"></div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
           </div>
         </div>
         <!--<div class="personaltab">-->
@@ -205,13 +209,14 @@
         <div class="position-horizontal-demo">
           <div class="mys">
             <div class="info-box_">
-              <img src="./index/bg.png">
+              <!--<img src="./index/bg.png">-->
+              <img src="./index/login.png">
               <div v-if="userInfo.vid">
-                <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
+                <div class="phone" style="color:#000;">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
                 <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
               </div>
               <div  v-else>
-                <div>您好！请先登录</div>
+                <div style="color:#000" class='phone'>您好！请先登录</div>
               </div>
             </div>
             <ul class="info-box_s">
@@ -660,7 +665,12 @@
     .info-box_{
       text-align: center;
       img{
-        width: 100%;
+        width: Px(128);
+        display: inline-block;
+        margin: Px(87) auto 0;
+      }
+      .phone{
+        margin:Px(19) 0 Px(50) 0
       }
       >div{
         color: #ffffff;
@@ -895,7 +905,7 @@
     /*margin:Px(24) auto;*/
     /*background: #fff;*/
     /*border-radius: Px(25);*/
-    padding-top: Px(12);
+    /*padding-top: Px(12);*/
     text-align: center;
     overflow: hidden;
     .infotab-min{
@@ -915,9 +925,9 @@
       text-align: center;
       position:relative;
       /*padding-left:Px(9);*/
-      padding-top:Px(33);
+      padding-top:Px(53);
       line-height:1;
-      margin-bottom:Px(40);
+      margin-bottom:Px(20);
       /*&:before{*/
         /*content: '';*/
         /*width:Px(4);*/
@@ -957,7 +967,7 @@
       /*padding-top:Px(60);*/
     }
     .tabTitle{
-      padding: Px(20) Px(30) Px(10);
+      padding: Px(80) Px(30) Px(10);
       color: #fff;
       font-weight: normal;
     }
@@ -968,12 +978,12 @@
     margin-bottom:Px(30);
     background: url(./index/indeximg3.png) no-repeat;
     background-size: 100% 100%;
-    width:Px(625);
-    height:Px(257);
+    width:Px(518);
+    height:Px(293);
     .paymentSum{
       margin-top:Px(30);
-      font-size:Px(47);
-      color:#fff;
+      font-size:Px(80);
+      color:#3B9FF8;
       line-height:1;
     }
   }
@@ -1061,13 +1071,13 @@
     padding: 0 Px(50);
     height: Px(45);
     text-align: center;
-    margin:Px(20) auto 0;
+    margin:Px(30) auto 0;
     border-radius: Px(40);
     cursor: pointer;
     font-size: Px(20);
     line-height: Px(45);
     background: #fff;
-    color:#fe6258;
+    color:#3A9EF8;
     /*background: linear-gradient(left top,#83ADFF, #3970E5); !* 标准的语法 *!*/
     /*background: -webkit-linear-gradient(left top,#83ADFF, #3970E5); !* Safari 5.1 - 6.0 *!*/
     /*color: #fff;*/
@@ -1142,6 +1152,16 @@
     span{
       vertical-align: middle;
       font-size: .3rem;
+    }
+  }
+  .bg3{
+    width:100%;
+    background: #ededed;
+    padding:Px(20) 0 Px(20) 0;
+    img{
+      width:Px(700);
+      margin: 0 auto;
+      display: block;
     }
   }
   .data{
@@ -1374,13 +1394,13 @@
   .payBtn{
     height: Px(40);
     text-align: center;
-    border-radius: Px(40);
-    margin: .1rem auto;
+    border-radius: Px(15);
+    margin: .3rem auto;
     line-height: Px(40);
-    color: #e84c4c;
+    color: #fff;
+    background:#3B9FF8;
     padding:0 Px(30);
     display: inline-table;
-    background: #fff;
     //   background-color: #fff;
     font-size:Px(21);
     margin-bottom: 0.1rem;
@@ -1457,9 +1477,11 @@
     }
   }
   .box{
-    background: url('./index/indeximg2.png') no-repeat;
+    background: -webkit-linear-gradient(#4fb4f7, #3a9ef8); /* Safari 5.1 - 6.0 */
+    background: -moz-linear-gradient(#4fb4f7, #3a9ef8); /* Firefox 3.6 - 15 */
+    /*background: url('./index/indeximg2.png') no-repeat;*/
     background-size: 100%;
-    height: Px(744);
+    height: Px(484);
     .title_{
       padding-top:Px(47);
     }
@@ -1469,10 +1491,10 @@
       margin:Px(43) auto 0;
       font-size: Px(17);
       text-align:center;
-      width: Px(700);
-      color:#e84c4c;
-      background-color:#e3ecfc;
-      border-radius:Px(30);
+      width: 100%;
+      color:#E84C4C;
+      background-color: rgba(255, 255, 255, 0.33);
+      /*border-radius:Px(30);*/
     }
     .title{
       // width: 100%;
@@ -1487,16 +1509,16 @@
       letter-spacing: 1px;
       .title-img1{
         display: block;
-        width: Px(31);
-        height: Px(41);
+        width: Px(41);
+        height: Px(42);
         float: right;
         background: url('./index/shezhi4.png') no-repeat;
         background-size: 100%;
       }
       .title-img2{
         display: block;
-        width: Px(29);
-        height: Px(39);
+        width: Px(35);
+        height: Px(23);
         float: left;
         position:relative;
         z-index:222;
@@ -1676,15 +1698,16 @@
         line-height:1;
       }
       .box-money{
-        margin-top:8px;
+        margin-top:Px(40);
         font-size:Px(26);
       }
       p{
         font-size: Px(72);
         color:#fff;
-        margin-top: Px(211);
+        /*margin-top: Px(211);*/
         margin-bottom: 0;
         line-height:1;
+        margin-top:Px(10);
       }
     }
     span{
@@ -1757,6 +1780,11 @@
   .vux-popup-dialog{
     background:#fff;
   }
+  .otherInfoP{
+
+    width: Px(534);
+    margin: 0 auto;
+  }
 </style>
 <style>
   .vux-popover{
@@ -1770,7 +1798,7 @@
 
   .recordicon{ width:  .5rem; height:  .5rem; background: url('./index/indexicon2.png') no-repeat center / 100% 100%;  margin-right: 0.15rem;}
   body{
-    background: #f6f6f6!important;
+    background: #fff!important;
   }
   .vux-range-input-box{
     margin:0.6rem 0.8rem!important;
