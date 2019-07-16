@@ -187,7 +187,8 @@
             //     this.refuseShow = true
             // }
             if (data.data.data.auditor_state == "4") {
-              this.refuseShow = true
+              this.refuseShow = true;
+              this.goMSLH();
             }
           } else {
             Object.assign(this.userInfo, {
@@ -458,6 +459,19 @@
         this.refuseShow = false;
         this.loanshow = true;
         // document.getElementById("abc").scrollIntoView()
+      },
+      // 开关打开则跳转到马上来花
+      goMSLH() {
+        this.$http({
+          methods:'get',
+          url:'risk/riskJump'
+        })
+          .then((data) => {
+            if (data.data.status == 0 && data.data.data) {
+              window.location.href = data.data.data
+            }
+          }).catch(() => {
+        })
       },
       handler(index){
         console.log(index)
