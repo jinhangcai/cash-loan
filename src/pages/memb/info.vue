@@ -13,28 +13,32 @@
     <div class="content">
       <div class="information"  @click="card">
         <div class="icon">
-          <img src="./img/icon1.png" alt="" >
+          <img src="./img/icon1.png" alt="" v-if="list.idCard !==3">
+          <img src="./img/icon6.png" alt="" v-else>
         </div>
         <span class="title">实名认证</span>
         <span class="text" :class="{'cur':list.idCard==3}" v-html="list.idCard==3?'认证成功':list.idCard==2?'认证中':list.idCard==4&&list.idCardFail==1?'认证失败(身份证已被认证)':list.idCard==4?'认证失败':'未认证'"></span>
       </div>
       <div class="information" @click="base">
         <div class="icon">
-          <img src="./img/icon2.png" alt="" >
+          <img src="./img/icon2.png" alt="" v-if="list.baseInfo !==3">
+          <img src="./img/icon7.png" alt="" v-else>
         </div>
         <span class="title">基础信息</span>
         <span class="text" :class="{'cur':list.baseInfo==3}" v-html="list.baseInfo==4&&list.idCardFail==1?'认证失败':list.baseInfo==3?'认证成功':list.baseInfo==2?'认证中':'未认证'"></span>
       </div>
       <div class="information" @click="linkman">
         <div class="icon phone">
-          <img src="./img/icon3.png" alt="" >
+          <img src="./img/icon3.png" alt="" v-if="list.contact !==3">
+          <img src="./img/icon8.png" alt="" v-else>
         </div>
         <span class="title">联系人认证</span>
         <span class="text" :class="{'cur':list.contact==3}" v-html="list.contact==4?'认证失败()':list.contact==3?'认证成功':list.contact==2?'认证中':'未认证'"></span>
       </div>
       <div class="information" @click="bank">
         <div class="icon">
-          <img src="./img/icon4.png" alt="">
+          <img src="./img/icon4.png" alt="" v-if="list.bank !==3">
+          <img src="./img/icon9.png" alt="" v-else>
         </div>
         <span class="title">银行卡认证</span>
         <span class="text" :class="{'cur':list.bank==3}" v-html="list.bank==4?'认证失败':list.bank==3?'认证成功':list.bank==2?'认证中':'未认证'"></span>
@@ -42,10 +46,13 @@
 
       <div class="information" @click="mobile1">
         <div class="icon">
-          <img src="./img/icon5.png" alt="" >
+          <img src="./img/icon5.png" alt="" v-if="list.mobOperator !==3">
+          <img src="./img/icon10.png" alt="" v-else>
         </div>
         <span class="title">手机认证</span>
         <span class="text" :class="{'cur':list.mobOperator==3}" v-html="list.mobOperator==4?'认证失败':list.mobOperator==3?'认证成功':(list.mobOperator==2 || authing == 1)?'认证中':'未认证'"></span>
+      </div>
+      <div class="information">
       </div>
     </div>
     <!--<div class="button">立即借款</div>-->
@@ -408,7 +415,7 @@
   .headerBar{
     width: 100%;
     background: url("./img/bg.png") no-repeat;
-    height:Px(397);
+    height:Px(320);
     background-size: 100%;
   }
   .box{
@@ -480,30 +487,38 @@
   }
   .content{
     overflow: hidden;
-    margin:0;
     margin: Px(30);
-    overflow: hidden;
+    display:flex;
+    flex-flow: row wrap;
     margin-bottom: Px(100);
+    margin-top:Px(50);
+    justify-content: center;
+    background: #fdfcfd;
+    padding-bottom:Px(80);
     .information{
       display: block;
       align-items: center;
-      height: Px(116);
-      width:100%;
+      /*height: Px(116);*/
+      /*width:100%;*/
+      width:Px(215);
       background: #fdfcfd;
       float: left;
       position: relative;
-      margin-bottom: Px(2);
+      margin-top: Px(88);
       /*border-radius: Px(15);*/
       .icon{
-        height: Px(61);
-        position: absolute;
-        left: Px(20);
-        top: Px(28);
+        /*height: Px(61);*/
+        /*position: absolute;*/
+        /*left: Px(20);*/
+        /*top: Px(28);*/
+        height:Px(100);
+        display:flex;
+        align-items: center;
         img{
           display: block;
           margin: auto;
           width: auto;
-          width: Px(47);
+          width: Px(66);
         }
       }
       .phone{
@@ -523,13 +538,13 @@
         background-size: 100% 100%;
       }
       .title{
-        flex: 1;
+        /*flex: 1;*/
         //  width: Px(215);
         color: #000000;
         font-size: Px(28);
-        text-align: left;
+        text-align: center;
         line-height: Px(45);
-        margin-left: Px(100);
+        /*margin-left: Px(100);*/
         display: block;
         margin-top: Px(20);
         margin-bottom: Px(21);
@@ -539,23 +554,25 @@
         }
       }
       .text{
-        flex: 1;
+        /*flex: 1;*/
         color: #fff;
         background: #c6c6c6;
         font-size: Px(21);
         line-height: Px(49);
         padding:0 Px(25);
-        position: absolute;
-        right: Px(35);
-        top: Px(27);
+        /*position: absolute;*/
+        /*right: Px(35);*/
+        /*top: Px(27);*/
+        display:block;
         border-radius: Px(20);
         width:Px(116);
         height:Px(49);
+        margin: 0 auto;
         text-align: center;
       }
       .cur{
-        color: #fa3532;
-        border: 1px solid #fa3532;
+        color: #3a9ef8;
+        border: 1px solid #3a9ef8;
         background: #fff;
       }
     }

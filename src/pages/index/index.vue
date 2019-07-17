@@ -1782,8 +1782,11 @@
   }
   .otherInfoP{
 
-    width: Px(534);
+    width: Px(554);
     margin: 0 auto;
+    span{
+      font-size:Px(12);
+    }
   }
 </style>
 <style>
