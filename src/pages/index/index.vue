@@ -13,7 +13,7 @@
         </div> -->
         <div class="scroll-container" :style="`transform:translate(0, ${native.statusBarHeight})`">
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
-            <!--<header-bar title="恒享借"></header-bar>-->
+            <!--<header-bar title="零钱盒子"></header-bar>-->
 
             <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
               <!--客服中心-->
@@ -21,7 +21,7 @@
             <!--</div>-->
             <div class="box_">
               <!--<div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">-->
-                <!--　恒享借-->
+                <!--　零钱盒子-->
                 <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
               <!--</div>-->
               <div class="titles">
@@ -96,8 +96,12 @@
             <div class="alipay-close" @click="alipayShow = false, popups = 2"></div>
             <img class="alipay-img" :src="codeUrl">
           </div>
-        </div>
+        </div>'
+      <div class="indexbtn" @click="$router.push('/my')" >
+        <img  src="./index/indexbtn.png" width="100%">
+      </div>
     </div>
+
 </template>
 <script>
 import HeaderBar from './header'
@@ -498,12 +502,18 @@ import { setTimeout } from 'timers'
   }
 </script>
 <style lang="scss" scoped>
+
+
   .titles{
     color: #FF6A5D;
     font-size: Px(24);
     line-height: Px(60);
     background: #fff;
     text-align:center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
   }
     .refuseBg{
         position: fixed;
@@ -788,19 +798,22 @@ import { setTimeout } from 'timers'
     }
     .borrowingBtn{
         display: block;
-         width: Px(600);
-        height: Px(90);
-        margin:Px(20) auto 0;
+        height: Px(67);
+        margin-left: Px(30);
         cursor: pointer;
-        font-size: Px(36);
-        line-height: Px(90);
-        border-radius: Px(45);
+        padding: 0 Px(30);
+        font-size: Px(30);
+        line-height: Px(67);
+        border-radius: Px(8);
         color: #fff;
         text-align: center;
         outline: none;
         border: none;
         align-self: center;
-        background:linear-gradient(to right, #FFC205, #FC660A);
+        background:none;
+        border: #fff Px(1) solid;
+        margin-top: Px(65);
+
 
     }
     .tabBottom{
@@ -1276,7 +1289,7 @@ import { setTimeout } from 'timers'
     .box_{
       position: relative;
       text-align: center;
-      background:-webkit-linear-gradient(-90deg,#ffc105, #fc650a);
+      background:#fff;
       background-size: 100% auto;
       padding-bottom:6.2rem;
       h4{
@@ -1291,30 +1304,32 @@ import { setTimeout } from 'timers'
         overflow: hidden;
         background:url(./index/index_bc.png) no-repeat ;
         background-size: 100% auto;
-        width: Px(750);
-        height: Px(411);
-        padding-bottom: Px(30);
+        width: Px(504);
+        height: Px(272);
         /*box-shadow: 0 0 .2rem 1px rgba(#000, .1);*/
         /*border-radius: Px(15);*/
-
+        padding: Px(79) Px(91);
+        margin: Px(32) auto;
         h3{
           font-style: normal;
-          font-size: Px(28);
-          color:#333333;
-          margin-top: Px(80);
-          text-align: center;
-          line-height: Px(60);
+          font-size: Px(24);
+          color:#fff;
+          margin-top: Px(28);
+          text-align: left;
+          line-height: Px(33);
           font-weight: normal;
+          padding-left: Px(30);
         }
         >p{
           font-style: normal;
-          font-size: Px(80);
-          color:#000000;
+          font-size: Px(50);
+          color:#FFFFFF;
           margin-top: Px(0);
-          text-align:  center;
-          line-height: Px(95);
+          text-align:  left;
+          line-height: Px(55);
           font-weight: normal;
           margin-bottom: 0;
+          padding-left: Px(25);
         }
         >em{
           color: #333333;
@@ -1428,6 +1443,13 @@ import { setTimeout } from 'timers'
         margin-bottom: Px(10);
       }
     }
+  .indexbtn{
+    width: Px(144);
+    position: fixed;
+    right: 0;
+    bottom: Px(20);
+    z-index: 99999;
+  }
 </style>
 <style>
   .vux-popover{

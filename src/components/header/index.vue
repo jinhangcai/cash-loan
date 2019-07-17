@@ -66,7 +66,7 @@ export default {
  .header-bar {
     width: 100%;
     height: Px(85);
-    background: -webkit-linear-gradient(0deg, #FFC205, #FC6409);
+    background: -webkit-linear-gradient(0deg, #FC735E, #E8413A);
     position: fixed;
     left:0;
     top:0;

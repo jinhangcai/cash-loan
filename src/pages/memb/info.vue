@@ -1,11 +1,15 @@
 <template>
   <div class="box">
-    <!-- <div class="header">
-      <div class="arrow"><img src="./img/row.png" alt=""></div>
-      <div class="title">完善资料</div>
-    </div> -->
+    <!--<div class="header">-->
+      <!--<div class="arrow"><img src="./img/row.png" alt=""></div>-->
+      <!--<div class="title">完善资料</div>-->
+      <!--<img src="./img/infobg.png" alt="" width="100%">-->
+    <!--</div>-->
     <!--<div class="title">温馨提示：请填写真实有效信息以获得更高信用额度</div>-->
-
+    <div class="headerBar">
+      <header-bar title="完善资料"></header-bar>
+      <img src="./img/infobg.png" alt="" width="100%">
+    </div>
 
     <div class="content">
       <div class="information"  @click="card">
@@ -479,11 +483,11 @@
   }
   .content{
     overflow: hidden;
-    margin:0;
     margin: Px(30);
     overflow: hidden;
     margin-bottom: Px(100);
     border-radius: Px(15);
+    margin-top:Px(-125);
     .information{
       display: block;
       align-items: center;
@@ -547,12 +551,11 @@
         position: absolute;
         right: Px(35);
         top: Px(35);
-        border: #999999 Px(1) solid;
+
 
       }
       .cur{
-        color: #FF675D;
-        border: #FF675D Px(1) solid;
+        color: #FF695D;
       }
     }
   }
@@ -568,6 +571,11 @@
     background: #ffffff;
   }
   .header{border: none!important;}
+  .headerBar{
+    >img{
+      margin-top: -1.2rem;
+    }
+  }
 </style>
 <style>
   .unchange{

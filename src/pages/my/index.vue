@@ -108,7 +108,9 @@
       <!--<em @click="signOut">退出</em>-->
       <!--</div>-->
     </div>
-
+    <div class="mybtn" @click="$router.push('/')" >
+      <img  src="./img/mybtn.png" width="100%">
+    </div>
   </div>
 </template>
 
@@ -222,6 +224,13 @@
 
 <style lang="scss" scoped>
   .content{
+    .mybtn{
+      width: Px(144);
+      position: fixed;
+      right: 0;
+      bottom: Px(20);
+      z-index: 99999;
+    }
     padding-bottom: Px(50);
     .info-box_{
       border-radius:Px(10) Px(10) 0 0!important;
@@ -285,20 +294,20 @@
     width: 100%;
     overflow: auto;
     color: #333;
-    background: -webkit-linear-gradient(0deg, #FFC205, #FC6409);
+    background: -webkit-linear-gradient(0deg, #FC735E, #E8413A);
     img{
       display: block;
       width: 100%;
     }
   }
   .body{
-    background: -webkit-linear-gradient(0deg, #FFC205, #FC6409);
+    background: -webkit-linear-gradient(0deg,  #FC735E, #E8413A);
     // position: absolute;
     // top: 0;
     width: 100%;
   }
   .top{
-    background: -webkit-linear-gradient(0deg, #FFC205, #FC6409);
+    background: -webkit-linear-gradient(0deg, #FC735E, #E8413A);
     position: relative;
     width: 100%;
 
@@ -476,6 +485,8 @@
       padding-right: .4rem !important;
       padding:Px(30) 0 !important;;
       border-top: none!important;
+      width: 50%;
+      float: left;
     }
     .weui-cells{
       margin: 0 Px(10) !important;
@@ -485,9 +496,12 @@
     .weui-cells:before{
       height: 0 !important;
       border: none;
+      display: none!important;
+      border: none!important;
     }
     .weui-cells:after{
       border: none;
+      display: none;
     }
     .vux-label{
       font-size:Px(25)!important;
@@ -496,7 +510,16 @@
     .weui-cell_access .weui-cell__ft:after{
       border-color: #999 !important;
       right:Px(35)!important;
+      display: none;
     }
+  }
+
+
+  .weui-cell:before{
+    height: 0 !important;
+    border: none;
+    display: none!important;
+    border: none!important;
   }
 </style>
 
