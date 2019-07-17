@@ -401,7 +401,7 @@
   // 表单
   .form
     position absolute
-    top px(620)
+    top px(820)
     left 0
     right 0
     //margin px(30) px(60) 0
@@ -414,22 +414,23 @@
     width:px(538);
     margin: px(30) auto;
     border-radius:px(15)
-    background:#f7bac2
+    background:#fff
+    border: 1px solid #3a9ef8;
 
   .form-areacode
     flex none
     font-size: px(26);
     line-height: px(60);
-    color: #000;
+    color: #b6b6b6;
 
   .form-input
     flex auto
     height px(61)
     font-size px(28)
-    color #333
-    background:#f7bac2
+    color #b6b6b6
+    background:#fff
     &::-webkit-input-placeholder
-      color #000
+      color #b6b6b6
 
   .form-separator
     flex none
@@ -448,7 +449,7 @@
     padding 0 px(20)
     border-radius px(30)
     color #fff
-    background #d91833
+    background #3a9ef8
     &.-active
       color #fff
       background-color #FFAA37
@@ -461,7 +462,7 @@
     font-size px(32)
     line-height px(80)
     text-align center
-    background:#d91833
+    background:#3a9ef8
     color #fff
     border-radius:px(15)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)

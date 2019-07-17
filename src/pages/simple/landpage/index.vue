@@ -49,9 +49,9 @@
       </div>
       <!-- landing_item -->
       <div class="landing_btn" @click="register">立即拿钱</div>
-<!--      <p class="register_txt txt_center">点击领取即同意-->
-<!--        <em class="">《服务协议》</em>-->
-<!--      </p>-->
+      <p class="register_txt txt_center">我已同意并阅读
+        <em class="">《服务协议》</em>
+      </p>
     </div>
     <!-- landing_form -->
     <!--<p class="txt_center rights">Copyright © 2018 人人快贷 All right reserved</p>-->
@@ -60,7 +60,7 @@
 </template>
 
 <script>
-// import BMap from "BMap";
+import BMap from "BMap";
 // import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
 
 // import { getPosition } from "./lnglat";
@@ -284,18 +284,19 @@ export default {
     position: relative;
     z-index: 9;
     padding: Px(65) Px(0);
-    margin: Px(50) auto 0;
+    margin: Px(220) auto 0;
     width: Px(580);
     height: auto;
     //margin-top: Px(-106);
     & .landing_item {
       position: relative;
       overflow: hidden;
-      background: #f7bac2;
+      background: #fff;
+      border: 1px solid #3a9ef8;
       border-radius:Px(15);
       width: Px(500);
       .mobile {
-        background: #f7bac2;
+        background: #fff;
         position: absolute;
         display: block;
         width: Px(100);
@@ -303,7 +304,7 @@ export default {
         left: 0;
         font-size: Px(26);
         line-height: Px(80);
-        color: #000;
+        color: #b6b6b6;
         text-align: center;
         &::after {
           content: "";
@@ -321,11 +322,11 @@ export default {
         padding-left: Px(28);
         width: Px(500);
         height: Px(80);
-        background: #f7bac2;
-        color:#000;
+        background: #fff;
+        color:#b6b6b6;
       }
       input::-webkit-input-placeholder {
-        color: #000;
+        color: #b6b6b6;
       }
       .user_mobile {
         padding-left: Px(100);
@@ -360,7 +361,7 @@ export default {
         line-height: Px(60);
         text-align: center;
         color: #fff;
-        background: #e4112f;
+        background: #3a9ef8;
         border-radius:Px(15);
         /*border-left: #000 Px(2) solid;*/
         &:hover,
@@ -376,7 +377,7 @@ export default {
     width: Px(500);
     height: Px(88);
     color: #fff;
-    background: #d91833;
+    background: #3a9ef8;
     font-size: Px(26);
     line-height: Px(88);
     border-radius:Px(15);
@@ -395,7 +396,7 @@ export default {
   .register_txt {
     margin-top: Px(20);
     font-size: Px(20);
-    color: #fff;
+    color: #3a9ef8;
     line-height: Px(30);
   }
 }
