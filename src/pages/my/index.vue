@@ -22,13 +22,28 @@
             <!--</ul>-->
         <!--</div>-->
             <div class="info-box">
-              <img src="../my/img/login.png">
-              <div v-if="userInfo.vid">
-                <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
-                <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
+              <div class="info-box-logo-img">
+                <img src="../my/img/login.png">
+                <div v-if="userInfo.vid">
+                  <div class="phone" style="color:#000000;">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
+                  <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
+                </div>
+                <div  v-else>
+                  <div style="color:#000000;padding-left:10px;">您好！请先登录</div>
+                </div>
               </div>
-              <div  v-else>
-                <div>您好！请先登录</div>
+
+              <div class="box-list-cen">
+                <div class="box-list-cen1">
+                  <div @click="$router.push('/memb/info')">
+                    <img src="./img/icon-phone.png" />
+                    <span>我的认证</span>
+                  </div>
+                  <div  @click="$web2app('phone',{number: customPhone})">
+                    <img src="./img/icon-true.png" />
+                    <span>客服中心</span>
+                  </div>
+                </div>
               </div>
             </div>
 <!--            <div class="info-box_">-->
@@ -52,12 +67,6 @@
 <!--                &lt;!&ndash;<p>我的银行卡</p>&ndash;&gt;-->
 <!--              &lt;!&ndash;</a>&ndash;&gt;-->
 <!--            </div>-->
-        </div>
-        <div class="box-list-cen">
-          <div class="box-list-cen1">
-            <a href="javascript:;" @click="$router.push('/memb/info')">我的认证</a>
-            <a href="javascript:;"  @click="$web2app('phone',{number: customPhone})">客服中心</a>
-          </div>
         </div>
         <group class="group-box">
 
@@ -282,7 +291,7 @@ export default {
   background-size: 100% auto;
   position: relative;
   width: 100%;
-  height:Px(403);
+  height:Px(316);
   /*padding-bottom: Px(200);*/
   /*margin-bottom: Px(70);*/
   .info-box_{
@@ -372,11 +381,20 @@ export default {
     font-size: .32rem;
     min-height: 1.6rem;
     position: relative;
-    margin: Px(0) auto 0;
+    margin: Px(75) auto 0;
+    width:Px(660);
+    height:Px(278);
+    background: #fff;
     img{
       width: Px(105);
       text-align: center;
-      margin: Px(20) auto 0;
+    }
+    .info-box-logo-img{
+      display:flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      padding:Px(27) 0 0 Px(35);
     }
     >div{
       /*position: absolute;*/
@@ -385,9 +403,9 @@ export default {
       /*text-align: left;*/
       line-height: Px(56);
       text-align: center;
-      color: #fff;
-      font-size: Px(40);
-      margin-top:Px(30);
+      color: #000;
+      font-size: Px(28);
+      margin-top:Px(20);
       >a{
          color: #ff3c00;
          float: left;
@@ -441,25 +459,28 @@ export default {
   width:100%;
   padding-bottom:Px(20);
   .box-list-cen1{
-    width:Px(710);
-    background: #fff;
-    border-radius:Px(30);
-    box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    width:Px(525);
     line-height:Px(70);
     height:Px(70);
-    margin:0 auto;
-    a{
+    div{
       width:49.2%;
       text-align: center;
-      color:#00a8e8;
+      color:#000;
       display:inline-block;
       text-decoration: black;
+      span{
+        font-size:Px(28);
+      }
+      img{
+        width:Px(29);
+        display:inline-block;
+      }
     }
   }
 }
 
 .group-box{
-  margin: 0rem 0rem .3rem;
+  margin: Px(150) 0rem .3rem;
   overflow: hidden;
   border-radius: .1rem;
   //   box-shadow: 0 0px 10px 1px rgba(#000, .1);
@@ -522,6 +543,7 @@ export default {
       border-top: none!important;
     }
     .weui-cells{
+      border-radius:.3rem;
       margin: 0 !important;
       background-color: #fff !important;
     }
