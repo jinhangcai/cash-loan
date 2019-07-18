@@ -35,11 +35,28 @@
 
 <!--                <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>-->
 <!--              </div>-->
-            </div>
-            <div class="box-menymoney">
+              <div class="box-menymoney">
+                <h3 class="box-title">毛毛虫，让您有钱花！</h3>
                 <h3>最高可借(元)</h3>
                 <p>{{userInfo.valid_quota == null ? 0:userInfo.valid_quota}}</p>
-                <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
+              </div>
+            </div>
+            <div class="box-flow">
+              <div class="box-flow-flex">
+                <p>
+                  <img src="./index/icon1.png" />
+                  <span>1分钟申请</span>
+                </p>
+                <p>
+                  <img src="./index/icon1.png" />
+                  <span>5分钟审批</span>
+                </p>
+                <p>
+                  <img src="./index/icon1.png" />
+                  <span>10分钟放贷</span>
+                </p>
+              </div>
+              <button class="borrowingBtn" @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
             </div>
             <div class="tips" @click="$web2app('phone',{number: customPhone})">
               客服中心
@@ -800,7 +817,7 @@ import { setTimeout } from 'timers'
          /*width: Px(347);*/
         height: Px(70);
         padding: 0 Px(40);
-        margin:Px(70) auto 0;
+        margin:Px(60) auto 0;
         border-radius: Px(45);
         cursor: pointer;
         font-size: Px(36);
@@ -810,7 +827,7 @@ import { setTimeout } from 'timers'
         outline: none;
         border: none;
         align-self: center;
-        background: #00a8e8;
+        background: #ff8a34;
 
     }
     .tabBottom{
@@ -1360,7 +1377,7 @@ import { setTimeout } from 'timers'
       overflow: hidden;
       background: #fff url("./index/indeximg1.png") no-repeat ;
       background-size: 100%;
-      height: Px(437);
+      height: Px(691);
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1448,22 +1465,51 @@ import { setTimeout } from 'timers'
       }
 
     }
+    .box-flow{
+      padding-top:Px(50);
+      .box-flow-flex{
+        display:flex;
+        width:Px(620);
+        margin: 0 auto;
+        flex-flow: row nowrap;
+        justify-content: center;
+        p{
+          color:#434343;
+          font-size:Px(24);
+          width:Px(200);
+          height:Px(40);
+          position: relative;
+          span{
+            position:absolute;
+            left:Px(35);
+            top:Px(0);
+          }
+          img{
+            width:Px(29);
+          }
+        }
+      }
+    }
     .box-menymoney{
-      background: #fff;
+      /*background: #fff;*/
       width: 100%;
       padding-bottom:Px(57);
       margin-bottom:Px(12);
       h3{
-        color:#00a8e8;
-        font-size:Px(28);
+        color:#fff;
+        font-size:Px(30);
         text-align: center;
-        padding-top:Px(100);
+        padding-top:Px(180);
         line-height:1;
+      }
+      .box-title{
+        padding-top:Px(50);
+        color:#fff;
       }
       p{
         padding-top:Px(45);
-        font-size:Px(84);
-        color:#00a8e8;
+        font-size:Px(98);
+        color:#fff;
         text-align: center;
         line-height:1;
       }
@@ -1477,7 +1523,7 @@ import { setTimeout } from 'timers'
       background: #fff;
       overflow: hidden;
       width:Px(710);
-      margin: 0 auto;
+      margin: Px(38) auto 0;
       border-radius: Px(15);
       p{
         float: right;
