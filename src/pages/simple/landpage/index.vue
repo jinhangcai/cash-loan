@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import BMap from "BMap";
+// import BMap from "BMap";
 // import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
 
 // import { getPosition } from "./lnglat";

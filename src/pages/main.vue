@@ -80,7 +80,7 @@
   .weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon > i,
   .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label{
     color: $maincolor;
-    color: #00a8e8!important;
+    color: #ff8a34!important;
   }
   .bottom-tabs{
     height: 65px;

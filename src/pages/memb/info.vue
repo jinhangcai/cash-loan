@@ -408,7 +408,7 @@
   .headerBar{
     width: 100%;
     background: url("./img/headerBar-bg.png") no-repeat;
-    height:Px(350);
+    height:Px(438);
     background-size: 100%;
   }
   .box{
@@ -480,7 +480,7 @@
   }
   .content{
     overflow: hidden;
-    margin: Px(-80) auto 0;
+    margin: Px(-17) auto 0;
     overflow: hidden;
     margin-bottom: Px(100);
     border-radius:Px(15);
@@ -493,18 +493,19 @@
       background: #fdfcfd;
       float: left;
       position: relative;
+      margin-top:Px(17);
       margin-bottom: Px(2);
       /*border-radius: Px(15);*/
       .icon{
         height: Px(61);
         position: absolute;
         left: Px(20);
-        top: Px(28);
+        top: Px(35);
         img{
           display: block;
           margin: auto;
           width: auto;
-          width: Px(52);
+          width: Px(49);
         }
       }
       .phone{
@@ -532,7 +533,7 @@
         line-height: Px(45);
         margin-left: Px(100);
         display: block;
-        margin-top: Px(20);
+        margin-top: Px(35);
         margin-bottom: Px(21);
         em{
           color: #999999;
@@ -555,8 +556,8 @@
         text-align: center;
       }
       .cur{
-        color: #fa3532;
-        border: 1px solid #fa3532;
+        color: #ff8a34;
+        border: 1px solid #ff8a34;
         background: #fff;
       }
     }

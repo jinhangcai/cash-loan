@@ -472,7 +472,8 @@ export default {
         font-size:Px(28);
       }
       img{
-        width:Px(29);
+        width:Px(32);
+        vertical-align: middle;
         display:inline-block;
       }
     }
