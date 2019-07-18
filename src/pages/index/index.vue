@@ -365,6 +365,12 @@
       //   }
     },
     methods:{
+      goMyBank() {
+        this.$router.push('memb/my/bank')
+      },
+      goFeedback() {
+        this.$router.push('/memb/feedback/list')
+      },
       show8s() {
         console.log('111')
         this.show8 = !this.show8;
