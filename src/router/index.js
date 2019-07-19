@@ -38,7 +38,7 @@ const mobileSuccess = r => require.ensure([], () => r(require('../pages/memb/mob
 
 Vue.use(Router)
 
-const $appName = '白掌柜'
+const $appName = '毛毛虫'
 const router = new Router({
   routes: [
     {
