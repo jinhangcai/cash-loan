@@ -1,6 +1,6 @@
 <template lang="pug">
   .page-landpage-third(:class="pageLandpageThirdClassNames")
-    img(src="./img/bg1.jpg")
+    img(src="./img/bg1.png")
     //- .scroll-box.flex-center
       i.icon-messages
       marquee.flex-1(scrollamount="5")
@@ -10,23 +10,25 @@
           em 3000元
     //- 表单
     .form(v-if="!downloadShow")
-      .form-item
-        .form-areacode +86
-        .form-separator
-        input.form-input(
-        ref="formInputPhone"
-        type="number" placeholder="请输入手机号" :value="phone"
-        @input="inputDigital($event, 'phone', 11)"
-        )
-      .form-item
-        input.form-input(
-        ref="formInputCode"
-        type="number" placeholder="请输入验证码" :value="code"
-        @input="inputDigital($event, 'code', 6)"
-        )
-        .form-sendcode(:class="{ '-active': canSendCode }")
-          span(v-if="sendCodeTime") 重新发送({{ sendCodeTime }})
-          span(v-else @click="sendCode") 获取验证码
+      img(src="./img/loading-quick.png")
+      .form-item-bg
+        .form-item
+          .form-areacode +86
+          .form-separator
+          input.form-input(
+          ref="formInputPhone"
+          type="number" placeholder="请输入手机号" :value="phone"
+          @input="inputDigital($event, 'phone', 11)"
+          )
+        .form-item
+          input.form-input(
+          ref="formInputCode"
+          type="number" placeholder="请输入验证码" :value="code"
+          @input="inputDigital($event, 'code', 6)"
+          )
+          .form-sendcode(:class="{ '-active': canSendCode }")
+            span(v-if="sendCodeTime") 重新发送({{ sendCodeTime }})
+            span(v-else @click="sendCode") 获取验证码
       .form-submit(@click="login") 点击开始借钱
       // .form-tip 注册即同意
       //   em.txt_blue 《{{ $appName }}服务协议》
@@ -401,35 +403,40 @@
   // 表单
   .form
     position absolute
-    top px(890)
-    left 0
+    top px(690)
+    left px(37)
     right 0
+    width: px(692)
     //margin px(30) px(60) 0
     border-radius px(14)
     //padding px(46) 0 px(46)
-
+  .form-item-bg
+    background: #fdf1e2
+    padding-top:px(15)
+    padding-bottom:px(15)
+    margin-top:px(-6)
+    border-radius:px(15)
   .form-item
     display flex
     margin px(30) px(25.5)
     padding px(10) px(28)
     background none
-    border-radius:px(30)
-    border: 1px solid #fff
+    border-bottom: 1px solid #eeeeee;
 
   .form-areacode
     flex none
     font-size: px(26);
     line-height: px(60);
-    color: #fff;
+    color: #999999;
 
   .form-input
     flex auto
     height px(61)
     font-size px(28)
-    color #fff
+    color #999999
     background none
     &::-webkit-input-placeholder
-      color #fff
+      color #999999
 
   .form-separator
     flex none
@@ -447,7 +454,7 @@
     padding 0 px(20)
     border-radius px(30)
     color #fff
-    background #ffb80c
+    background #f8b900
     &.-active
       color #fff
       background-color #FFAA37
@@ -459,7 +466,7 @@
     font-size px(32)
     line-height px(80)
     text-align center
-    background:#ffb80c
+    background:#f8b900
     color #fff
     border-radius:px(30)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)

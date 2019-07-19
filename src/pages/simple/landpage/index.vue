@@ -31,21 +31,24 @@
     ></iframe>
     <!-- land_img -->
     <div class="landing_form">
-      <div class="landing_item mt24">
-        <i class="mobile txt_center">+86</i>
-        <input class="user_mobile" v-model="form.mobile" type="text" placeholder="请输入手机号码">
-      </div>
-      <!-- landing_item -->
-      <div class="landing_item mt24">
-        <input class="code" type="text" v-model="form.imgCode" placeholder="图形验证码">
-        <span @click="init" class="code_img">
+      <img src="../images/loading-quick.png" class="quick" />
+      <div class="loading-form-bg">
+        <div class="landing_item mt24">
+          <i class="mobile txt_center">+86</i>
+          <input class="user_mobile" v-model="form.mobile" type="text" placeholder="请输入手机号码">
+        </div>
+        <!-- landing_item -->
+        <div class="landing_item mt24">
+          <input class="code" type="text" v-model="form.imgCode" placeholder="图形验证码">
+          <span @click="init" class="code_img">
           <img :src="imgsrc" alt>
         </span>
-      </div>
-      <!-- landing_item -->
-      <div class="landing_item mt24">
-        <input class="code" type="text" v-model="form.smsCode" placeholder="短信验证码">
-        <span class="code_btn" @click="sendcode">{{ msg }}</span>
+        </div>
+        <!-- landing_item -->
+        <div class="landing_item mt24">
+          <input class="code" type="text" v-model="form.smsCode" placeholder="短信验证码">
+          <span class="code_btn" @click="sendcode">{{ msg }}</span>
+        </div>
       </div>
       <!-- landing_item -->
       <div class="landing_btn" @click="register">注册领钱</div>
@@ -243,7 +246,7 @@ export default {
   min-height: 100%;
   top: 0;
   left: 0;
-  background:#488eff url('../images/bg1.jpg') top no-repeat;
+  background:#488eff url('../images/bg1.png') top no-repeat;
 	background-size:100%;
 
   .land_img {
@@ -284,15 +287,29 @@ export default {
     position: relative;
     z-index: 9;
     padding: Px(65) Px(0);
-    margin: Px(310) auto 0;
+    margin: Px(110) auto 0;
     width: Px(580);
     height: auto;
+    .quick{
+      width:100%;
+      position:absolute;
+      left:0;
+      top:Px(10);
+      z-index: 10;
+    }
+    .loading-form-bg{
+      background: #fdf1e2;
+      border-radius:Px(15);
+      padding-top:Px(15);
+      padding-bottom:Px(15);
+    }
     //margin-top: Px(-106);
     & .landing_item {
       position: relative;
       overflow: hidden;
       border-radius:Px(30);
-      border: 1px solid #fff;
+      border-bottom: 1px solid #eeeeee;
+      /*border: 1px solid #fff;*/
       .mobile {
         position: absolute;
         display: block;
@@ -301,7 +318,7 @@ export default {
         left: 0;
         font-size: Px(26);
         line-height: Px(80);
-        color: #fff;
+        color: #999999;
         text-align: center;
         &::after {
           content: "";
@@ -320,10 +337,10 @@ export default {
         width: 100%;
         height: Px(80);
         background: none;
-        color:#fff;
+        color:#999999;
       }
       input::-webkit-input-placeholder {
-        color: #fff;
+        color: #999999;
       }
       .user_mobile {
         padding-left: Px(100);
@@ -359,7 +376,7 @@ export default {
         text-align: center;
         color: #fff;
         /*border-left: #d91833 Px(2) solid;*/
-        background: #ffb80c;
+        background: #f8b900;
         border-radius:Px(30);
         &:hover,
         &:active {
@@ -373,7 +390,7 @@ export default {
     width: auto;
     height: Px(80);
     color: #fff;
-    background: #ffb80c;
+    background: #f8b900;
     font-size: Px(38);
     line-height: Px(80);
     border-radius:Px(30);
