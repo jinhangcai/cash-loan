@@ -54,7 +54,7 @@
 <!--            </div>-->
             <div class="box-list-cen">
               <div class="box-list-cen1">
-                <a href="javascript:;" @click="$router.push('/memb/info')">我的认证</a>
+                <a href="javascript:;" @click="gotoinfo">我的认证</a>
                 <a href="javascript:;"  @click="$web2app('phone',{number: customPhone})">客服中心</a>
               </div>
             </div>
@@ -174,6 +174,11 @@ export default {
     }
   },
   methods: {
+    gotoinfo() {
+      this.$router.push({
+        path: 'memb/info'
+      })
+    },
     getInfo() {
       this.$http({
         methods:'post',

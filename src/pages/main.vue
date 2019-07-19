@@ -34,8 +34,6 @@
     },
     created() {
       if (this.$route.fullPath === '/my') {
-        this.activIndex = 2
-      }else if (this.$route.fullPath === '/loan/record') {
         this.activIndex = 1
       } else {
         this.activIndex = 0
@@ -46,10 +44,13 @@
         // if (index === 1) {
         //   this.$router.replace('/loan/record')
         // } else
+        console.log('ceshi', index)
         if (index === 1) {
-          this.$router.replace('/my')
+          this.$router.push({
+            path: '/my'
+          })
         }else {
-          this.$router.replace('/')
+          this.$router.push('/')
         }
       }
     },watch:{
