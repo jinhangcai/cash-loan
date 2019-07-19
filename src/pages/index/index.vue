@@ -19,13 +19,19 @@
             请认准官方客服,其他方式（百度）搜索到的客服都是骗子;
             </div>
             <div class="title">
-              <a class="title-img1" @click="$router.push('/my/news')" style="position:relative;z-index:9999;"></a>
+<!--              <a class="title-img1" @click="$router.push('/my/news')" style="position:relative;z-index:9999;"></a>-->
               <group title="set position">
                 <a class="title-img2" title="left(56% width)" @click="show8s" v-model="show8"></a>
               </group>
 <!--              <a @click="$router.push('/my')" style="position:relative;z-index:9999;"></a>-->
             </div>
           </div>
+          <!--<div class="titles">-->
+            <!--&lt;!&ndash;温馨提示：除了加客服微信扣扣外,其余(百度)公众号添加都是骗子;&ndash;&gt;-->
+            <!--请认准官方客服,其他方式(百度)搜索到的客服都是骗子;-->
+          <!--</div>-->
+        </div>
+        <div class="bg4">
           <div class="box_">
             <div class="box_1">
               <!--<h3 class="box-title">海贝钱包</h3>-->
@@ -34,10 +40,6 @@
               <button class="borrowingBtn"  @click="goPerfectInfo(userInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</button>
             </div>
           </div>
-          <!--<div class="titles">-->
-            <!--&lt;!&ndash;温馨提示：除了加客服微信扣扣外,其余(百度)公众号添加都是骗子;&ndash;&gt;-->
-            <!--请认准官方客服,其他方式(百度)搜索到的客服都是骗子;-->
-          <!--</div>-->
         </div>
         <div class="bg3">
           <img src="./index/bg3.png"  />
@@ -60,73 +62,73 @@
         <!--</li>-->
         <!--</ul>-->
         <!-- <div class="payBtn" @click="goPerfectInfo(usserInfo.auditor_state)">{{changeBtnState(userInfo.auditor_state)}}</div> -->
-        <div class="infotab_">
-          <div class="infotab-min">
-            <h3 class="title-left-h3">
-              还款信息
-            </h3>
-            <div style="overflow:hidden;">
-              <!--<div class="infotab">-->
-                <!--<div class="otherInfo">-->
-                  <!--<div class="otherInfo">-->
-                    <!--{{timestampToTime(paymentInformation.recentDay)}}-->
-                    <!--&lt;!&ndash;<p style="color:#fff;margin:0;" class="otherInfo otherInfoP">最近还款日2019-07-12</p>&ndash;&gt;-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--<div class="infotab">-->
-                <!--<div class="num otherInfo">-->
-                  <!--<span style="color:#fff;">剩余待还笔数 {{paymentInformation.repayNum}} 笔</span>-->
-                <!--</div>-->
-              <!--</div>-->
-              <div class="infotab infotab1">
-                <div class="tabTitle">
-                  <div>
-                    <p style="color:#7A7A7A;">近日待还（元）</p>
-                  </div>
-                  <p class="paymentSum">{{paymentInformation.allMoney || 0}}</p>
-                  <div  class="payBtn"  @click="$router.push('/repay')">立即还款</div>
+<!--        <div class="infotab_">-->
+<!--          <div class="infotab-min">-->
+<!--            <h3 class="title-left-h3">-->
+<!--              还款信息-->
+<!--            </h3>-->
+<!--            <div style="overflow:hidden;">-->
+<!--              &lt;!&ndash;<div class="infotab">&ndash;&gt;-->
+<!--                &lt;!&ndash;<div class="otherInfo">&ndash;&gt;-->
+<!--                  &lt;!&ndash;<div class="otherInfo">&ndash;&gt;-->
+<!--                    &lt;!&ndash;{{timestampToTime(paymentInformation.recentDay)}}&ndash;&gt;-->
+<!--                    &lt;!&ndash;&lt;!&ndash;<p style="color:#fff;margin:0;" class="otherInfo otherInfoP">最近还款日2019-07-12</p>&ndash;&gt;&ndash;&gt;-->
+<!--                  &lt;!&ndash;</div>&ndash;&gt;-->
+<!--                &lt;!&ndash;</div>&ndash;&gt;-->
+<!--              &lt;!&ndash;</div>&ndash;&gt;-->
+<!--              &lt;!&ndash;<div class="infotab">&ndash;&gt;-->
+<!--                &lt;!&ndash;<div class="num otherInfo">&ndash;&gt;-->
+<!--                  &lt;!&ndash;<span style="color:#fff;">剩余待还笔数 {{paymentInformation.repayNum}} 笔</span>&ndash;&gt;-->
+<!--                &lt;!&ndash;</div>&ndash;&gt;-->
+<!--              &lt;!&ndash;</div>&ndash;&gt;-->
+<!--              <div class="infotab infotab1">-->
+<!--                <div class="tabTitle">-->
+<!--                  <div>-->
+<!--                    <p style="color:#7A7A7A;">近日待还（元）</p>-->
+<!--                  </div>-->
+<!--                  <p class="paymentSum">{{paymentInformation.allMoney || 0}}</p>-->
+<!--                  <div  class="payBtn"  @click="$router.push('/repay')">立即还款</div>-->
 
-                </div>
-              </div>
-              <p style="color:#fff;overflow: hidden;" class="otherInfo otherInfoP">
-                <span style="float:left;color:#AAAAAA;">最近还款日 {{timestampToTime(paymentInformation.recentDay)}}</span>
-                <span style="color:#AAAAAA;float:right;">剩余待还笔数 {{paymentInformation.repayNum}} 笔</span>
-              </p>
-            </div>
-            <!--<h3 class="title-left-h3">-->
-              <!--个人资料-->
-            <!--</h3>-->
-            <!--<div class="tabCenter">-->
-              <!--<div class="data" @click="$router.push('/memb/info')">-->
-                <!--<div class="left">-->
-                  <!--<div class="personalicon"></div>-->
-                  <!--<div>信用资料填写</div>-->
-                <!--</div>-->
-                <!--<div class="right">-->
-                  <!--<div class="unfinish" v-if="!attestation" style="display:flex;align-items: center;">-->
-                    <!--<x-icon type="ios-information" size="16"></x-icon>-->
-                    <!--<span style="color:#ec4351;">未完成</span>-->
-                  <!--</div>-->
-                  <!--<div class="finish" v-else style="display:flex;align-items: center;">-->
-                    <!--<x-icon type="ios-checkmark" size="16"></x-icon>-->
-                    <!--<span style="color:#ec4351;">已完成</span>-->
-                  <!--</div>-->
-                  <!--<div class="enterBtn"></div>-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--&lt;!&ndash;<div class="data" style="border-top:1px solid #eaebee" @click="goLoan">&ndash;&gt;-->
-              <!--&lt;!&ndash;<div class="left">&ndash;&gt;-->
-              <!--&lt;!&ndash;<div class="recordicon"></div>&ndash;&gt;-->
-              <!--&lt;!&ndash;<div>提现记录</div>&ndash;&gt;-->
-              <!--&lt;!&ndash;</div>&ndash;&gt;-->
-              <!--&lt;!&ndash;<div class="right">&ndash;&gt;-->
-              <!--&lt;!&ndash;<div class="enterBtn"></div>&ndash;&gt;-->
-              <!--&lt;!&ndash;</div>&ndash;&gt;-->
-              <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--</div>-->
-          </div>
-        </div>
+<!--                </div>-->
+<!--              </div>-->
+<!--              <p style="color:#fff;overflow: hidden;" class="otherInfo otherInfoP">-->
+<!--                <span style="float:left;color:#AAAAAA;">最近还款日 {{timestampToTime(paymentInformation.recentDay)}}</span>-->
+<!--                <span style="color:#AAAAAA;float:right;">剩余待还笔数 {{paymentInformation.repayNum}} 笔</span>-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            &lt;!&ndash;<h3 class="title-left-h3">&ndash;&gt;-->
+<!--              &lt;!&ndash;个人资料&ndash;&gt;-->
+<!--            &lt;!&ndash;</h3>&ndash;&gt;-->
+<!--            &lt;!&ndash;<div class="tabCenter">&ndash;&gt;-->
+<!--              &lt;!&ndash;<div class="data" @click="$router.push('/memb/info')">&ndash;&gt;-->
+<!--                &lt;!&ndash;<div class="left">&ndash;&gt;-->
+<!--                  &lt;!&ndash;<div class="personalicon"></div>&ndash;&gt;-->
+<!--                  &lt;!&ndash;<div>信用资料填写</div>&ndash;&gt;-->
+<!--                &lt;!&ndash;</div>&ndash;&gt;-->
+<!--                &lt;!&ndash;<div class="right">&ndash;&gt;-->
+<!--                  &lt;!&ndash;<div class="unfinish" v-if="!attestation" style="display:flex;align-items: center;">&ndash;&gt;-->
+<!--                    &lt;!&ndash;<x-icon type="ios-information" size="16"></x-icon>&ndash;&gt;-->
+<!--                    &lt;!&ndash;<span style="color:#ec4351;">未完成</span>&ndash;&gt;-->
+<!--                  &lt;!&ndash;</div>&ndash;&gt;-->
+<!--                  &lt;!&ndash;<div class="finish" v-else style="display:flex;align-items: center;">&ndash;&gt;-->
+<!--                    &lt;!&ndash;<x-icon type="ios-checkmark" size="16"></x-icon>&ndash;&gt;-->
+<!--                    &lt;!&ndash;<span style="color:#ec4351;">已完成</span>&ndash;&gt;-->
+<!--                  &lt;!&ndash;</div>&ndash;&gt;-->
+<!--                  &lt;!&ndash;<div class="enterBtn"></div>&ndash;&gt;-->
+<!--                &lt;!&ndash;</div>&ndash;&gt;-->
+<!--              &lt;!&ndash;</div>&ndash;&gt;-->
+<!--              &lt;!&ndash;&lt;!&ndash;<div class="data" style="border-top:1px solid #eaebee" @click="goLoan">&ndash;&gt;&ndash;&gt;-->
+<!--              &lt;!&ndash;&lt;!&ndash;<div class="left">&ndash;&gt;&ndash;&gt;-->
+<!--              &lt;!&ndash;&lt;!&ndash;<div class="recordicon"></div>&ndash;&gt;&ndash;&gt;-->
+<!--              &lt;!&ndash;&lt;!&ndash;<div>提现记录</div>&ndash;&gt;&ndash;&gt;-->
+<!--              &lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--              &lt;!&ndash;&lt;!&ndash;<div class="right">&ndash;&gt;&ndash;&gt;-->
+<!--              &lt;!&ndash;&lt;!&ndash;<div class="enterBtn"></div>&ndash;&gt;&ndash;&gt;-->
+<!--              &lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--              &lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;</div>&ndash;&gt;-->
+<!--          </div>-->
+<!--        </div>-->
         <!--<div class="personaltab">-->
         <!--<div class="tabTitle">-->
         <!--个人资料-->
@@ -1068,16 +1070,16 @@
   .borrowingBtn{
     display: block;
     /*width:Px(185);*/
-    padding: 0 Px(50);
-    height: Px(45);
+    padding: Px(20) Px(50);
+    /*height: Px(45);*/
     text-align: center;
     margin:Px(30) auto 0;
     border-radius: Px(40);
     cursor: pointer;
-    font-size: Px(20);
-    line-height: Px(45);
-    background: #fff;
-    color:#3A9EF8;
+    font-size: Px(34);
+    /*line-height: Px(45);*/
+    background: #ff5b65;
+    color:#fff;
     /*background: linear-gradient(left top,#83ADFF, #3970E5); !* 标准的语法 *!*/
     /*background: -webkit-linear-gradient(left top,#83ADFF, #3970E5); !* Safari 5.1 - 6.0 *!*/
     /*color: #fff;*/
@@ -1154,10 +1156,16 @@
       font-size: .3rem;
     }
   }
+  .bg4{
+    width:Px(687);
+    margin:Px(80) auto 0;
+    height:Px(414);
+    background: url("./index/bg4.png") no-repeat;
+    background-size: 100%;
+  }
   .bg3{
     width:100%;
-    background: #ededed;
-    padding:Px(20) 0 Px(20) 0;
+    padding:Px(30) 0 Px(20) 0;
     img{
       width:Px(700);
       margin: 0 auto;
@@ -1477,11 +1485,11 @@
     }
   }
   .box{
-    background: -webkit-linear-gradient(#4fb4f7, #3a9ef8); /* Safari 5.1 - 6.0 */
-    background: -moz-linear-gradient(#4fb4f7, #3a9ef8); /* Firefox 3.6 - 15 */
-    /*background: url('./index/indeximg2.png') no-repeat;*/
+    /*background: -webkit-linear-gradient(#4fb4f7, #3a9ef8); !* Safari 5.1 - 6.0 *!*/
+    /*background: -moz-linear-gradient(#4fb4f7, #3a9ef8); !* Firefox 3.6 - 15 *!*/
+    background: url('./index/indeximg2.png') no-repeat;
     background-size: 100%;
-    height: Px(484);
+    height: Px(560);
     .title_{
       padding-top:Px(47);
     }
@@ -1492,7 +1500,7 @@
       font-size: Px(17);
       text-align:center;
       width: 100%;
-      color:#E84C4C;
+      color:#fff;
       background-color: rgba(255, 255, 255, 0.33);
       /*border-radius:Px(30);*/
     }
@@ -1517,8 +1525,8 @@
       }
       .title-img2{
         display: block;
-        width: Px(35);
-        height: Px(23);
+        width: Px(41);
+        height: Px(40);
         float: left;
         position:relative;
         z-index:222;
@@ -1667,8 +1675,9 @@
   .box_{
     position: relative;
     text-align: center;
-    margin:Px(30) auto;
-    width:Px(700);
+    /*margin:Px(30) auto;*/
+    width:Px(638);
+    margin: 0 auto;
     h4{
       color: #eb5130;
       font-size: Px(24);
@@ -1679,7 +1688,8 @@
     .box_1{
       text-align: center;
       overflow: hidden;
-      margin:Px(-45) Px(120) Px(40);
+      /*<!--margin:Px(-57) Px(120) Px(40);-->*/
+      margin:Px(-57) auto 0;
       z-index: 999;
       /*background: url('./index/indexbgs.png') no-repeat;*/
       background-size: 100%;
@@ -1698,16 +1708,19 @@
         line-height:1;
       }
       .box-money{
-        margin-top:Px(40);
+        margin-top:Px(50);
         font-size:Px(26);
+        color:#000;
       }
       p{
-        font-size: Px(72);
-        color:#fff;
+        font-size: Px(90);
+        color:#ff4747;
         /*margin-top: Px(211);*/
         margin-bottom: 0;
         line-height:1;
-        margin-top:Px(10);
+        margin-top:Px(50);
+        padding-bottom:Px(20);
+        border-bottom: 1px solid #ebebeb;
       }
     }
     span{
@@ -1801,7 +1814,7 @@
 
   .recordicon{ width:  .5rem; height:  .5rem; background: url('./index/indexicon2.png') no-repeat center / 100% 100%;  margin-right: 0.15rem;}
   body{
-    background: #fff!important;
+    background: #ededed!important;
   }
   .vux-range-input-box{
     margin:0.6rem 0.8rem!important;
