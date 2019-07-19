@@ -216,6 +216,7 @@ const router = new Router({
       path: '/loan/cash',
       name: 'cash',
       meta: {
+        // hideHeader: true,
         cssNames: 'gray',
         title: '我要借款'
       },

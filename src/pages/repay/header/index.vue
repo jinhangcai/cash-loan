@@ -30,6 +30,7 @@
             callback: true
           })
         } else {
+          console.log('gogogo')
           this.$router.go(-1)
         }
 

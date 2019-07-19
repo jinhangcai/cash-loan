@@ -1,20 +1,26 @@
 <template>
   <div classs="loan-detail" :style="`transform:translate(0,${native.statusBarHeight}px)`">
-
+<!--    <div class="headerBar">-->
+<!--      <header-bar title="我要借款"></header-bar>-->
+<!--    </div>-->
     <div class="detail-body">
       <div class="detail-body-content">
         <div class="body-content-items" style="height: auto; display: block">
           <div class="item-left" style="width: 100%">最高可借(元)</div>
           <div class="item-xin"><span></span>{{quota}}</div>
         </div>
+        <div class="body-content-item">
+          <div class="item-left">服务费</div>
+          <div class="item-right">{{cover}}元</div>
+        </div>
+        <div class="body-content-item">
+          <div class="item-left">借款天数</div>
+          <div class="item-right">{{days}}天</div>
+        </div>
         <div class="body-content-items">
           <div class="item-left">到期金额</div>
           <div class="item-right"><span>￥</span>{{quota}}</div>
         </div>
-        <!--<div class="body-content-item">-->
-          <!--<div class="item-left">固定周期</div>-->
-          <!--<div class="item-right">{{days}}天</div>-->
-        <!--</div>-->
         <div class="body-content-item">
           <div class="item-left">利息</div>
           <div class="item-right">{{interest}}元</div>
@@ -23,11 +29,11 @@
           <div class="item-left">
 
             <span class="loan-font">还款金额</span>
-            <div class="loan-what" @click="tipsSwitch">
-              <div class="loan-answer" v-show="showTips">
-                <span>{{ $appName }}对借款人进行信息搜集、资信评估、信息交互核验及为借款提供的技术服务所收取的费用，借款人应不迟于借款发放当日向{{ $appName }}支付信息技术服务费</span>
-            </div>
-            </div>
+<!--            <div class="loan-what" @click="tipsSwitch">-->
+<!--              <div class="loan-answer" v-show="showTips">-->
+<!--                <span>{{ $appName }}对借款人进行信息搜集、资信评估、信息交互核验及为借款提供的技术服务所收取的费用，借款人应不迟于借款发放当日向{{ $appName }}支付信息技术服务费</span>-->
+<!--            </div>-->
+<!--            </div>-->
 
           </div>
           <div class="item-right">{{account}}元</div>
@@ -55,12 +61,14 @@
       </div>
     </div>
     <div class="cash-footer">
-      <button class="cash-btn" @click="contract">点击签《三方借款合同》并提交审核</button>
+      <button class="cash-btn" @click="contract">立即领取</button>
     </div>
   </div>
 </template>
 
 <script>
+
+  import headerBar from '../repay/header/index.vue'
   import {AlertModule} from 'vux'
   export default {
     data() {
@@ -73,8 +81,12 @@
         bank: '', // 银行卡信息
         bankList: [], // 银行卡列表
         card_id: '', // 银行卡id
+        cover: 0, // 服务费
         changeWX: true
       }
+    },
+    components: {
+      headerBar
     },
     created() {
 
@@ -141,6 +153,7 @@
             that.bank = data.bank;
             // 前置   先扣服务费
             if (data.entryMode != 1) {
+                that.cover =  data.quota * + data.manageRate.toFixed(2);;
                 that.quota = data.quota - data.quota * + data.manageRate;
                 that.interest = data.quota * + data.interestRate / 365 * that.days;
                 that.interest = that.interest.toFixed(2);
@@ -184,7 +197,12 @@
     overflow: hidden;
 
   }
-
+  /*.headerBar{*/
+  /*  width: 100%;*/
+  /*  background: url("./img/headerBar-bg.png") no-repeat;*/
+  /*  height:Px(350);*/
+  /*  background-size: 100%;*/
+  /*}*/
   .repay-header {
     width: Px(750);
     height: Px(85);
