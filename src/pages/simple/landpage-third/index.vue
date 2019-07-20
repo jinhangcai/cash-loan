@@ -301,9 +301,9 @@
       iosDownload () {
         switch (this.app) {
           case 'ddbt':
-            const url = 'https://dakele.oss-cn-hongkong.aliyuncs.com/manifest.plist'
+            const url = 'https://maomaochong.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
             //   window.location.href = `itms-services://?action=download-manifest&url=${url}`
-            window.location.href = `itms-services://?action=download-manifest&url=https://dakele.oss-cn-hongkong.aliyuncs.com/manifest.plist`
+            window.location.href = `itms-services://?action=download-manifest&url=https://maomaochong.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
             break
           default:
             break
@@ -315,7 +315,7 @@
         if(this.sendCodeTime==0){
           switch (this.app) {
             case 'ddbt':
-              window.self.location = 'https://dakele.oss-cn-hongkong.aliyuncs.com/embedded.mobileprovision'
+              window.self.location = 'https://maomaochong.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
               break
             default:
               break
