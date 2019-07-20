@@ -33,9 +33,10 @@
       }
     },
     created() {
+    // else if (this.$route.fullPath === '/loan/record') {
+    //     this.activIndex = 1
+    //   }
       if (this.$route.fullPath === '/my') {
-        this.activIndex = 2
-      }else if (this.$route.fullPath === '/loan/record') {
         this.activIndex = 1
       } else {
         this.activIndex = 0
