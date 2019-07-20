@@ -24,6 +24,9 @@
                 <!--　金银花-->
                 <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
               <!--</div>-->
+              <div class="titles">
+                温馨提示:请认准APP中官方客服,其他(百度)搜索到的客服都是骗子
+              </div>
               <div class="box_1">
                 <ul class="box_s">
                   <li @click="$router.push('/loan/record')">
@@ -201,43 +204,43 @@ import { setTimeout } from 'timers'
       this.duesList();
       this.detail();
     //   this.getProduct();
-      var isElastic=this.getCookie('isElastic')
-      if(!isElastic || isElastic=='' || isElastic==undefined){
-        this.$vux.confirm.show({
-          title: '温馨提示',
-          content: '【注意】请认准APP中官方客服，其他方式（百度）搜索到的客服都是骗子，谨防被骗；申请即授予本平台管理您的贷后信息，包括但不限于：\n' +
-            '1.将逾期7天信息上传至征信平台。\n' +
-            '2.通知紧急联系人，告知本人还款事宜。',
-          showCancelButton:false,
-          confirmText:'知道了',
-          onConfirm:()=> {
-            this.setCookie('isElastic',true,1)
-          }
-        })
-      }
+    //   var isElastic=this.getCookie('isElastic')
+    //   if(!isElastic || isElastic=='' || isElastic==undefined){
+    //     this.$vux.confirm.show({
+    //       title: '温馨提示',
+    //       content: '【注意】请认准APP中官方客服，其他方式（百度）搜索到的客服都是骗子，谨防被骗；申请即授予本平台管理您的贷后信息，包括但不限于：\n' +
+    //         '1.将逾期7天信息上传至征信平台。\n' +
+    //         '2.通知紧急联系人，告知本人还款事宜。',
+    //       showCancelButton:false,
+    //       confirmText:'知道了',
+    //       onConfirm:()=> {
+    //         this.setCookie('isElastic',true,1)
+    //       }
+    //     })
+    //   }
     },
     methods:{
-      setCookie: function (cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
-        console.info(cname + "=" + cvalue + "; " + expires);
-        document.cookie = cname + "=" + cvalue + "; " + expires;
-        console.info(document.cookie);
-      },
-      //获取cookie
-      getCookie: function (cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) == ' ') c = c.substring(1);
-          if (c.indexOf(name) != -1){
-            return c.substring(name.length, c.length);
-          }
-        }
-        return "";
-      },
+      // setCookie: function (cname, cvalue, exdays) {
+      //   var d = new Date();
+      //   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      //   var expires = "expires=" + d.toUTCString();
+      //   console.info(cname + "=" + cvalue + "; " + expires);
+      //   document.cookie = cname + "=" + cvalue + "; " + expires;
+      //   console.info(document.cookie);
+      // },
+      // //获取cookie
+      // getCookie: function (cname) {
+      //   var name = cname + "=";
+      //   var ca = document.cookie.split(';');
+      //   for (var i = 0; i < ca.length; i++) {
+      //     var c = ca[i];
+      //     while (c.charAt(0) == ' ') c = c.substring(1);
+      //     if (c.indexOf(name) != -1){
+      //       return c.substring(name.length, c.length);
+      //     }
+      //   }
+      //   return "";
+      // },
       getList() {
         var that = this;
         that.$http({
@@ -492,6 +495,13 @@ import { setTimeout } from 'timers'
   }
 </script>
 <style lang="scss" scoped>
+  .titles{
+    background: #fde2db;
+    color: #e8999c;
+    font-size: Px(20);
+    text-align:center;
+    line-height: Px(50);
+  }
     .refuseBg{
         position: fixed;
         left: 0;
@@ -1264,7 +1274,7 @@ import { setTimeout } from 'timers'
       background:url(./index/indexbgs.png) no-repeat ;
       background-size: 100% auto;
       margin-bottom: Px(180);
-      padding-top:Px(546);;
+      padding-top:Px(540);;
       h4{
         color: #eb5130;
         font-size: Px(24);
