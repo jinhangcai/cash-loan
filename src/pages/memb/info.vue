@@ -11,48 +11,40 @@
 
 
     <div class="content">
-      <div class="information"  @click="card">
-        <div class="icon">
-          <img src="./img/icon1.png" alt="" v-if="list.idCard !==3">
-          <img src="./img/icon6.png" alt="" v-else>
-        </div>
-        <span class="title">实名认证</span>
-        <span class="text" :class="{'cur':list.idCard==3}" v-html="list.idCard==3?'认证成功':list.idCard==2?'认证中':list.idCard==4&&list.idCardFail==1?'认证失败(身份证已被认证)':list.idCard==4?'认证失败':'未认证'"></span>
-      </div>
       <div class="information" @click="base">
         <div class="icon">
-          <img src="./img/icon2.png" alt="" v-if="list.baseInfo !==3">
-          <img src="./img/icon7.png" alt="" v-else>
+          <img src="./img/icon2.png" alt="" >
         </div>
         <span class="title">基础信息</span>
         <span class="text" :class="{'cur':list.baseInfo==3}" v-html="list.baseInfo==4&&list.idCardFail==1?'认证失败':list.baseInfo==3?'认证成功':list.baseInfo==2?'认证中':'未认证'"></span>
       </div>
-      <div class="information" @click="linkman">
-        <div class="icon phone">
-          <img src="./img/icon3.png" alt="" v-if="list.contact !==3">
-          <img src="./img/icon8.png" alt="" v-else>
+      <div class="information"  @click="card">
+        <div class="icon">
+          <img src="./img/icon1.png" alt="">
         </div>
-        <span class="title">联系人认证</span>
-        <span class="text" :class="{'cur':list.contact==3}" v-html="list.contact==4?'认证失败()':list.contact==3?'认证成功':list.contact==2?'认证中':'未认证'"></span>
+        <span class="title">实名认证</span>
+        <span class="text" :class="{'cur':list.idCard==3}" v-html="list.idCard==3?'认证成功':list.idCard==2?'认证中':list.idCard==4&&list.idCardFail==1?'认证失败(身份证已被认证)':list.idCard==4?'认证失败':'未认证'"></span>
       </div>
       <div class="information" @click="bank">
         <div class="icon">
-          <img src="./img/icon4.png" alt="" v-if="list.bank !==3">
-          <img src="./img/icon9.png" alt="" v-else>
+          <img src="./img/icon4.png" alt="" >
         </div>
         <span class="title">银行卡认证</span>
         <span class="text" :class="{'cur':list.bank==3}" v-html="list.bank==4?'认证失败':list.bank==3?'认证成功':list.bank==2?'认证中':'未认证'"></span>
       </div>
-
+      <div class="information" @click="linkman">
+        <div class="icon phone">
+          <img src="./img/icon3.png" alt="" >
+        </div>
+        <span class="title">联系人认证</span>
+        <span class="text" :class="{'cur':list.contact==3}" v-html="list.contact==4?'认证失败()':list.contact==3?'认证成功':list.contact==2?'认证中':'未认证'"></span>
+      </div>
       <div class="information" @click="mobile1">
         <div class="icon">
-          <img src="./img/icon5.png" alt="" v-if="list.mobOperator !==3">
-          <img src="./img/icon10.png" alt="" v-else>
+          <img src="./img/icon5.png" alt="" >
         </div>
         <span class="title">手机认证</span>
         <span class="text" :class="{'cur':list.mobOperator==3}" v-html="list.mobOperator==4?'认证失败':list.mobOperator==3?'认证成功':(list.mobOperator==2 || authing == 1)?'认证中':'未认证'"></span>
-      </div>
-      <div class="information">
       </div>
     </div>
     <!--<div class="button">立即借款</div>-->
@@ -415,7 +407,7 @@
   .headerBar{
     width: 100%;
     background: url("./img/bg.png") no-repeat;
-    height:Px(320);
+    height:Px(470);
     background-size: 100%;
   }
   .box{
@@ -491,10 +483,11 @@
     display:flex;
     flex-flow: row wrap;
     margin-bottom: Px(100);
-    margin-top:Px(50);
+    margin-top:Px(-50);
     justify-content: center;
     background: #fdfcfd;
     padding-bottom:Px(80);
+    border-radius:Px(15);
     .information{
       display: block;
       align-items: center;
@@ -555,24 +548,25 @@
       }
       .text{
         /*flex: 1;*/
-        color: #fff;
-        background: #c6c6c6;
+        color: #bfbfbf;
+        /*background: #c6c6c6;*/
         font-size: Px(21);
+        border:1px solid #bfbfbf;
         line-height: Px(49);
         padding:0 Px(25);
         /*position: absolute;*/
         /*right: Px(35);*/
         /*top: Px(27);*/
         display:block;
-        border-radius: Px(20);
+        /*border-radius: Px(20);*/
         width:Px(116);
         height:Px(49);
         margin: 0 auto;
         text-align: center;
       }
       .cur{
-        color: #3a9ef8;
-        border: 1px solid #3a9ef8;
+        color: #ff5d66;
+        border: 1px solid #ff5d66;
         background: #fff;
       }
     }

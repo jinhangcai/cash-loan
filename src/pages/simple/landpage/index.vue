@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import BMap from "BMap";
+// import BMap from "BMap";
 // import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
 
 // import { getPosition } from "./lnglat";
@@ -284,19 +284,19 @@ export default {
     position: relative;
     z-index: 9;
     padding: Px(65) Px(0);
-    margin: Px(220) auto 0;
+    margin: Px(280) auto 0;
     width: Px(580);
     height: auto;
     //margin-top: Px(-106);
     & .landing_item {
       position: relative;
       overflow: hidden;
-      background: #fff;
-      border: 1px solid #3a9ef8;
+      background: #f3f4f5;
+      /*border: 1px solid #3a9ef8;*/
       border-radius:Px(15);
       width: Px(500);
       .mobile {
-        background: #fff;
+        background: #f3f4f5;
         position: absolute;
         display: block;
         width: Px(100);
@@ -322,7 +322,7 @@ export default {
         padding-left: Px(28);
         width: Px(500);
         height: Px(80);
-        background: #fff;
+        background: #f3f4f5;
         color:#b6b6b6;
       }
       input::-webkit-input-placeholder {
@@ -361,7 +361,7 @@ export default {
         line-height: Px(60);
         text-align: center;
         color: #fff;
-        background: #3a9ef8;
+        background: #f76c6e;
         border-radius:Px(15);
         /*border-left: #000 Px(2) solid;*/
         &:hover,
@@ -377,7 +377,7 @@ export default {
     width: Px(500);
     height: Px(88);
     color: #fff;
-    background: #3a9ef8;
+    background: #f76c6e;
     font-size: Px(26);
     line-height: Px(88);
     border-radius:Px(15);
@@ -396,7 +396,7 @@ export default {
   .register_txt {
     margin-top: Px(20);
     font-size: Px(20);
-    color: #3a9ef8;
+    color: #000;
     line-height: Px(30);
   }
 }

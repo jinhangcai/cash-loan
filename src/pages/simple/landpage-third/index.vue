@@ -401,7 +401,7 @@
   // 表单
   .form
     position absolute
-    top px(820)
+    top px(850)
     left 0
     right 0
     //margin px(30) px(60) 0
@@ -414,8 +414,8 @@
     width:px(538);
     margin: px(30) auto;
     border-radius:px(15)
-    background:#fff
-    border: 1px solid #3a9ef8;
+    background:#f3f4f5
+    /*border: 1px solid #3a9ef8;*/
 
   .form-areacode
     flex none
@@ -428,7 +428,7 @@
     height px(61)
     font-size px(28)
     color #b6b6b6
-    background:#fff
+    background:#f3f4f5
     &::-webkit-input-placeholder
       color #b6b6b6
 
@@ -437,7 +437,7 @@
     width 1px
     height px(30)
     margin px(17) px(13) 0 px(14)
-    background-color #f7bac2
+    background-color #b6b6b6
     color:#000
 
   .form-sendcode
@@ -449,7 +449,7 @@
     padding 0 px(20)
     border-radius px(30)
     color #fff
-    background #3a9ef8
+    background #f76c6e
     &.-active
       color #fff
       background-color #FFAA37
@@ -462,7 +462,7 @@
     font-size px(32)
     line-height px(80)
     text-align center
-    background:#3a9ef8
+    background:#f76c6e
     color #fff
     border-radius:px(15)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
