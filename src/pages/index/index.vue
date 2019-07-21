@@ -15,9 +15,6 @@
       <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
         <div class="box">
           <div class="title_" >
-            <div class="titles">
-            请认准官方客服,其他方式（百度）搜索到的客服都是骗子;
-            </div>
             <div class="title">
 <!--              <a class="title-img1" @click="$router.push('/my/news')" style="position:relative;z-index:9999;"></a>-->
               <group title="set position">
@@ -31,6 +28,10 @@
             <!--请认准官方客服,其他方式(百度)搜索到的客服都是骗子;-->
           <!--</div>-->
         </div>
+
+        <div class="titles">
+          请认准官方客服,其他方式（百度）搜索到的客服都是骗子;
+        </div>
         <div class="bg4">
           <div class="box_">
             <div class="box_1">
@@ -42,7 +43,8 @@
           </div>
         </div>
         <div class="bg3">
-          <img src="./index/bg3.png"  />
+          <p><img src="./index/bg3.png"  /></p>
+          <p><img src="./index/bg4.png"  /></p>
         </div>
         <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
         <!--客服中心-->
@@ -1074,11 +1076,11 @@
     /*height: Px(45);*/
     text-align: center;
     margin:Px(30) auto 0;
-    border-radius: Px(40);
+    /*border-radius: Px(40);*/
     cursor: pointer;
     font-size: Px(34);
     /*line-height: Px(45);*/
-    background: #ff5b65;
+    background: #27a6ff;
     color:#fff;
     /*background: linear-gradient(left top,#83ADFF, #3970E5); !* 标准的语法 *!*/
     /*background: -webkit-linear-gradient(left top,#83ADFF, #3970E5); !* Safari 5.1 - 6.0 *!*/
@@ -1156,20 +1158,40 @@
       font-size: .3rem;
     }
   }
+
+  .titles{
+    height: Px(50);
+    line-height: Px(50);
+    margin:Px(0) auto 0;
+    font-size: Px(17);
+    text-align:center;
+    width: 100%;
+    color:#000;
+    /*background-color: rgba(255, 255, 255, 0.33);*/
+    background-color: #f7f7f7;
+    /*border-radius:Px(30);*/
+  }
   .bg4{
     width:Px(687);
     margin:Px(80) auto 0;
-    height:Px(414);
-    background: url("./index/bg4.png") no-repeat;
+    height:Px(459);
+    /*background: url("./index/bg4.png") no-repeat;*/
+    background: #fff;
     background-size: 100%;
   }
   .bg3{
-    width:100%;
+    width:Px(687);
+    margin: 0 auto;
     padding:Px(30) 0 Px(20) 0;
+    display:flex;
+    justify-content: space-around;
+    p{
+      width:Px(335);
+      margin:0;
+    }
     img{
-      width:Px(700);
+      width:100%;
       margin: 0 auto;
-      display: block;
     }
   }
   .data{
@@ -1489,20 +1511,9 @@
     /*background: -moz-linear-gradient(#4fb4f7, #3a9ef8); !* Firefox 3.6 - 15 *!*/
     background: url('./index/indeximg2.png') no-repeat;
     background-size: 100%;
-    height: Px(560);
+    height: Px(507);
     .title_{
       padding-top:Px(47);
-    }
-    .titles{
-      height: Px(50);
-      line-height: Px(50);
-      margin:Px(43) auto 0;
-      font-size: Px(17);
-      text-align:center;
-      width: 100%;
-      color:#fff;
-      background-color: rgba(255, 255, 255, 0.33);
-      /*border-radius:Px(30);*/
     }
     .title{
       // width: 100%;
@@ -1511,7 +1522,7 @@
       margin-bottom: Px(50);
       color: #fff;
       // background-color: #fff;
-      padding:Px(20) .4rem 0;
+      padding:Px(40) .4rem 0;
       // font-weight: bold;
       font-size:Px(32);
       letter-spacing: 1px;
@@ -1525,8 +1536,8 @@
       }
       .title-img2{
         display: block;
-        width: Px(41);
-        height: Px(40);
+        width: Px(58);
+        height: Px(58);
         float: left;
         position:relative;
         z-index:222;
@@ -1714,13 +1725,13 @@
       }
       p{
         font-size: Px(90);
-        color:#ff4747;
+        color:#27a6ff;
         /*margin-top: Px(211);*/
         margin-bottom: 0;
         line-height:1;
         margin-top:Px(50);
         padding-bottom:Px(20);
-        border-bottom: 1px solid #ebebeb;
+        /*border-bottom: 1px solid #ebebeb;*/
       }
     }
     span{
