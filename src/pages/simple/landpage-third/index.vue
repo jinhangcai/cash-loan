@@ -10,24 +10,25 @@
           em 3000元
     //- 表单
     .form(v-if="!downloadShow")
-      .form-item
-        .form-areacode +86
-        .form-separator
-        input.form-input(
-        ref="formInputPhone"
-        type="number" placeholder="请输入手机号" :value="phone"
-        @input="inputDigital($event, 'phone', 11)"
-        )
-      .form-item
-        input.form-input(
-        ref="formInputCode"
-        type="number" placeholder="请输入验证码" :value="code"
-        @input="inputDigital($event, 'code', 6)"
-        )
-        .form-sendcode(:class="{ '-active': canSendCode }")
-          span(v-if="sendCodeTime") 重新发送({{ sendCodeTime }})
-          span(v-else @click="sendCode") 获取验证码
-      .form-submit(@click="login") 点击开始借钱
+      .form-min
+        .form-item
+          .form-areacode +86
+          .form-separator
+          input.form-input(
+          ref="formInputPhone"
+          type="number" placeholder="请输入手机号" :value="phone"
+          @input="inputDigital($event, 'phone', 11)"
+          )
+        .form-item
+          input.form-input(
+          ref="formInputCode"
+          type="number" placeholder="请输入验证码" :value="code"
+          @input="inputDigital($event, 'code', 6)"
+          )
+          .form-sendcode(:class="{ '-active': canSendCode }")
+            span(v-if="sendCodeTime") 重新发送({{ sendCodeTime }})
+            span(v-else @click="sendCode") 获取验证码
+        .form-submit(@click="login") 点击开始借钱
       // .form-tip 注册即同意
       //   em.txt_blue 《{{ $appName }}服务协议》
 
@@ -401,13 +402,17 @@
   // 表单
   .form
     position absolute
-    top px(850)
+    top px(750)
     left 0
     right 0
     //margin px(30) px(60) 0
     border-radius px(14)
     //padding px(46) 0 px(46)
-
+  .form-min
+    width:px(670)
+    margin:0 auto;
+    background #85D1FD;
+    padding:px(20) 0;
   .form-item
     display flex
     padding px(10) px(28)
@@ -449,7 +454,7 @@
     padding 0 px(20)
     border-radius px(30)
     color #fff
-    background #f76c6e
+    background #3F6BFC
     &.-active
       color #fff
       background-color #FFAA37
@@ -462,7 +467,7 @@
     font-size px(32)
     line-height px(80)
     text-align center
-    background:#f76c6e
+    background:#3F6BFC
     color #fff
     border-radius:px(15)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)

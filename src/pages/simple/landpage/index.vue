@@ -284,16 +284,17 @@ export default {
     position: relative;
     z-index: 9;
     padding: Px(65) Px(0);
-    margin: Px(280) auto 0;
+    margin: Px(200) auto 0;
     width: Px(580);
     height: auto;
+    background: #85D1FD;
     //margin-top: Px(-106);
     & .landing_item {
       position: relative;
       overflow: hidden;
       background: #f3f4f5;
       /*border: 1px solid #3a9ef8;*/
-      border-radius:Px(15);
+      /*border-radius:Px(15);*/
       width: Px(500);
       .mobile {
         background: #f3f4f5;
@@ -361,7 +362,7 @@ export default {
         line-height: Px(60);
         text-align: center;
         color: #fff;
-        background: #f76c6e;
+        background: #3F6BFC;
         border-radius:Px(15);
         /*border-left: #000 Px(2) solid;*/
         &:hover,
@@ -377,7 +378,7 @@ export default {
     width: Px(500);
     height: Px(88);
     color: #fff;
-    background: #f76c6e;
+    background: #3F6BFC;
     font-size: Px(26);
     line-height: Px(88);
     border-radius:Px(15);
