@@ -216,36 +216,36 @@
               <!--<img src="./index/bg.png">-->
               <img src="./index/login.png">
               <div v-if="userInfo.vid">
-                <div class="phone" style="color:#000;">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
+                <div class="phone" style="color:#fff;">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
                 <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
               </div>
               <div  v-else>
-                <div style="color:#000" class='phone'>您好！请先登录</div>
+                <div style="color:#fff" class='phone'>您好！请先登录</div>
               </div>
             </div>
             <ul class="info-box_s">
               <li @click="$router.push('/loan')">
-                <img src="./index/icon1.png">
+<!--                <img src="./index/icon1.png">-->
                 提现记录<i></i>
               </li>
               <li @click="$router.push('/loan/record')">
-                <img src="./index/icon2.png">
+<!--                <img src="./index/icon2.png">-->
                 我的借款<i></i>
               </li>
               <li @click="goFeedback">
-                <img src="./index/icon3.png">
+<!--                <img src="./index/icon3.png">-->
                 用户反馈<i></i>
               </li>
               <li @click="goMyBank">
-                <img src="./index/icon4.png">
+<!--                <img src="./index/icon4.png">-->
                 我的银行卡<i></i>
               </li>
               <li @click="$web2app('phone',{number: customPhone})">
-                <img src="./index/icon5.png">
+<!--                <img src="./index/icon5.png">-->
                 联系客服<i></i>
               </li>
               <li @click="$router.push('/set')">
-                <img src="./index/icon6.png">
+<!--                <img src="./index/icon6.png">-->
                 设置<i></i>
               </li>
             </ul>
@@ -668,6 +668,8 @@
   .mys{
     .info-box_{
       text-align: center;
+      background: #50cdfd;
+      padding-bottom:Px(50);
       img{
         width: Px(128);
         display: inline-block;
@@ -692,7 +694,7 @@
         line-height: Px(90);
         color: #615A55;
         font-size: Px(25);
-        text-align: center;
+        /*text-align: center;*/
         position: relative;
         border-bottom: #d6d4d3 Px(1) solid;
         position:relative;
