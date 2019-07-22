@@ -84,16 +84,16 @@ service.interceptors.response.use(
     // 处理未登录情况
     if (response.data && response.data.status === 99) {
 
-      AlertModule.show({
-        content: '请先登录',
-        onShow () {
-        },
-        async onHide () {
-          console.log('拦截器-跳转登录')
-          await web2app('logOut')
-          web2app('openAppPage', {name: 'register'})
-        }
-      })
+      // AlertModule.show({
+      //   content: '请先登录',
+      //   onShow () {
+      //   },
+      //   async onHide () {
+      //     console.log('拦截器-跳转登录')
+      //     await web2app('logOut')
+      //     web2app('openAppPage', {name: 'register'})
+      //   }
+      // })
     } else if (response.data.status !== 0) {
       // 处理状态非0
 

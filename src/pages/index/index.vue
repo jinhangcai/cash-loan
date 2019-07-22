@@ -97,8 +97,54 @@
             <img class="alipay-img" :src="codeUrl">
           </div>
         </div>'
-      <div class="indexbtn" @click="$router.push('/my')" >
+      <div class="indexbtn" title="left(56% width)"@click="show8s" v-model="show8" >
         <img  src="./index/indexbtn.png" width="100%">
+      </div>
+
+      <div v-transfer-dom>
+        <popup v-model="show8" position="left" width="56%">
+          <div class="position-horizontal-demo">
+            <div class="mys">
+              <div class="info-box_">
+                <img src="./index/denglu.png">
+                <div v-if="userInfo.vid">
+                  <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
+                  <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
+                </div>
+                <div  v-else>
+                  <div>您好！请先登录</div>
+                </div>
+              </div>
+              <ul class="info-box_s">
+                <li @click="$router.push('/memb/info')">
+                  实名认证<i></i>
+                </li>
+                <li @click="$router.push('/loan/record')">
+                  我的借款<i></i>
+                </li>
+
+              </ul>
+              <ul class="info-box_s">
+
+                <li @click="goMyBank">
+                  我的银行卡<i></i>
+                </li>
+                <li @click="goFeedback">
+                  用户反馈<i></i>
+                </li>
+                <li @click="$router.push('/set')">
+                  设置<i></i>
+                </li>
+                <li @click="$web2app('phone',{number: customPhone})">
+                  联系客服<i></i>
+                </li>
+                <li @click="$router.push('/loan')">
+                  提现记录<i></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </popup>
       </div>
     </div>
 
@@ -108,7 +154,7 @@ import HeaderBar from './header'
 import LeftMenu from './menu'
 import Scroller from '../../components/scroller'
 // import ScrollLine from '../../components/ScrollLine'
-import { XHeader,Tab,TabItem,Popover,Divider,Alert,Range } from 'vux'
+import { XHeader,Tab,TabItem,Popover,Divider,Alert,Range,Popup } from 'vux'
 import {getString} from '../../utils/getString.js'
 import { setTimeout } from 'timers'
   export default {
@@ -122,7 +168,8 @@ import { setTimeout } from 'timers'
       Divider,
       Scroller,
       Alert,
-      Range
+      Range,
+      Popup
     },
     data() {
       return {
@@ -159,6 +206,7 @@ import { setTimeout } from 'timers'
         quota: 0 , // 借款金额
         interest: 0 , // 借款利息
         days: 0 , // 借款天数
+        show8: false
       }
     },
     created() {
@@ -227,6 +275,12 @@ import { setTimeout } from 'timers'
     //   }
     },
     methods:{
+      goMyBank() {
+        this.$router.push('memb/my/bank')
+      },
+      goFeedback() {
+        this.$router.push('/memb/feedback/list')
+      },
       // setCookie: function (cname, cvalue, exdays) {
       //   var d = new Date();
       //   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -497,13 +551,55 @@ import { setTimeout } from 'timers'
                     }
                 })
             }
-        }
+        },
+      show8s() {
+        this.show8=!this.show8;
+      }
     }
   }
 </script>
 <style lang="scss" scoped>
 
-
+  .mys{
+    .info-box_{
+      text-align: center;
+      padding:Px(100) 0 0;
+      img{
+        width: Px(94);
+        height: Px(94);
+      }
+      >div{
+        color: #ffffff;
+        opacity: 0.74;
+        font-size: Px(30);
+        line-height: Px(71);
+      }
+    }
+    .info-box_s{
+      width: Px(286);
+      margin: 0 auto;
+      li{
+        width: Px(286);
+        height: Px(90);
+        line-height: Px(90);
+        color: #333;
+        font-size: Px(30);
+        text-align: center;
+        position: relative;
+        border-bottom: #a396fb Px(2) solid;
+        i{
+          display: block;
+          width: Px(17);
+          height: Px(30);
+          position: absolute;
+          right: 0;
+          top:Px(30);
+          background:url('./index/row2.png')no-repeat;
+          background-size: 100% auto;
+        }
+      }
+    }
+  }
   .titles{
     color: #FF6A5D;
     font-size: Px(24);
@@ -798,12 +894,12 @@ import { setTimeout } from 'timers'
     }
     .borrowingBtn{
         display: block;
-        height: Px(67);
-        margin-left: Px(30);
+        height: Px(89);
+        margin-left: Px(0);
         cursor: pointer;
         padding: 0 Px(30);
-        font-size: Px(30);
-        line-height: Px(67);
+        font-size: Px(40);
+        line-height: Px(89);
         border-radius: Px(8);
         color: #fff;
         text-align: center;
@@ -1304,21 +1400,21 @@ import { setTimeout } from 'timers'
         overflow: hidden;
         background:url(./index/index_bc.png) no-repeat ;
         background-size: 100% auto;
-        width: Px(504);
-        height: Px(272);
+        width: Px(591);
+        height: Px(299);
         /*box-shadow: 0 0 .2rem 1px rgba(#000, .1);*/
         /*border-radius: Px(15);*/
-        padding: Px(79) Px(91);
+        padding: Px(30) Px(40);
         margin: Px(32) auto;
         h3{
           font-style: normal;
-          font-size: Px(24);
+          font-size: Px(28);
           color:#fff;
           margin-top: Px(28);
           text-align: left;
           line-height: Px(33);
           font-weight: normal;
-          padding-left: Px(30);
+          padding-left: Px(5);
         }
         >p{
           font-style: normal;
@@ -1329,7 +1425,7 @@ import { setTimeout } from 'timers'
           line-height: Px(55);
           font-weight: normal;
           margin-bottom: 0;
-          padding-left: Px(25);
+          padding-left: Px(0);
         }
         >em{
           color: #333333;
@@ -1500,3 +1596,38 @@ import { setTimeout } from 'timers'
   }
 </style>
 
+<style lang="less" scoped>
+
+  .popup0 {
+    padding-bottom:15px;
+    height:200px;
+  }
+  .popup1 {
+    width:100%;
+    height:100%;
+  }
+  .popup2 {
+    padding-bottom:15px;
+    height:400px;
+  }
+  .position-vertical-demo {
+    background-color: #ffe26d;
+    color: #000;
+    text-align: center;
+    padding: 15px;
+  }
+  .position-horizontal-demo {
+    position: relative;
+    height: 100%;
+    .vux-close {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(4);
+      color: #000;
+    }
+  }
+  .vux-popup-dialog{
+    background: -webkit-linear-gradient(90deg,#8371fa, #a582f6);
+  }
+</style>
