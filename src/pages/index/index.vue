@@ -1297,12 +1297,30 @@ import { setTimeout } from 'timers'
           font-style: normal;
           font-size: Px(28);
           color:#333333;
-          margin-left: Px(45);
           margin-top: Px(20);
           text-align: center;
           font-weight:bold;
           line-height: Px(60);
           font-weight: normal;
+          position: relative;
+        }
+        h3:before {
+          content: "";
+          position: absolute;
+          width: 30%;
+          height:Px(2);
+          top: 50%;
+          background-color: #dcdcdc;
+          left:8%;
+        }
+        h3:after {
+          content: "";
+          position: absolute;
+          width: 30%;
+          height:Px(2);
+          top: 50%;
+          background-color: #dcdcdc;
+          right:8%;
         }
         >p{
           font-style: normal;
