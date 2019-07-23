@@ -4,7 +4,7 @@
           <div class="top">
 <!--         <img class="icon-logo" src="./img/icon_logo.png" alt=""> -->
         <!-- <img src="./img/pic_top.png" alt=""> -->
-        <div class="title" :style="`padding-top:${native.statusBarHeight + 15}px`">
+        <div class="title" :style="`padding-top:${native.statusBarHeight + 5}px`">
           　我的
           <a @click="$router.push('/set')"></a>
         </div>
@@ -289,7 +289,7 @@ export default {
   background-size: 100% auto;
   position: relative;
   width: 100%;
-  height:Px(492);
+  height:Px(507);
   /*padding-bottom: Px(200);*/
   /*margin-bottom: Px(70);*/
   .info-box_{
@@ -465,6 +465,7 @@ export default {
       color:#fff;
       display:inline-block;
       text-decoration: black;
+      text-decoration:none;
     }
   }
 }
