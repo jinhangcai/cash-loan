@@ -19,7 +19,7 @@
               <!--客服中心-->
               <!--<p>如有问题及时反馈 ></p>-->
             <!--</div>-->
-            <div class="box_">
+            <div class="box_" :style="`padding-top:${native.statusBarHeight + 20}px`">
               <!--<div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">-->
                 <!--　恒享借-->
                 <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
@@ -1278,7 +1278,7 @@ import { setTimeout } from 'timers'
       text-align: center;
       background:-webkit-linear-gradient(-90deg,#ffc105, #fc650a);
       background-size: 100% auto;
-      padding-bottom:6.2rem;
+      padding-bottom:6rem;
       h4{
         color: #eb5130;
         font-size: Px(24);
