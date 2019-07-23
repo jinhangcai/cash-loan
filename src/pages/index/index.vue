@@ -1276,9 +1276,9 @@ import { setTimeout } from 'timers'
     .box_{
       position: relative;
       text-align: center;
-      background:-webkit-linear-gradient(-90deg,#ffc105, #fc650a);
+      background:-webkit-linear-gradient(-90deg,#ffc105, #FC7609);
       background-size: 100% auto;
-      padding-bottom:6rem;
+      padding-bottom:3rem;
       h4{
         color: #eb5130;
         font-size: Px(24);
