@@ -294,20 +294,20 @@
     width: 100%;
     overflow: auto;
     color: #333;
-    background: -webkit-linear-gradient(0deg, #FC735E, #E8413A);
+    background: -webkit-linear-gradient(0deg, #5DE1FF, #8C93FF);
     img{
       display: block;
       width: 100%;
     }
   }
   .body{
-    background: -webkit-linear-gradient(0deg,  #FC735E, #E8413A);
+    background: -webkit-linear-gradient(0deg,  #5DE1FF, #8C93FF);
     // position: absolute;
     // top: 0;
     width: 100%;
   }
   .top{
-    background: -webkit-linear-gradient(0deg, #FC735E, #E8413A);
+    background: -webkit-linear-gradient(0deg, #5DE1FF, #8C93FF);
     position: relative;
     width: 100%;
 

@@ -488,15 +488,14 @@
     margin-bottom: Px(100);
     border-radius: Px(15);
     margin-top:Px(-125);
+    background: #fff;
     .information{
       display: block;
       align-items: center;
-      height: Px(116);
-      width:100%;
+      width:50%;
       background: #FFFEFE;
       float: left;
       position: relative;
-      border-bottom: #E0E0E0 Px(1) solid;
       .icon{
         height: Px(50);
         position: absolute;
@@ -533,8 +532,8 @@
         line-height: Px(45);
         margin-left: Px(100);
         display: block;
-        margin-top: Px(35);
-        margin-bottom: Px(35);
+        margin-top: Px(25);
+        margin-bottom: Px(60);
         em{
           color: #999999;
           font-size: Px(26);
@@ -549,13 +548,13 @@
         height: Px(40);
         padding:0 Px(25);
         position: absolute;
-        right: Px(35);
-        top: Px(35);
+        left: Px(75);
+        top: Px(70);
 
 
       }
       .cur{
-        color: #FF695D;
+        color: #8A98FF;
       }
     }
   }

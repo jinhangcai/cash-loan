@@ -289,12 +289,13 @@ export default {
     margin: Px(-27) auto 0;
     width: Px(580);
     height: auto;
-    margin-top: Px(100);
+    margin-top: Px(140);
     & .landing_item {
       position: relative;
       overflow: hidden;
       background:rgba(246,246,246,1);
       border:1px solid rgba(224,224,224,1);
+      border-radius: Px(40);
       .mobile {
         position: absolute;
         display: block;
@@ -374,8 +375,8 @@ export default {
     width: auto;
     height: Px(88);
     color: #fff;
-    border-radius: Px(0);
-    background:linear-gradient(to right, #FC735E, #E8413A);
+    border-radius: Px(44);
+    background:linear-gradient(to right, #5DE1FF, #8D93FF);
     font-size: Px(26);
     line-height: Px(88);
     text-align: center;

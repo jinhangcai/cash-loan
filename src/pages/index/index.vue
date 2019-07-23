@@ -102,7 +102,7 @@
       </div>
 
       <div v-transfer-dom>
-        <popup v-model="show8" position="left" width="56%">
+        <popup v-model="show8" position="left" width="60%">
           <div class="position-horizontal-demo">
             <div class="mys">
               <div class="info-box_">
@@ -117,29 +117,29 @@
               </div>
               <ul class="info-box_s">
                 <li @click="$router.push('/memb/info')">
-                  实名认证<i></i>
+                  <img src="./index/icon_i1.png" class="img2">实名认证<i></i>
                 </li>
                 <li @click="$router.push('/loan/record')">
-                  我的借款<i></i>
+                  <img src="./index/icon_i2.png" class="img1">我的借款<i></i>
                 </li>
 
               </ul>
               <ul class="info-box_s">
 
                 <li @click="goMyBank">
-                  我的银行卡<i></i>
+                  <img src="./index/icon_i3.png" class="img1">我的银行卡<i></i>
                 </li>
                 <li @click="goFeedback">
-                  用户反馈<i></i>
+                  <img src="./index/icon_i4.png" class="img1">用户反馈<i></i>
                 </li>
                 <li @click="$router.push('/set')">
-                  设置<i></i>
+                  <img src="./index/icon_i5.png" class="img2">设置<i></i>
                 </li>
                 <li @click="$web2app('phone',{number: customPhone})">
-                  联系客服<i></i>
+                  <img src="./index/icon_i6.png" class="img1">联系客服<i></i>
                 </li>
                 <li @click="$router.push('/loan')">
-                  提现记录<i></i>
+                  <img src="./index/icon_i7.png" class="img2">提现记录<i></i>
                 </li>
               </ul>
             </div>
@@ -563,15 +563,15 @@ import { setTimeout } from 'timers'
   .mys{
     .info-box_{
       text-align: center;
-      padding:Px(100) 0 0;
+      padding:Px(60) 0 Px(40);
       img{
         width: Px(94);
         height: Px(94);
       }
       >div{
-        color: #ffffff;
+        color: #333333;
         opacity: 0.74;
-        font-size: Px(30);
+        font-size: Px(40);
         line-height: Px(71);
       }
     }
@@ -584,9 +584,20 @@ import { setTimeout } from 'timers'
         line-height: Px(90);
         color: #333;
         font-size: Px(30);
-        text-align: center;
+        text-align: left;
         position: relative;
-        border-bottom: #a396fb Px(2) solid;
+        img{
+          float: left;
+          margin-top: Px(23);
+          margin-right: Px(30);
+        }
+        .img1{
+          width: Px(38);
+
+        }
+        .img2{
+          height: Px(40);
+        }
         i{
           display: block;
           width: Px(17);
@@ -596,6 +607,7 @@ import { setTimeout } from 'timers'
           top:Px(30);
           background:url('./index/row2.png')no-repeat;
           background-size: 100% auto;
+          display: none;
         }
       }
     }
@@ -1628,6 +1640,6 @@ import { setTimeout } from 'timers'
     }
   }
   .vux-popup-dialog{
-    background: -webkit-linear-gradient(90deg,#8371fa, #a582f6);
+    background: #fff;
   }
 </style>
