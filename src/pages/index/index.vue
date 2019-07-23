@@ -24,7 +24,7 @@
                 <!--　零钱盒子-->
                 <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
               <!--</div>-->
-              <div class="titles">
+              <div class="titles" :style="`margin-top:${native.statusBarHeight + 20}px`">
                 温馨提示:请认准APP中官方客服,其他(百度)搜索到的客服都是骗子
               </div>
               <img  src="./index/indexbgs.png" width="100%">
