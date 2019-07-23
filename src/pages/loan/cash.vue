@@ -90,7 +90,7 @@
     },
     created() {
 
-      // this.getCardList()
+      this.getCardList()
     },
     activated() {
       console.log(1)
@@ -99,7 +99,7 @@
       // this.$vux.loading.show({
       //   text: 'Loading'
       // });
-      // this.getList();
+      this.getList();
     },
     methods: {
       // 跳转至合同页
@@ -153,7 +153,7 @@
             that.bank = data.bank;
             // 前置   先扣服务费
             if (data.entryMode != 1) {
-                that.cover =  data.quota * + data.manageRate.toFixed(2);;
+                that.cover =  data.quota * + (data.manageRate);
                 that.quota = data.quota - data.quota * + data.manageRate;
                 that.interest = data.quota * + data.interestRate / 365 * that.days;
                 that.interest = that.interest.toFixed(2);
@@ -166,6 +166,7 @@
                 that.interest = data.quota * +data.interestRate / 365 * that.days;
                 that.interest = that.interest.toFixed(2);
                 // 本金 + 服务费 + 利息
+                that.cover =  data.quota * + (data.manageRate);
                 that.account = Number(data.quota) + data.quota *+ data.manageRate + Number(that.interest);
                 console.log(that.account)
                 that.account = that.account.toFixed(2);

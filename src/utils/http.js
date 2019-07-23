@@ -26,7 +26,7 @@ const service = axios.create({
 service.interceptors.request.use(config => {
 
   // console.log(config)
-   //native.vid = '54e5ce1f582a09c9e673b34a9b59303ae2b53d59'
+   // native.vid = '54e5ce1f582a09c9e673b34a9b59303ae2b53d59'
   const extraParams = { vid: native.vid }
   if (!config.methods || config.methods.toLowerCase() === 'get') {
     // config.params = {
