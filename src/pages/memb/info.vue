@@ -492,7 +492,7 @@
     .information{
       display: block;
       align-items: center;
-      width:50%;
+      width:100%;
       background: #FFFEFE;
       float: left;
       position: relative;

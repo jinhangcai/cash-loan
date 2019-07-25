@@ -295,7 +295,7 @@ export default {
       overflow: hidden;
       background:rgba(246,246,246,1);
       border:1px solid rgba(224,224,224,1);
-      border-radius: Px(40);
+      border-radius: Px(0);
       .mobile {
         position: absolute;
         display: block;
@@ -375,8 +375,8 @@ export default {
     width: auto;
     height: Px(88);
     color: #fff;
-    border-radius: Px(44);
-    background:linear-gradient(to right, #5DE1FF, #8D93FF);
+    border-radius: Px(0);
+    background:linear-gradient(to right, #27CDEB, #85FBC8);
     font-size: Px(26);
     line-height: Px(88);
     text-align: center;

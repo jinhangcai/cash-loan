@@ -407,7 +407,7 @@
   // 表单
   .form
     position absolute
-    top px(680)
+    top px(630)
     left 0
     right 0
     margin px(30) px(60) 0
@@ -419,9 +419,7 @@
     margin px(30) px(25.5)
     padding px(10) px(28)
     background rgba(246,246,246,1);
-
     border:1px solid rgba(224,224,224,1);
-    border-radius px(40)
   .form-areacode
     flex none
     font-size: px(26);
@@ -466,9 +464,8 @@
     font-size px(36)
     line-height px(88)
     text-align center
-    background:linear-gradient(to right, #5DE1FF, #8D93FF);
+    background:linear-gradient(to right, #27CDEB, #85FBC8);
     color #fff
-    border-radius px(44)
   //   text-shadow 0 px(2) rgba(11,107,212,.53)
 
   .form-tip
