@@ -12,7 +12,7 @@ module.exports = {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/m.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'dpr_static',
+    assetsSubDirectory: 'hhwy_static',
     assetsPublicPath: './',
     productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
@@ -36,7 +36,7 @@ module.exports = {
     autoOpenBrowser: true,
     proxyTable: {
       '/web': {
-        target: 'https://dpr.huitianservice.top',
+        target: 'https://hhwy.baotoulongtian.cn',
         changeOrigin: true,
         pathRewrite: {
           '^/web': '/'
