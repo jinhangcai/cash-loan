@@ -554,7 +554,7 @@
 
       }
       .cur{
-        color: #8A98FF;
+        color: #2BCFEA;
       }
     }
   }

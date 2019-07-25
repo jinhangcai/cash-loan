@@ -97,54 +97,42 @@
             <img class="alipay-img" :src="codeUrl">
           </div>
         </div>'
-      <div class="indexbtn" title="left(56% width)"@click="show8s" v-model="show8" >
-        <img  src="./index/indexbtn.png" width="100%">
-      </div>
-
-      <div v-transfer-dom>
-        <popup v-model="show8" position="left" width="60%">
-          <div class="position-horizontal-demo">
-            <div class="mys">
-              <div class="info-box_">
-                <img src="./index/denglu.png">
-                <div v-if="userInfo.vid">
-                  <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
-                  <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
-                </div>
-                <div  v-else>
-                  <div>您好！请先登录</div>
-                </div>
-              </div>
-              <ul class="info-box_s">
-                <li @click="$router.push('/memb/info')">
-                  <img src="./index/icon_i1.png" class="img2">实名认证<i></i>
-                </li>
-                <li @click="$router.push('/loan/record')">
-                  <img src="./index/icon_i2.png" class="img1">我的借款<i></i>
-                </li>
-
-              </ul>
-              <ul class="info-box_s">
-
-                <li @click="goMyBank">
-                  <img src="./index/icon_i3.png" class="img1">我的银行卡<i></i>
-                </li>
-                <li @click="goFeedback">
-                  <img src="./index/icon_i4.png" class="img1">用户反馈<i></i>
-                </li>
-                <li @click="$router.push('/set')">
-                  <img src="./index/icon_i5.png" class="img2">设置<i></i>
-                </li>
-                <li @click="$web2app('phone',{number: customPhone})">
-                  <img src="./index/icon_i6.png" class="img1">联系客服<i></i>
-                </li>
-                <li @click="$router.push('/loan')">
-                  <img src="./index/icon_i7.png" class="img2">提现记录<i></i>
-                </li>
-              </ul>
+      <!--<div class="indexbtn" title="left(56% width)"@click="show8s" v-model="show8" >-->
+        <!--<img  src="./index/indexbtn.png" width="100%">-->
+      <!--</div>-->
+      <div class="mys">
+        <ul class="info-box_s">
+          <li @click="$router.push('/memb/info')">
+            <img src="./index/icon_i1.png" class="img2">实名认证<i></i>
+          </li>
+          <li @click="$router.push('/loan/record')">
+            <img src="./index/icon_i2.png" class="img1">我的借款<i></i>
+          </li>
+          <li @click="goMyBank">
+            <img src="./index/icon_i3.png" class="img1">我的银行卡<i></i>
+          </li>
+          <li @click="goFeedback">
+            <img src="./index/icon_i4.png" class="img1">用户反馈<i></i>
+          </li>
+          <li @click="$web2app('phone',{number: customPhone})">
+            <img src="./index/icon_i6.png" class="img1">联系客服<i></i>
+          </li>
+          <li @click="$router.push('/loan')">
+            <img src="./index/icon_i7.png" class="img2">提现记录<i></i>
+          </li>
+          <li @click="$router.push('/set')">
+            <img src="./index/icon_i5.png" class="img2">设置<i></i>
+          </li>
+          <li >
+            <div v-if="userInfo.vid" style="padding-left: .5rem;">
+              <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
+              <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
             </div>
-          </div>
-        </popup>
+            <div  v-else style="padding-left:.5rem;">
+              <div>您好！请先登录</div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -154,7 +142,7 @@ import HeaderBar from './header'
 import LeftMenu from './menu'
 import Scroller from '../../components/scroller'
 // import ScrollLine from '../../components/ScrollLine'
-import { XHeader,Tab,TabItem,Popover,Divider,Alert,Range,Popup } from 'vux'
+import { XHeader,Tab,TabItem,Popover,Divider,Alert,Range } from 'vux'
 import {getString} from '../../utils/getString.js'
 import { setTimeout } from 'timers'
   export default {
@@ -168,8 +156,7 @@ import { setTimeout } from 'timers'
       Divider,
       Scroller,
       Alert,
-      Range,
-      Popup
+      Range
     },
     data() {
       return {
@@ -561,38 +548,32 @@ import { setTimeout } from 'timers'
 <style lang="scss" scoped>
 
   .mys{
-    .info-box_{
-      text-align: center;
-      padding:Px(60) 0 Px(40);
-      img{
-        width: Px(94);
-        height: Px(94);
-      }
-      >div{
-        color: #333333;
-        opacity: 0.74;
-        font-size: Px(40);
-        line-height: Px(71);
-      }
-    }
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    background:#30D2E7;
+    width: 100%;
+    border-radius:Px(35) Px(35) 0px 0px;
+    padding: Px(20) 0;
     .info-box_s{
-      width: Px(286);
-      margin: 0 auto;
       li{
-        width: Px(286);
-        height: Px(90);
-        line-height: Px(90);
-        color: #333;
+        width: 50%;
+        height: Px(75);
+        line-height: Px(75);
+        color: #fff;
         font-size: Px(30);
         text-align: left;
         position: relative;
+        float: left;
         img{
           float: left;
           margin-top: Px(23);
           margin-right: Px(30);
+          margin-left: Px(35);
         }
         .img1{
-          width: Px(38);
+          width: Px(40);
 
         }
         .img2{
@@ -913,15 +894,15 @@ import { setTimeout } from 'timers'
         font-size: Px(40);
         line-height: Px(89);
         border-radius: Px(8);
-        color: #fff;
+        color: #2ED0E8;
         text-align: center;
         outline: none;
         border: none;
         align-self: center;
         background:none;
-        border: #fff Px(1) solid;
-        margin-top: Px(65);
-
+        border: #2ED0E8 Px(1) solid;
+        margin-top: Px(-95);
+        float:right;
 
     }
     .tabBottom{
@@ -1397,9 +1378,9 @@ import { setTimeout } from 'timers'
     .box_{
       position: relative;
       text-align: center;
-      background:#fff;
+      background: -webkit-linear-gradient(0deg, #27CDEB, #85FBC8);
       background-size: 100% auto;
-      padding-bottom:6.2rem;
+      padding-bottom:1.8rem;
       h4{
         color: #eb5130;
         font-size: Px(24);
@@ -1410,34 +1391,37 @@ import { setTimeout } from 'timers'
       .box_1{
         text-align: center;
         overflow: hidden;
-        background:url(./index/index_bc.png) no-repeat ;
+        background:#fff ;
         background-size: 100% auto;
-        width: Px(591);
-        height: Px(299);
+        width: Px(680);
+        border-radius:Px(35) Px(35) 0px 0px;
+        height: Px(250);
+        padding: Px(35);
         /*box-shadow: 0 0 .2rem 1px rgba(#000, .1);*/
         /*border-radius: Px(15);*/
-        padding: Px(30) Px(40);
-        margin: Px(32) auto;
         h3{
           font-style: normal;
-          font-size: Px(28);
-          color:#fff;
-          margin-top: Px(28);
+          font-size: Px(32);
+          color:#31D2E7;
+          margin-top: Px(45);
           text-align: left;
           line-height: Px(33);
           font-weight: normal;
-          padding-left: Px(5);
+          padding-left: Px(7);
+          display:table;
         }
         >p{
           font-style: normal;
-          font-size: Px(50);
-          color:#FFFFFF;
+          font-size: Px(67);
+          color:#31D1E8;
           margin-top: Px(0);
           text-align:  left;
-          line-height: Px(55);
+          line-height: Px(73);
           font-weight: normal;
           margin-bottom: 0;
           padding-left: Px(0);
+          display:table;
+
         }
         >em{
           color: #333333;
