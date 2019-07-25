@@ -276,8 +276,9 @@
           url:'auth/operatorConf?type=magic',
           methods: 'get',
         }).then((data) => {
+          that.$vux.loading.hide()
+          that.$store.commit('SET-YYS-AUTH', '')
           if(data.data.status === 0){
-            that.$vux.loading.hide()
             const urlBefore = data.data.data.url // 验证使用者身份的唯一标识
             const box_token = data.data.data.box_token // 验证使用者身份的唯一标识
             const arr_pass_hide = String(data.data.data.arr_pass_hide) // 隐藏身份要素
@@ -311,6 +312,7 @@
           methods: 'get',
         }).then((data) => {
           that.$vux.loading.hide()
+          that.$store.commit('SET-YYS-AUTH', '')
           if(data.data.status === 0){
             const url = data.data.data.url // 	string	api钥匙
             const apiKey = data.data.data.apiKey // 	string	api钥匙
