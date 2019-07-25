@@ -62,6 +62,13 @@
     </div>
     <div class="cash-footer">
       <button class="cash-btn" @click="contract">立即领取</button>
+      <div class="checked-box">
+        <label>
+          <input v-model="confirm" type="checkbox">
+          <i class="icon-checked"></i>
+          <span class="check-label">申请借款即可免费领取最高100万赠险</span>
+        </label>
+      </div>
     </div>
   </div>
 </template>
@@ -82,7 +89,8 @@
         bankList: [], // 银行卡列表
         card_id: '', // 银行卡id
         cover: 0, // 服务费
-        changeWX: true
+        changeWX: true,
+        confirm: 1, // 是否同意赠送保险
       }
     },
     components: {
@@ -104,7 +112,7 @@
     methods: {
       // 跳转至合同页
       contract() {
-        this.$router.push({path: '/agreement', query: {quota: this.quota, card_id: this.card_id}})
+        this.$router.push({path: '/agreement', query: {quota: this.quota, card_id: this.card_id, confirm: this.confirm ? 1:0}})
       },
       // 提示切换
       tipsSwitch() {
@@ -582,4 +590,43 @@
     color: #fb8e3b;
     font-size: Px(70);
   }
+
+.checked-box{
+  margin-top: Px(20);
+  line-height: Px(60);
+  font-size: Px(26);
+  color: #999999;
+  input{
+    display: none;
+    & + .icon-checked{
+      position: relative;
+      display: inline-block;
+      width: Px(30);
+      height: Px(30);
+      background-color: #cac8c8;
+      border-radius: 50%;
+      vertical-align: middle;
+      &::before{
+        position: absolute;
+        top: 12%;
+        left: 35%;
+        width: 20%;
+        height: 45%;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(45deg);
+        content: '';
+      }
+    }
+    &:checked + .icon-checked{
+      border-color: $maincolor;
+      background-color: $maincolor;
+      
+    }
+  }
+  .check-label{
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
 </style>

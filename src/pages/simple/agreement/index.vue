@@ -279,7 +279,8 @@
           methods: 'post',
           url: 'loan/apply',
           data: {
-            money: that.quota
+            money: that.quota,
+            confirm: that.$route.query.confirm
           }
         }).then((res) => {
           if (res.data.status == 0) {
