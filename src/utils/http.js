@@ -26,17 +26,8 @@ const service = axios.create({
 service.interceptors.request.use(config => {
 
   // console.log(config)
-   // native.vid = '54e5ce1f582a09c9e673b34a9b59303ae2b53d59'
   const extraParams = { vid: native.vid }
   if (!config.methods || config.methods.toLowerCase() === 'get') {
-    // config.params = {
-    //   data: Object.assign(
-    //     {},
-    //     extraParams,
-    //     config.data || {}
-    //   )
-    // };
-		// delete config['data'];
     config.params = {
       vid: native.vid,
       data: Object.assign(
@@ -52,13 +43,6 @@ service.interceptors.request.use(config => {
     config.methods.toLowerCase() === 'post'
   ) {
 
-    // config.data = {
-    //   data: getAES(JSON.stringify(Object.assign(
-    //     {},
-    //     extraParams,
-    //     config.data || {}
-    //   )))
-    // }
     config.data = getAES(JSON.stringify(Object.assign(
       {},
       extraParams,
@@ -66,9 +50,7 @@ service.interceptors.request.use(config => {
     )))
     config.method = 'post'
     // config.data = Qs.stringify(config.data);
-    config.headers = {
-      'Content-Type': 'application/json'
-    }
+    config.headers['Content-Type'] = 'application/json'
   }
 
 
@@ -95,6 +77,8 @@ service.interceptors.response.use(
           web2app('openAppPage', {name: 'register'})
         }
       })
+    } else if (response.config.responseType === 'arraybuffer') {
+
     } else if (response.data.status !== 0) {
       // 处理状态非0
 

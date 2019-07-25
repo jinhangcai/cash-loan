@@ -36,7 +36,8 @@ module.exports = {
     autoOpenBrowser: true,
     proxyTable: {
       '/web': {
-        target: 'https://bzg.lemorejio.com',
+        // target: 'https://bzg.lemorejio.com',
+        target: 'http://moshenapi.nn1n.com',
         changeOrigin: true,
         pathRewrite: {
           '^/web': '/'
