@@ -1630,7 +1630,7 @@ import { setTimeout } from 'timers'
   }
   .position-horizontal-demo {
     position: relative;
-    height: 100%;
+    height: 50%;
     .vux-close {
       position: absolute;
       top: 50%;
