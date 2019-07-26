@@ -222,6 +222,10 @@
               </div>
             </div>
             <ul class="info-box_s">
+              <li @click="$router.push('/memb/info')">
+                <img src="./index/icon0.png">
+                资料认证<i></i>
+              </li>
               <li @click="$router.push('/loan')">
                 <img src="./index/icon1.png">
                 提现记录<i></i>
