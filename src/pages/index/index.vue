@@ -409,6 +409,8 @@ import { setTimeout } from 'timers'
             }else if (state == 6) {
                 text = "马上还款"
             }
+
+
             return text;
         },
         goPerfectInfo(state){
