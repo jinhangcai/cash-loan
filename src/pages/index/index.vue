@@ -24,10 +24,10 @@
                 <!--　易提花-->
                 <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
               <!--</div>-->
-              <div class="titles" :style="`margin-top:${native.statusBarHeight + 10}px`">
+              <div class="titles" :style="`margin-top:${native.statusBarHeight + 15}px`">
                 请认准官方客服,其他方式（百度）搜索到的客服都是骗子;
               </div>
-              <img  src="./index/indexbgs.png" width="100%">
+              <!--<img  src="./index/indexbgs.png" width="100%">-->
               <div class="box_1">
                 <!--<ul class="box_s">-->
                   <!--<li @click="$router.push('/loan/record')">-->
@@ -98,11 +98,12 @@
           </div>
         </div>'
       <div class="indexbtn" title="left(56% width)"@click="show8s" v-model="show8" >
-        <img  src="./index/indexbtn.png" width="100%">
+        <img  src="./index/indexbtn.png" width="100%" v-if="!show8">
+        <img  src="./index/indexbtn1.png" width="100%" v-else>
       </div>
 
       <div v-transfer-dom>
-        <popup v-model="show8" position="left" width="60%">
+        <popup v-model="show8" position="left" width="100%">
           <div class="position-horizontal-demo">
             <div class="mys">
               <div class="info-box_">
@@ -563,7 +564,7 @@ import { setTimeout } from 'timers'
   .mys{
     .info-box_{
       text-align: center;
-      padding:Px(60) 0 Px(40);
+      padding:Px(80) 0 Px(40);
       img{
         width: Px(94);
         height: Px(94);
@@ -576,10 +577,12 @@ import { setTimeout } from 'timers'
       }
     }
     .info-box_s{
-      width: Px(286);
-      margin: 0 auto;
+      width: Px(600);
+      margin: 0 auto 0 Px(120);
+      display:flex;
+      flex-flow: row wrap;
       li{
-        width: Px(286);
+        width:49%;
         height: Px(90);
         line-height: Px(90);
         color: #333;
@@ -907,20 +910,18 @@ import { setTimeout } from 'timers'
     .borrowingBtn{
         display: block;
         height: Px(89);
-        margin-left: Px(0);
+        margin: Px(35) auto;
         cursor: pointer;
         padding: 0 Px(30);
         font-size: Px(40);
         line-height: Px(89);
         border-radius: Px(8);
-        color: #fff;
+        color: #E93E60;
         text-align: center;
         outline: none;
-        border: none;
         align-self: center;
-        background:none;
-        border: #fff Px(1) solid;
-        margin-top: Px(65);
+        background:#fff;
+        border: 1px  solid #E93E60;
 
 
     }
@@ -1208,9 +1209,11 @@ import { setTimeout } from 'timers'
       position: absolute;
       left:0;
       top: 0;
-      bottom: 60px;
+      bottom: 0px;
       width:100%;
-
+    }
+    .list-wrapper{
+      /*/background-image: linear-gradient(-45deg, #E7355D 0%, #FEC38C 100%);*/
     }
     .mask {
       position: fixed;
@@ -1397,7 +1400,7 @@ import { setTimeout } from 'timers'
     .box_{
       position: relative;
       text-align: center;
-      background:#fff;
+      /*background:#fff;*/
       background-size: 100% auto;
       padding-bottom:6.2rem;
       h4{
@@ -1410,30 +1413,34 @@ import { setTimeout } from 'timers'
       .box_1{
         text-align: center;
         overflow: hidden;
-        background:url(./index/index_bc.png) no-repeat ;
-        background-size: 100% auto;
-        width: Px(591);
+        position:absolute;
+        left:0;
+        top: Px(600);
+        /*background:url(./index/index_bc.png) no-repeat ;*/
+        /*background-size: 100% auto;*/
+        width: Px(686);
         height: Px(299);
         /*box-shadow: 0 0 .2rem 1px rgba(#000, .1);*/
         /*border-radius: Px(15);*/
         padding: Px(30) Px(40);
-        margin: Px(32) auto;
+        margin: Px(132) auto;
         h3{
           font-style: normal;
-          font-size: Px(28);
-          color:#fff;
+          font-size: Px(32);
+          color:#E93E60;
           margin-top: Px(28);
-          text-align: left;
+          text-align: center;
           line-height: Px(33);
           font-weight: normal;
           padding-left: Px(5);
+
         }
         >p{
           font-style: normal;
-          font-size: Px(50);
-          color:#FFFFFF;
-          margin-top: Px(0);
-          text-align:  left;
+          font-size: Px(66);
+          color:#E93E60;
+          margin-top: Px(30);
+          text-align:  center;
           line-height: Px(55);
           font-weight: normal;
           margin-bottom: 0;
@@ -1552,11 +1559,15 @@ import { setTimeout } from 'timers'
       }
     }
   .indexbtn{
-    width: Px(144);
+    width: Px(112);
     position: fixed;
-    right: 0;
+    right: Px(30);
     bottom: Px(20);
     z-index: 99999;
+  }
+  .vux-popup-dialog{
+    background: #fff;
+    height:Px(686) !important;
   }
 </style>
 <style>
@@ -1639,7 +1650,10 @@ import { setTimeout } from 'timers'
       color: #000;
     }
   }
-  .vux-popup-dialog{
-    background: #fff;
+</style>
+<style>
+  .scroll-content{
+
+    background: url('../repay/img/bg.png') no-repeat center / 100% 100%;
   }
 </style>

@@ -49,9 +49,9 @@
       </div>
       <!-- landing_item -->
       <div class="landing_btn" @click="register">注册领钱</div>
-      <p class="register_txt txt_center">点击领取即同意
-        <em class="">《服务协议》</em>
-      </p>
+      <!--<p class="register_txt txt_center">点击领取即同意-->
+        <!--<em class="">《服务协议》</em>-->
+      <!--</p>-->
     </div>
     <!-- landing_form -->
     <!--<p class="txt_center rights">Copyright © 2018 人人快贷 All right reserved</p>-->
@@ -60,8 +60,8 @@
 </template>
 
 <script>
-import BMap from "BMap";
-import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
+// import BMap from "BMap";
+// import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT";
 
 // import { getPosition } from "./lnglat";
 export default {
@@ -285,7 +285,7 @@ export default {
     overflow: hidden;
     position: relative;
     z-index: 9;
-    padding: Px(65) Px(0);
+    padding: Px(0) Px(0);
     margin: Px(-27) auto 0;
     width: Px(580);
     height: auto;
@@ -295,7 +295,7 @@ export default {
       overflow: hidden;
       background:rgba(246,246,246,1);
       border:1px solid rgba(224,224,224,1);
-      border-radius: Px(40);
+      /*border-radius: Px(40);*/
       .mobile {
         position: absolute;
         display: block;
@@ -375,8 +375,8 @@ export default {
     width: auto;
     height: Px(88);
     color: #fff;
-    border-radius: Px(44);
-    background:linear-gradient(to right, #5DE1FF, #8D93FF);
+    /*border-radius: Px(44);*/
+    background:linear-gradient(to right, #FCB687, #E94462);
     font-size: Px(26);
     line-height: Px(88);
     text-align: center;

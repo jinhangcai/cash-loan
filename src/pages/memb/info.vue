@@ -417,7 +417,7 @@
   .box{
     width: 100%;
     height: 100%;
-    background: #f6f4f7;
+    background: #F8F9F9;
     overflow: hidden;
 
 
@@ -487,15 +487,22 @@
     overflow: hidden;
     margin-bottom: Px(100);
     border-radius: Px(15);
-    margin-top:Px(-125);
+    margin-top:Px(-225);
     background: #fff;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    z-index:2;
+    position:relative;
+    padding-bottom:Px(20);
     .information{
       display: block;
       align-items: center;
-      width:50%;
+      width:Px(200);
       background: #FFFEFE;
       float: left;
       position: relative;
+      margin-left:Px(30);
       .icon{
         height: Px(50);
         position: absolute;
@@ -530,10 +537,10 @@
         font-size: Px(28);
         text-align: left;
         line-height: Px(45);
-        margin-left: Px(100);
+        /*margin-left: Px(100);*/
         display: block;
-        margin-top: Px(25);
-        margin-bottom: Px(60);
+        margin-top: Px(85);
+        /*margin-bottom: Px(60);*/
         em{
           color: #999999;
           font-size: Px(26);
@@ -546,15 +553,17 @@
         font-size: Px(24);
         line-height: Px(40);
         height: Px(40);
-        padding:0 Px(25);
-        position: absolute;
-        left: Px(75);
-        top: Px(70);
+        padding-left:Px(15);
+        /*padding-top:Px(60);*/
+        /*padding:0 Px(25);*/
+        /*position: absolute;*/
+        /*left: Px(75);*/
+        /*top: Px(70);*/
 
 
       }
       .cur{
-        color: #8A98FF;
+        color:#EB4D65;
       }
     }
   }
@@ -578,6 +587,6 @@
 </style>
 <style>
   .unchange{
-    background: #f6f4f7!important;
+    background: #F8F9F9!important;
   }
 </style>
