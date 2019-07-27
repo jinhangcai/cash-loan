@@ -12,7 +12,7 @@ module.exports = {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/m.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'yth_static',
+    assetsSubDirectory: 'bzg_static',
     assetsPublicPath: './',
     productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
@@ -36,7 +36,8 @@ module.exports = {
     autoOpenBrowser: true,
     proxyTable: {
       '/web': {
-        target: 'https://yth.xiaokguanjia.com',
+        // target: 'https://bzg.lemorejio.com',
+        target: 'http://moshenapi.nn1n.com',
         changeOrigin: true,
         pathRewrite: {
           '^/web': '/'

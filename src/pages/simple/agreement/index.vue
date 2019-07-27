@@ -25,7 +25,7 @@
         借款申请发起地(借款申请发起人所在地)： {{ list.province }}<br>
 
         借款申请发起日期： {{ dateTime }}<br>
-        乙方（出借方）：易提花
+        乙方（出借方）：霹雳火
       </h3><br>
       鉴于：<br>
       甲方有借款需求；甲方同意接受乙方的服务并与乙方达成协议如下：<br>
@@ -279,7 +279,8 @@
           methods: 'post',
           url: 'loan/apply',
           data: {
-            money: that.quota
+            money: that.quota,
+            confirm: that.$route.query.confirm
           }
         }).then((res) => {
           if (res.data.status == 0) {

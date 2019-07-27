@@ -13,7 +13,7 @@
         </div> -->
         <div class="scroll-container" :style="`transform:translate(0, ${native.statusBarHeight})`">
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
-            <!--<header-bar title="易提花"></header-bar>-->
+            <!--<header-bar title="霹雳火"></header-bar>-->
 
             <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
               <!--客服中心-->
@@ -21,7 +21,7 @@
             <!--</div>-->
             <div class="box_">
               <!--<div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">-->
-                <!--　易提花-->
+                <!--　霹雳火-->
                 <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
               <!--</div>-->
               <div class="titles" :style="`margin-top:${native.statusBarHeight + 15}px`">
@@ -214,6 +214,11 @@ import { setTimeout } from 'timers'
       // this.$vux.loading.show({
       //     text: '加载中'
       // })
+      if ((getString('all_submit') == 1 && !this.$store.state.isYysAuth) || (getString('authing') == 1 && !this.$store.state.isYysAuth)) {
+        this.$store.commit('SET-YYS-AUTH', true)
+        this.$router.push('/memb/info?authing=1')
+        return
+      }
       this.getSystemData()
       this.getcustomPhone()
       this.getCodeUrl()

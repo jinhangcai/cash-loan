@@ -26,7 +26,7 @@
         )
         .form-sendcode(:class="{ '-active': canSendCode }")
           span(v-if="sendCodeTime") 重新发送({{ sendCodeTime }})
-          span(v-else @click="sendCode") 获取验证码
+          span(v-else @click="openPicCode") 获取验证码
       .form-submit(@click="login") 点击开始借钱
       // .form-tip 注册即同意
       //   em.txt_blue 《{{ $appName }}服务协议》
@@ -53,8 +53,12 @@
   // import BMap from "BMap"
   // import BMapSymbolSHAPEPOINT from "BMap_Symbol_SHAPE_POINT"
   import utils from '@/utils'
+  import {XDialog} from 'vux'
 
   export default {
+    components: {
+      XDialog
+    },
     data() {
       return {
         app: 'ddbt', // 供下载的APP
@@ -70,6 +74,10 @@
         mobroot: 1, // 1未root，2已root
         downloadShow: false, // 下载弹窗显示
         download2Show: false, // 下载弹窗2显示
+        showPicCode: false, // 图片验证码弹窗
+        imgUrl: '', // 图形验证码url
+        picCodeText: '', // 图形验证码输入框
+        kxbtimg: '', // 获取图形验证码返回头key
       }
     },
 
@@ -175,20 +183,67 @@
           type: 'warn',
           text: '手机号格式不正确',
         })
-
+        if (!this.picCodeText) return this.$vux.toast.show({
+          type: 'warn',
+          text: '请输入图形验证码',
+        })
         const { data: { status, msg } } = await this.$http({
           methods: 'post',
           url: 'index/sendsms',
+          headers: {
+            'KXBTIMG': this.kxbtimg
+          },
           data: {
             mobile: this.phone,
+            imgCode: this.picCodeText
           },
         })
-        if (+status !== 0) return this.$refs.formInputPhone.focus()
+        if (+status !== 0) {
+          this.$refs.formInputPhone.focus()
+          this.openPicCode()
+          return
+        }
 
         this.$refs.formInputCode.focus()
         clearTimeout(this.sendCodeTimer)
         this.sendCodeCountdown()
         this.$vux.toast.text('验证码已发送')
+      },
+      // 取消图形验证码弹框
+      cancelPicCode() {
+        this.showPicCode = false
+        this.picCodeText = ''
+      },
+      // 确定图形验证码弹框
+      surePicCode() {
+        this.showPicCode = false
+        this.sendCode()
+      },
+      // 打开图形验证码弹框
+      openPicCode() {
+        if (!this.canSendCode) {
+          return this.$vux.toast.show({
+            type: 'warn',
+            text: '手机号格式不正确',
+          })
+        }
+
+        this.showPicCode = true
+        this.getPicCode()
+      },
+      // 获取图形验证码
+      async getPicCode () {
+        const { data, headers } = await this.$http({
+          methods: 'post',
+          url: 'index/captcha',
+          responseType: 'arraybuffer'
+        })
+        this.kxbtimg = headers.kxbtimg
+        console.log(this.kxbtimg)
+        this.imgUrl = await  'data:image/png;base64,' + btoa(
+          new Uint8Array(data)
+            .reduce((data, byte) => data + String.fromCharCode(byte), '')
+        )
       },
 
       // 发送短信验证码倒计时
@@ -584,7 +639,63 @@
     width px(270 * 1.5)
     height px(189 * 1.5)
     background url(./img/masklayer.png) 50%/ 100% 100% no-repeat
-
+  // picCodeDialog
+  .dialog-pic-code{
+    .content-box{
+      display block
+      width 80%;
+      margin 0 auto;
+      box-sizing border-box
+    }
+    .pic-code-title{
+      text-align center
+      font-size px(26)
+      color #00a8e8
+      line-height px(80)
+      margin 0;
+    }
+    .form-box{
+      // margin 0 px(60)
+      padding px(20) 0;
+      .form-input{
+        background-color #f0f0f0
+        border-radius px(10)
+        margin-right px(30)
+        color #333
+      }
+      img, .no-img{
+        display block;
+        width px(160);
+        height px(60);
+        line-height px(60)
+        background-color #00a8e8;
+        border-radius px(10)
+        color #fff
+        font-size px(26)
+      }
+      .no-img{
+        padding 0 px(10)
+      }
+    }
+    .pic-code-tips{
+      color #999;
+      font-size px(26)
+      line-height px(80)
+    }
+    .bottom-box{
+      border-top 1px solid #f0f0f0;
+    }
+    .btn-bottom{
+      line-height px(80)
+    }
+    .btn-gray{
+      color #999;
+      border-right: 1px solid #f0f0f0;
+    }
+    .btn-primary{
+      color: #00a8e8;
+    }
+  }
 
 </style>
 <style>

@@ -17,7 +17,7 @@ let store = new Vuex.Store({
     needLogin: true, // 是否需要登录
     hideStatusHeader: false, // 隐藏H5状态栏
     webviewIndex: null, // webview里面的层级,== H5历史记录长度
-    isYysAuth: false // 是否是运营商认证
+    isYysAuth: !!sessionStorage.getItem('isYysAuth') // 是否是运营商认证
   },
   mutations: {
     'SET-LOGIN' (state, login) {
@@ -36,6 +36,7 @@ let store = new Vuex.Store({
       state.hideStatusHeader = data;
     },
     'SET-YYS-AUTH'(state, data) {
+      sessionStorage.setItem('isYysAuth', data)
       state.isYysAuth = data
     }
   },
