@@ -183,7 +183,15 @@ import {
         // 计算续借还款时间
       formatTime() {
         if (this.delayInfo.delayDays) {
-            let time = Number(this.delayInfo.delayDays * 60 * 60 * 24) + Number(this.delayInfo.expireTime)
+          let nowTime = Number(new Date()) / 1000
+          // 到期时间 > 当前时间
+          if (Number(this.delayInfo.expireTime) > nowTime) {
+            // 未逾期
+            let time = Number((this.delayInfo.delayDays*1 - 2) * 60 * 60 * 24) + Number(this.delayInfo.expireTime)
+          } else {
+            // 逾期
+            let time = Number((this.delayInfo.delayDays*1 - 1) * 60 * 60 * 24) + Number(this.delayInfo.expireTime)
+          }
             return timeconversion(time)
         }
         return ''

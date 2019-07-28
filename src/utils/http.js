@@ -4,7 +4,8 @@ import {AlertModule, ToastPlugin} from 'vux'
 var Qs = require('qs');
 import web2app from '../service/web2app'
 import native from '../service/native'
-const HOST = '//' + window.location.hostname + '/'
+// const BASE_URL = native.isTest ? '/web' : 'https://dkl.dakele2019.com'   // 'TODO 测试域名' : 'TODO 正式域名 '
+const HOST = '//' + window.location.hostname + '/';
 const BASE_URL = native.isTest ? '/web' : HOST // 'TODO 测试域名' : 'TODO 正式域名 '
 Vue.use(ToastPlugin);
 import { getAES, getDAes } from './crypto'
@@ -25,24 +26,15 @@ const service = axios.create({
 service.interceptors.request.use(config => {
 
   // console.log(config)
-   //native.vid = '54e5ce1f582a09c9e673b34a9b59303ae2b53d59'
   const extraParams = { vid: native.vid }
   if (!config.methods || config.methods.toLowerCase() === 'get') {
-    // config.params = {
-    //   data: Object.assign(
-    //     {},
-    //     extraParams,
-    //     config.data || {}
-    //   )
-    // };
-		// delete config['data'];
     config.params = {
       vid: native.vid,
       data: Object.assign(
-				{},
-				extraParams,
-				config.data || {}
-			)
+        {},
+        extraParams,
+        config.data || {}
+      )
     }
     delete config['data']
   }
@@ -51,13 +43,6 @@ service.interceptors.request.use(config => {
     config.methods.toLowerCase() === 'post'
   ) {
 
-    // config.data = {
-    //   data: getAES(JSON.stringify(Object.assign(
-    //     {},
-    //     extraParams,
-    //     config.data || {}
-    //   )))
-    // }
     config.data = getAES(JSON.stringify(Object.assign(
       {},
       extraParams,
@@ -65,9 +50,7 @@ service.interceptors.request.use(config => {
     )))
     config.method = 'post'
     // config.data = Qs.stringify(config.data);
-    config.headers = {
-      'Content-Type': 'application/json'
-    }
+    config.headers['Content-Type'] = 'application/json'
   }
 
 
@@ -84,16 +67,18 @@ service.interceptors.response.use(
     // 处理未登录情况
     if (response.data && response.data.status === 99) {
 
-      // AlertModule.show({
-      //   content: '请先登录',
-      //   onShow () {
-      //   },
-      //   async onHide () {
-      //     console.log('拦截器-跳转登录')
-      //     await web2app('logOut')
-      //     web2app('openAppPage', {name: 'register'})
-      //   }
-      // })
+      AlertModule.show({
+        content: '请先登录',
+        onShow () {
+        },
+        async onHide () {
+          console.log('拦截器-跳转登录')
+          await web2app('logOut')
+          web2app('openAppPage', {name: 'register'})
+        }
+      })
+    } else if (response.config.responseType === 'arraybuffer') {
+
     } else if (response.data.status !== 0) {
       // 处理状态非0
 

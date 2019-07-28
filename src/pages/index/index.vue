@@ -200,6 +200,12 @@ import { setTimeout } from 'timers'
       // this.$vux.loading.show({
       //     text: '加载中'
       // })
+
+      if ((getString('all_submit') == 1 && !this.$store.state.isYysAuth) || (getString('authing') == 1 && !this.$store.state.isYysAuth)) {
+        this.$store.commit('SET-YYS-AUTH', true)
+        this.$router.push('/memb/info?authing=1')
+        return
+      }
       this.getSystemData()
       this.getcustomPhone()
       this.getCodeUrl()
