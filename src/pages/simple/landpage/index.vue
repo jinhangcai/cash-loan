@@ -376,7 +376,7 @@ export default {
     height: Px(88);
     color: #fff;
     border-radius: Px(0);
-    background:linear-gradient(to right, #27CDEB, #85FBC8);
+    background:linear-gradient(to right, #FFB39C, #FF0E49);
     font-size: Px(26);
     line-height: Px(88);
     text-align: center;
