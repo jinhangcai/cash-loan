@@ -13,7 +13,7 @@
         </div> -->
         <div class="scroll-container" :style="`transform:translate(0, ${native.statusBarHeight})`">
           <scroller ref="scroll" :pullDownRefresh="true" @pullingDown="reload">
-            <!--<header-bar title="虾米在线"></header-bar>-->
+            <!--<header-bar title="花月钱包"></header-bar>-->
 
             <!--<div class="tips" @click="$web2app('phone',{number: customPhone})">-->
               <!--客服中心-->
@@ -21,7 +21,7 @@
             <!--</div>-->
             <div class="box_" >
               <!--<div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">-->
-                <!--　虾米在线-->
+                <!--　花月钱包-->
                 <!--&lt;!&ndash;<a @click="$router.push('/set')"></a>&ndash;&gt;-->
               <!--</div>-->
               <div class="titles" :style="`margin-top:${native.statusBarHeight + 10}px`">
