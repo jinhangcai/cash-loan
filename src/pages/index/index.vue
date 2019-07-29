@@ -115,13 +115,13 @@
             <img src="./index/icon_i4.png" class="img1">用户反馈<i></i>
           </li>
           <li @click="$web2app('phone',{number: customPhone})">
-            <img src="./index/icon_i6.png" class="img1">联系客服<i></i>
+            <img src="./index/icon_i5.png" class="img1">联系客服<i></i>
           </li>
           <li @click="$router.push('/loan')">
-            <img src="./index/icon_i7.png" class="img2">提现记录<i></i>
+            <img src="./index/icon_i6.png" class="img2">提现记录<i></i>
           </li>
           <li @click="$router.push('/set')">
-            <img src="./index/icon_i5.png" class="img2">设置<i></i>
+            <img src="./index/icon_i7.png" class="img2">设置<i></i>
           </li>
           <li >
             <div v-if="userInfo.vid" style="padding-left: .5rem;">
@@ -558,16 +558,15 @@ import { setTimeout } from 'timers'
     left: 0;
     bottom: 0;
     z-index: 9999;
-    background:#30D2E7;
+    background:#fff;
     width: 100%;
-    border-radius:Px(35) Px(35) 0px 0px;
     padding: Px(20) 0;
     .info-box_s{
       li{
         width: 50%;
         height: Px(75);
         line-height: Px(75);
-        color: #fff;
+        color: #333;
         font-size: Px(30);
         text-align: left;
         position: relative;
@@ -899,14 +898,14 @@ import { setTimeout } from 'timers'
         padding: 0 Px(30);
         font-size: Px(40);
         line-height: Px(89);
-        border-radius: Px(8);
-        color: #2ED0E8;
+        border-radius: Px(45);
+        color: #fff;
         text-align: center;
         outline: none;
         border: none;
         align-self: center;
         background:none;
-        border: #2ED0E8 Px(1) solid;
+        border: #fff Px(1) solid;
         margin-top: Px(-95);
         float:right;
 
@@ -1384,7 +1383,7 @@ import { setTimeout } from 'timers'
     .box_{
       position: relative;
       text-align: center;
-      background: -webkit-linear-gradient(0deg, #27CDEB, #85FBC8);
+      background: -webkit-linear-gradient(0deg, #FF7C7E, #FF0A45);
       background-size: 100% auto;
       padding-bottom:1.8rem;
       h4{
@@ -1397,7 +1396,7 @@ import { setTimeout } from 'timers'
       .box_1{
         text-align: center;
         overflow: hidden;
-        background:#fff ;
+        background:none ;
         background-size: 100% auto;
         width: Px(680);
         border-radius:Px(35) Px(35) 0px 0px;
@@ -1408,7 +1407,7 @@ import { setTimeout } from 'timers'
         h3{
           font-style: normal;
           font-size: Px(32);
-          color:#31D2E7;
+          color:#fff;
           margin-top: Px(45);
           text-align: left;
           line-height: Px(33);
@@ -1419,7 +1418,7 @@ import { setTimeout } from 'timers'
         >p{
           font-style: normal;
           font-size: Px(67);
-          color:#31D1E8;
+          color:#fff;
           margin-top: Px(0);
           text-align:  left;
           line-height: Px(73);

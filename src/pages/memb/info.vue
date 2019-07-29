@@ -489,9 +489,10 @@
     margin: Px(30);
     overflow: hidden;
     margin-bottom: Px(100);
-    border-radius: Px(15);
+    border-radius: Px(20);
     margin-top:Px(-125);
-    background: #fff;
+    overflow: hidden;
+    background: #FFFEFE;
     .information{
       display: block;
       align-items: center;
@@ -499,11 +500,13 @@
       background: #FFFEFE;
       float: left;
       position: relative;
+      padding: Px(10) 0;
+
       .icon{
         height: Px(50);
         position: absolute;
         left: Px(30);
-        top: Px(30);
+        top: Px(40);
         img{
           display: block;
           margin: auto;
@@ -534,9 +537,9 @@
         text-align: left;
         line-height: Px(45);
         margin-left: Px(100);
-        display: block;
-        margin-top: Px(25);
-        margin-bottom: Px(60);
+        margin-top: Px(32);
+        margin-bottom: Px(32);
+        float: left;
         em{
           color: #999999;
           font-size: Px(26);
@@ -549,15 +552,14 @@
         font-size: Px(24);
         line-height: Px(40);
         height: Px(40);
-        padding:0 Px(25);
-        position: absolute;
-        left: Px(75);
-        top: Px(70);
+        padding:Px(32) Px(25);
+        float: right;
+        margin-right: Px(15);
 
 
       }
       .cur{
-        color: #2BCFEA;
+        color: #FF0844;
       }
     }
   }
