@@ -13,6 +13,7 @@
     <div class="content">
       <div class="information"  @click="card">
         <div class="information-right" v-if="list.idCard==3"></div>
+        <div class="information-right1" v-else></div>
         <div class="icon">
           <img src="./img/my-icon1.png" alt="" >
         </div>
@@ -21,6 +22,7 @@
       </div>
       <div class="information" @click="base">
         <div class="information-right" v-if="list.baseInfo==3"></div>
+        <div class="information-right1" v-else></div>
         <div class="icon">
           <img src="./img/my-icon2.png" alt="" >
         </div>
@@ -29,6 +31,7 @@
       </div>
       <div class="information" @click="linkman">
         <div class="information-right" v-if="list.contact==3"></div>
+        <div class="information-right1" v-else></div>
         <div class="icon phone">
           <img src="./img/my-icon3.png" alt="" >
         </div>
@@ -37,6 +40,7 @@
       </div>
       <div class="information" @click="bank">
         <div class="information-right" v-if="list.bank==3"></div>
+        <div class="information-right1" v-else></div>
         <div class="icon">
           <img src="./img/my-icon4.png" alt="">
         </div>
@@ -46,6 +50,7 @@
 
       <div class="information" @click="mobile1">
         <div class="information-right" v-if="list.mobOperator==3"></div>
+        <div class="information-right1" v-else></div>
         <div class="icon">
           <img src="./img/my-icon5.png" alt="" >
         </div>
@@ -507,6 +512,14 @@
         height: Px(116);
         width:Px(20);
         background: #50cdfd;
+      }
+      .information-right1{
+        position:absolute;
+        right:0;
+        top:0;
+        height: Px(116);
+        width:Px(20);
+        background: #C2C2C2;
       }
       /*border-radius: Px(15);*/
       .icon{
