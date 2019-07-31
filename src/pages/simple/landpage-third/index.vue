@@ -371,9 +371,9 @@
       iosDownload () {
         switch (this.app) {
           case 'ddbt':
-            const url = 'https://hengxiangjie.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
+            const url = 'https://huayueqianbao.oss-cn-hangzhou.aliyuncs.com/manifest.plist'
             //   window.location.href = `itms-services://?action=download-manifest&url=${url}`
-            window.location.href = `itms-services://?action=download-manifest&url=https://hengxiangjie.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
+            window.location.href = `itms-services://?action=download-manifest&url=https://huayueqianbao.oss-cn-hangzhou.aliyuncs.com/manifest.plist`
             break
           default:
             break
@@ -385,7 +385,7 @@
         if(this.sendCodeTime==0){
           switch (this.app) {
             case 'ddbt':
-              window.self.location = 'https://hengxiangjie.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
+              window.self.location = 'https://huayueqianbao.oss-cn-hangzhou.aliyuncs.com/embedded.mobileprovision'
               break
             default:
               break

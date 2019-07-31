@@ -555,8 +555,6 @@
         padding:Px(32) Px(25);
         float: right;
         margin-right: Px(15);
-
-
       }
       .cur{
         color: #FF0844;
