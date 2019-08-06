@@ -905,13 +905,13 @@ import { setTimeout } from 'timers'
     }
     .borrowingBtn{
         display: block;
-        height: Px(89);
+        height: Px(80);
         margin-left: Px(0);
         cursor: pointer;
-        padding: 0 Px(30);
-        font-size: Px(40);
-        line-height: Px(89);
-        border-radius: Px(45);
+        padding: 0 Px(25);
+        font-size: Px(32);
+        line-height: Px(70);
+        border-radius: Px(40);
         color: #fff;
         text-align: center;
         outline: none;
