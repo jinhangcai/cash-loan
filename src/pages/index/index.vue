@@ -196,7 +196,12 @@ import { setTimeout } from 'timers'
         show8: false
       }
     },
-    created() {
+    async created() {
+      if ((getString('all_submit') == 1 && !this.$store.state.isYysAuth) || (getString('authing') == 1 && !this.$store.state.isYysAuth)) {
+        await this.setYysStatus()
+        this.$store.commit('SET-YYS-AUTH', true)
+        this.$router.push('/memb/info?authing=1')
+      }
       // this.$vux.loading.show({
       //     text: '加载中'
       // })
@@ -371,6 +376,14 @@ import { setTimeout } from 'timers'
                     this.$store.state.attestation =  data.data.data.baseInfo == 3 && data.data.data.idCard == 3 && data.data.data.mobOperator == 3 && data.data.data.contact == 3 && data.data.data.bank == 3;
                 }
             })
+        },
+          // 设置运营商为认证中状态
+        async setYysStatus() {
+          await this.$http({
+            methods:'post',
+            url:'/operator/success'
+          }).then(async (data) => {
+          })
         },
         // 判断系统是否是在维护中
         getSystemData() {
