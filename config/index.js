@@ -30,13 +30,13 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     port: 8094,
-    autoOpenBrowser: false,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     autoOpenBrowser: true,
     proxyTable: {
       '/web': {
-        target: 'https://mmc.nn1n.com',
+        // target: 'https://mmc.nn1n.com',
+        target: 'http://moshenapi.nn1n.com',
         changeOrigin: true,
         pathRewrite: {
           '^/web': '/'

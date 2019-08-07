@@ -70,6 +70,15 @@ const router = new Router({
             title: '首页'
           }
         }, {
+          path: '/indexYysAuth',
+          name: 'indexYysAuth',
+          component: resolve => require(['../pages/index/indexYysAuth.vue'], resolve),
+          meta: {
+            hideHeader: true,
+            cssNames: 'gray',
+            title: '首页'
+          }
+        }, {
           path: '/my',
           name: 'my',
           component: my,

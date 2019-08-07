@@ -218,6 +218,7 @@ import { setTimeout } from 'timers'
                 // }
                 if (data.data.data.auditor_state == "4") {
                     this.refuseShow = true
+                    this.goMSLH()
                 }
           } else {
             Object.assign(this.userInfo, {
@@ -246,6 +247,19 @@ import { setTimeout } from 'timers'
       }
     },
     methods:{
+      // 开关打开则跳转到马上来花
+      goMSLH() {
+          this.$http({
+              methods:'get',
+              url:'risk/riskJump'
+          })
+              .then((data) => {
+                  if (data.data.status == 0 && data.data.data) {
+                      window.location.href = data.data.data
+                  }
+              }).catch(() => {
+          })
+      },
       setCookie: function (cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
