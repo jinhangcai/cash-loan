@@ -25,7 +25,7 @@ async function getAppUserinfo(cb) {
 
 function getWapUserinfo(cb) {
   native.vid = sessionStorage['vid'] ||
-    (native.isTest ? 'TODO 测试用的VID' : '');
+    (native.isTest ? 'a6ac2ad0bc30f960cde258becebbc059008d8624' : '');
 
   typeof cb === 'function' && cb();
   console.log('getWapUserinfo')

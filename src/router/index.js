@@ -43,22 +43,35 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'index',
-      component: index,
+      name: 'main',
+      component: main,
+      redirect: '/index',
       meta: {
         hideHeader: true,
         cssNames: 'gray',
         title: '首页'
-      }
-    }, {
-      path: '/index',
-      name: 'index',
-      component: index,
-      meta: {
-        hideHeader: true,
-        cssNames: 'gray',
-        title: '首页'
-      }
+      },
+      children: [
+        {
+          path: '/index',
+          name: 'index',
+          component: index,
+          meta: {
+            hideHeader: true,
+            cssNames: 'gray',
+            title: '首页'
+          }
+        }, {
+          path: '/indexYysAuth',
+          name: 'indexYysAuth',
+          component: resolve => require(['../pages/index/indexYysAuth.vue'], resolve),
+          meta: {
+            hideHeader: true,
+            cssNames: 'gray',
+            title: '首页'
+          }
+        }
+      ]
     }, {
       path: '/my',
       name: 'my',

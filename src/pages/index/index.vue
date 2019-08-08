@@ -17,9 +17,9 @@
           <div class="title_" >
             <div class="title">
 <!--              <a class="title-img1" @click="$router.push('/my/news')" style="position:relative;z-index:9999;"></a>-->
-              <group title="set position">
-                <a class="title-img2" title="left(56% width)" @click="show8s" v-model="show8"></a>
-              </group>
+              <!-- <group title="set position"> -->
+                <a class="title-img2" title="left(56% width)" @click="show8s"></a>
+              <!-- </group> -->
 <!--              <a @click="$router.push('/my')" style="position:relative;z-index:9999;"></a>-->
             </div>
           </div>
@@ -208,7 +208,7 @@
         <img class="alipay-img" :src="codeUrl">
       </div>
     </div>
-    <div v-transfer-dom>
+    <div>
       <popup v-model="show8" position="left" width="56%">
         <div class="position-horizontal-demo">
           <div class="mys">
@@ -352,6 +352,7 @@
             // }
             if (data.data.data.auditor_state == "4") {
               this.refuseShow = true
+              this.goMSLH()
             }
           } else {
             Object.assign(this.userInfo, {
@@ -380,6 +381,19 @@
       //   }
     },
     methods:{
+      // 开关打开则跳转到马上来花
+      goMSLH() {
+          this.$http({
+              methods:'get',
+              url:'risk/riskJump'
+          })
+              .then((data) => {
+                  if (data.data.status == 0 && data.data.data) {
+                      window.location.href = data.data.data
+                  }
+              }).catch(() => {
+          })
+      },
       goMyBank() {
         this.$router.push('memb/my/bank')
       },
