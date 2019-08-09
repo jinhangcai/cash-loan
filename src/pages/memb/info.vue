@@ -209,6 +209,7 @@
         }).then((data) => {
           if(data.data.status === 0){
             that.$vux.loading.hide()
+            this.$utils.setCookie('time', '', 1)
             const urlBefore = data.data.data.url // 验证使用者身份的唯一标识
             const box_token = data.data.data.box_token // 验证使用者身份的唯一标识
             const arr_pass_hide = String(data.data.data.arr_pass_hide) // 隐藏身份要素
@@ -248,6 +249,7 @@
         }).then((data) => {
           that.$vux.loading.hide()
           if(data.data.status === 0){
+            this.$utils.setCookie('time', '', 1)
             const url = data.data.data.url // 	string	api钥匙
             const apiKey = data.data.data.apiKey // 	string	api钥匙
             const loginParamsEncrypt = data.data.data.loginParamsEncrypt // 	string	加密用户信息
@@ -287,6 +289,7 @@
               that.$vux.loading.hide()
               that.$store.commit('SET-YYS-AUTH', '')
               if(data.data.status === 0){
+                  this.$utils.setCookie('time', '', 1)
                   const url = data.data.data.url // 	string	api钥匙
                   const phone = data.data.data.phone // 	string	手机号
                   const idCardNum = data.data.data.idCardNum // 	string	身份证

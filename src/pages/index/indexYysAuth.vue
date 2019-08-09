@@ -66,7 +66,6 @@ export default {
         }
     },
     async created() {
-        return
         await this.getInfo()
         this.getcustomPhone()
     },

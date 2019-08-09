@@ -20,12 +20,11 @@ async function getAppUserinfo(cb) {
   // window.native = na;
   typeof cb === 'function' && cb();
   console.log('systemInfo', systemInfo, userInfo)
-
 }
 
 function getWapUserinfo(cb) {
   native.vid = sessionStorage['vid'] ||
-    (native.isTest ? 'fa0f24d5f1b9059564cad04be46171b5bc08eb75' : '');
+    (native.isTest ? '2278bd4dc153a6f417db97fd779bad7f5dc883cb' : '');
 
   typeof cb === 'function' && cb();
   console.log('getWapUserinfo')

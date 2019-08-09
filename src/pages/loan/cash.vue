@@ -78,7 +78,7 @@
     },
     created() {
 
-      // this.getCardList()
+      this.getCardList()
     },
     activated() {
       console.log(1)
@@ -87,7 +87,7 @@
       // this.$vux.loading.show({
       //   text: 'Loading'
       // });
-      // this.getList();
+      this.getList();
     },
     methods: {
       // 跳转至合同页

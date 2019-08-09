@@ -264,9 +264,9 @@ import { setTimeout } from 'timers'
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
-        console.info(cname + "=" + cvalue + "; " + expires);
+        // console.info(cname + "=" + cvalue + "; " + expires);
         document.cookie = cname + "=" + cvalue + "; " + expires;
-        console.info(document.cookie);
+        // console.info(document.cookie);
       },
       //获取cookie
       getCookie: function (cname) {
@@ -308,7 +308,7 @@ import { setTimeout } from 'timers'
         ispopup() {
           this.popups = 0;
           this.$router.replace('/')
-          console.log(this.popups);
+          // console.log(this.popups);
         },
         reload() {
           this.iconShow = true
@@ -418,7 +418,7 @@ import { setTimeout } from 'timers'
             }, 500);
         },
         changeBtnState(state){
-          console.log(state)
+          // console.log(state)
             var text = "完善资料获取额度";
             if (state == 0) {
                 text = "完善资料获取额度"

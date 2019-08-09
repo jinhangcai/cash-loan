@@ -24,7 +24,7 @@
     data() {
     return {
       activIndex: 0,
-      show: true, // 是否显示首页 true: 运营商认证页   false: 首页 默认首页
+      show: false, // 是否显示首页 true: 运营商认证页   false: 首页 默认首页
       auditor_state: '', // 用户借款状态 4：被拒     3：审核通过
       timer: null,
       menuList: [
