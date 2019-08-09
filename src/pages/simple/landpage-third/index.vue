@@ -674,6 +674,7 @@
       // margin 0 px(60)
       padding px(20) 0;
       .form-input{
+        width 50%;
         background-color #f0f0f0
         border-radius px(10)
         margin-right px(30)
@@ -688,6 +689,7 @@
         border-radius px(10)
         color #fff
         font-size px(26)
+        margin 0
       }
       .no-img{
         padding 0 px(10)
