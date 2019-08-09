@@ -209,7 +209,7 @@ const router = new Router({
       },
       component: cashDetail
     },{
-      path: '/loan/yys-cash',
+      path: 'loan/yys/cash',
       name: 'yyscash',
       meta: {
         cssNames: 'gray',
