@@ -2,41 +2,58 @@
     <div>
            <div class="sideBg" v-show="showLeftMenu" @click="hideMenu"></div>
             <div class="sidebar" :class="{'-show': showLeftMenu,'-hide':!showLeftMenu }" v-show="ready">
-                <div class="sidebarTitle">
+                <div class="sidebarTitle header-box">
+                    <img class="pic-header" src="../index/denglu.png" alt="">
                     <p>您好！</p>
                     <p>{{userInfo.mobile}}</p>
                 </div>
-                <div class="sideBaritem">
-                    <div @click="goAbout" style="display: flex;">
-                    <img src="./images/icon_users.png" alt="" class="iconUsers">
-                    <span>关于我们</span>
-                    </div>
+                <div class="sideBaritem" v-if="userInfo.vid">
+                    <div @click="$router.push('/memb/info')" style="display: flex;">
+                    <img src="../index/icon_i1.png" alt="" class="iconUsers">
+                    <span>实名认证</span>
+                    </div>  
                     <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="goAbout">
                 </div>
                 <div class="sideBaritem" v-if="userInfo.vid">
-                    <div @click="gofindPwd" style="display: flex;">
-                    <img src="./images/icon_lock.png" alt="" class="iconUsers">
-                    <span>修改密码</span>
+                    <div @click="$router.push('/loan/record')" style="display: flex;">
+                    <img src="../index/icon_i2.png" alt="" class="iconUsers">
+                    <span>我的借款</span>   
+                    </div>  
+                    <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="$router.push('/loan/record')">
+                </div>
+                <div class="sideBaritem" v-if="userInfo.vid">
+                    <div @click="goMyBank" style="display: flex;">
+                    <img src="../index/icon_i3.png" alt="" class="iconUsers">
+                    <span>我的银行卡</span>
                     </div>
-                    <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="gofindPwd">
+                    <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="goMyBank">
                 </div>
                 <div class="sideBaritem" v-if="userInfo.vid">
                     <div @click="goFeedback" style="display: flex;">
-                    <img src="./images/icon_feedback.png" alt="" class="iconUsers">
+                    <img src="../index/icon_i4.png" alt="" class="iconUsers">
                     <span>用户反馈</span>
                     </div>
                     <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="goFeedback">
                 </div>
-                <div class="sideBaritem" v-if="userInfo.vid">
-                    <div @click="goMyBank" style="display: flex;">
-                    <img src="./images/icon_feedback.png" alt="" class="iconUsers">
-                    <span>我的银行卡</span>
-                    </div>
-                    <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="goFeedback">
+    
+                <div class="sideBaritem">
+                    <div @click="$router.push('/set')" style="display: flex;">
+                    <img src="../index/icon_i5.png" alt="" class="iconUsers">
+                    <span>设置</span>
+                    </div>  
+                    <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="$router.push('/set')">
                 </div>
+                <div class="sideBaritem" v-if="userInfo.vid">
+                    <div  @click="$web2app('phone',{number: customPhone})" style="display: flex;">
+                    <img src="../index/icon_i6.png" alt="" class="iconUsers">
+                    <span>联系客服</span>
+                    </div>
+                    <img src="./images/icon_arrow_right.png" alt="" class="enter"  @click="$web2app('phone',{number: customPhone})">
+                </div>
+                
                 <div class="sideBaritem">
                     <div @click="signOut" style="display: flex;">
-                    <img src="./images/icon_out.png" alt="" class="iconUsers">
+                    <img src="../index/icon_i7.png" alt="" class="iconUsers">
                     <span> 退 出 </span>
                     </div>
                     <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="signOut">
@@ -123,12 +140,20 @@ export default {
             font-size:Px(38)
         }
         .sideBaritem{
-            margin-top:Px(100);
+            margin-top:Px(60);
             display:flex;
             font-size:Px(28);
             padding-left:Px(30);
             padding-right:Px(30);
             justify-content:space-between;
+        }
+        .header-box{
+            padding-top: Px(60)
+        }
+        .pic-header{
+            display: block;
+            margin: 0 0 Px(20) Px(100);   
+            width: Px(100)
         }
     }
 

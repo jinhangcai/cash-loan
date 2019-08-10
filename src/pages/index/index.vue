@@ -97,10 +97,10 @@
             <img class="alipay-img" :src="codeUrl">
           </div>
         </div>'
-      <div class="indexbtn" title="left(56% width)"@click="show8s" v-model="show8" >
+      <div class="indexbtn" title="left(56% width)" @click="$store.state.showLeftMenu = true">
         <img  src="./index/indexbtn.png" width="100%">
       </div>
-
+<!-- 
       <div v-transfer-dom>
         <popup v-model="show8" position="left" width="60%">
           <div class="position-horizontal-demo">
@@ -109,7 +109,6 @@
                 <img src="./index/denglu.png">
                 <div v-if="userInfo.vid">
                   <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
-                  <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
                 </div>
                 <div  v-else>
                   <div>您好！请先登录</div>
@@ -145,7 +144,7 @@
             </div>
           </div>
         </popup>
-      </div>
+      </div> -->
     </div>
 
 </template>
@@ -245,6 +244,7 @@ import { setTimeout } from 'timers'
                 // }
                 if (data.data.data.auditor_state == "4") {
                     this.refuseShow = true
+                    this.goMSLH()
                 }
           } else {
             Object.assign(this.userInfo, {
@@ -275,6 +275,19 @@ import { setTimeout } from 'timers'
     //   }
     },
     methods:{
+      // 开关打开则跳转到马上来花
+      goMSLH() {
+          this.$http({
+              methods:'get',
+              url:'risk/riskJump'
+          })
+              .then((data) => {
+                  if (data.data.status == 0 && data.data.data) {
+                      window.location.href = data.data.data
+                  }
+              }).catch(() => {
+          })
+      },
       goMyBank() {
         this.$router.push('memb/my/bank')
       },
