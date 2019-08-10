@@ -36,13 +36,6 @@
                     <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="goFeedback">
                 </div>
     
-                <div class="sideBaritem">
-                    <div @click="$router.push('/set')" style="display: flex;">
-                    <img src="../index/icon_i5.png" alt="" class="iconUsers">
-                    <span>设置</span>
-                    </div>  
-                    <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="$router.push('/set')">
-                </div>
                 <div class="sideBaritem" v-if="userInfo.vid">
                     <div  @click="$web2app('phone',{number: customPhone})" style="display: flex;">
                     <img src="../index/icon_i6.png" alt="" class="iconUsers">
@@ -52,11 +45,19 @@
                 </div>
                 
                 <div class="sideBaritem">
-                    <div @click="signOut" style="display: flex;">
+                    <div @click="$router.push('/loan')" style="display: flex;">
                     <img src="../index/icon_i7.png" alt="" class="iconUsers">
-                    <span> 退 出 </span>
+                    <span> 提现记录 </span>
                     </div>
                     <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="signOut">
+                </div>
+
+                <div class="sideBaritem">
+                    <div @click="$router.push('/set')" style="display: flex;">
+                    <img src="../index/icon_i5.png" alt="" class="iconUsers">
+                    <span>设置</span>
+                    </div>  
+                    <img src="./images/icon_arrow_right.png" alt="" class="enter" @click="$router.push('/set')">
                 </div>
 
         </div>
