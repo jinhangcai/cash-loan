@@ -50,9 +50,10 @@ const router = new Router({
         title: $appName
       },
       component: main,
+      redirect: '/index',
       children: [
         {
-          path: '/',
+          path: '/index',
           name: 'index',
           component: index,
           meta: {
@@ -61,9 +62,9 @@ const router = new Router({
             title: '首页'
           }
         }, {
-          path: '/index',
-          name: 'index',
-          component: index,
+          path: '/indexYysAuth',
+          name: 'indexYysAuth',
+          component: resolve => require(['../pages/index/indexYysAuth.vue'], resolve),
           meta: {
             hideHeader: true,
             cssNames: 'gray',

@@ -51,7 +51,7 @@
         text: 'Loading'
       })
       this.getData();
-      console.log(native.statusBarHeight);
+      // console.log(native.statusBarHeight);
     },
     methods: {
       // 获取数据
@@ -79,7 +79,7 @@
             for (var i=0; i < cashList.length; i++) {
               var apply_time = parseInt(cashList[i].apply_time);
               var expire_time = parseInt(cashList[i].expire_time)
-              console.log(apply_time);
+              // console.log(apply_time);
               cashList[i].apply_time = cashTime(apply_time);
               cashList[i].expire_time = cashTime(expire_time);
             }
@@ -99,7 +99,7 @@
       },
       onPullingDown(){
          // 刷新数据
-        console.log("刷新");
+        // console.log("刷新");
         this.startTime = new Date().getTime();
         this.pageIndex = 1;
         this.getData();
@@ -107,7 +107,7 @@
       },
       onPullingUp(){
         // 加载数据
-        console.log("加载");
+        // console.log("加载");
         if (this.totalNumber <= this.list.length) {
           this.list = this.list.concat([]);
           return
