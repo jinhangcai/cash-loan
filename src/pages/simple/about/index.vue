@@ -7,7 +7,7 @@
         <div>{{$appName}}</div>
         <p class="vesion-center">版本信息V{{version}}</p>
         <div class="details">
-          本公司没有微信公众号，如果逾期客户有催收部门联系，可以联系APP客服确认是否本公司人员，防止被骗！客服唯一QQ：2507070067
+          本公司没有微信公众号，如果逾期客户有催收部门联系，可以联系APP客服确认是否本公司人员，防止被骗！客服唯一<br>QQ：2507070067
         </div>
       </div>
       <!-- logo -->
@@ -79,6 +79,7 @@
           margin-top: Px(30);
           text-align: left;
           color: #999;
+          font-size: Px(36);
         }
       }
       .app-name{
