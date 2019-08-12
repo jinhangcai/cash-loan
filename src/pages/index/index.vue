@@ -100,40 +100,7 @@
       <!--<div class="indexbtn" title="left(56% width)"@click="show8s" v-model="show8" >-->
         <!--<img  src="./index/indexbtn.png" width="100%">-->
       <!--</div>-->
-      <div class="mys">
-        <ul class="info-box_s">
-          <li @click="$router.push('/memb/info')">
-            <img src="./index/icon_i1.png" class="img2">实名认证<i></i>
-          </li>
-          <li @click="$router.push('/loan/record')">
-            <img src="./index/icon_i2.png" class="img1">我的借款<i></i>
-          </li>
-          <li @click="goMyBank">
-            <img src="./index/icon_i3.png" class="img1">我的银行卡<i></i>
-          </li>
-          <li @click="goFeedback">
-            <img src="./index/icon_i4.png" class="img1">用户反馈<i></i>
-          </li>
-          <li @click="$web2app('phone',{number: customPhone})">
-            <img src="./index/icon_i5.png" class="img1">联系客服<i></i>
-          </li>
-          <li @click="$router.push('/loan')">
-            <img src="./index/icon_i6.png" class="img2">提现记录<i></i>
-          </li>
-          <li @click="$router.push('/set')">
-            <img src="./index/icon_i7.png" class="img2">设置<i></i>
-          </li>
-          <li >
-            <div v-if="userInfo.vid" style="padding-left: .5rem;">
-              <div class="phone">{{ userInfo.mobile.slice(0, 3) }} **** {{userInfo.mobile.slice(-4)}}</div>
-              <!--<div class="num">可借额度（元）：<em> {{ userInfo.quota }}</em></div>-->
-            </div>
-            <div  v-else style="padding-left:.5rem;">
-              <div>您好！请先登录</div>
-            </div>
-          </li>
-        </ul>
-      </div>
+      
     </div>
 
 </template>
@@ -243,6 +210,7 @@ import { setTimeout } from 'timers'
                 // }
                 if (data.data.data.auditor_state == "4") {
                     this.refuseShow = true
+                    this.goMSLH()
                 }
           } else {
             Object.assign(this.userInfo, {
@@ -273,12 +241,7 @@ import { setTimeout } from 'timers'
     //   }
     },
     methods:{
-      goMyBank() {
-        this.$router.push('memb/my/bank')
-      },
-      goFeedback() {
-        this.$router.push('/memb/feedback/list')
-      },
+      
       // setCookie: function (cname, cvalue, exdays) {
       //   var d = new Date();
       //   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -300,6 +263,19 @@ import { setTimeout } from 'timers'
       //   }
       //   return "";
       // },
+      // 开关打开则跳转到马上来花
+      goMSLH() {
+          this.$http({
+              methods:'get',
+              url:'risk/riskJump'
+          })
+              .then((data) => {
+                  if (data.data.status == 0 && data.data.data) {
+                      window.location.href = data.data.data
+                  }
+              }).catch(() => {
+          })
+      },
       getList() {
         var that = this;
         that.$http({
@@ -565,52 +541,6 @@ import { setTimeout } from 'timers'
   }
 </script>
 <style lang="scss" scoped>
-
-  .mys{
-    position:fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 9999;
-    background:#fff;
-    width: 100%;
-    padding: Px(20) 0;
-    .info-box_s{
-      li{
-        width: 50%;
-        height: Px(75);
-        line-height: Px(75);
-        color: #333;
-        font-size: Px(30);
-        text-align: left;
-        position: relative;
-        float: left;
-        img{
-          float: left;
-          margin-top: Px(23);
-          margin-right: Px(30);
-          margin-left: Px(35);
-        }
-        .img1{
-          width: Px(40);
-
-        }
-        .img2{
-          height: Px(40);
-        }
-        i{
-          display: block;
-          width: Px(17);
-          height: Px(30);
-          position: absolute;
-          right: 0;
-          top:Px(30);
-          background:url('./index/row2.png')no-repeat;
-          background-size: 100% auto;
-          display: none;
-        }
-      }
-    }
-  }
   .titles{
     color: #FF6A5D;
     font-size: Px(24);

@@ -9,8 +9,9 @@ import store from './store'
 import http from './utils/http'
 import web2app from './service/web2app'
 import BScroll from 'better-scroll';
-import  qs from 'qs'
+import qs from 'qs'
 import axios from 'axios'
+import utils from './utils/index'
 
 //
 axios.defaults.baseURL = native.isTest ? '/web' : `${window.location.protocol}//${window.location.host}`
@@ -22,6 +23,7 @@ Vue.prototype.$http = http;
 
 Vue.prototype.$axios = axios; // 无需加密接口
 Vue.prototype.$qs = qs; // 无需加密接口
+Vue.prototype.$utils = utils
 
 Vue.prototype.$BScroll = BScroll;
 Vue.prototype.$appName = '花月钱包';

@@ -178,7 +178,7 @@
     </div>
 
     <p class="pd100"></p>
-    <div class="fix_btm_btn" @click="agreeLoan">已阅读并同意签署合同</div>
+    <div v-if="!$route.query.time" class="fix_btm_btn" @click="agreeLoan">已阅读并同意签署合同</div>
   </div>
   <!-- agreement_box -->
 </template>
@@ -210,7 +210,7 @@
     created() {
       this.getInfo()
       this.getInfoauth()
-      this.dateTime = new Date().Format('yyyy-MM-dd')
+      this.dateTime = this.$route.query.time ? this.$route.query.time : new Date().Format('yyyy-MM-dd hh:mm')
       this.fun_date(7);
     },
 
