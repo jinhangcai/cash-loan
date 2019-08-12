@@ -19,7 +19,6 @@
                     <span class="list-status">申请提交成功</span>
                     <!-- <span class="list-time">{{ time }}</span> -->
                 </div>
-                
             </li>
             <li :class="active ? '' : 'active'" class="list-item">
                 <div class="list-title">

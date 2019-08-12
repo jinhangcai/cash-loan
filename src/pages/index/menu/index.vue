@@ -67,8 +67,8 @@
 export default {
     data(){
         return {
-            ready: false
-
+            ready: false,
+            customPhone: ''
         }
 
     },
@@ -85,7 +85,10 @@ export default {
         },
         userInfo(){
             return this.$store.state.userInfo;
-        }
+        },
+    },
+    created() {
+        this.getcustomPhone()
     },
     mounted() {
     },
@@ -111,7 +114,18 @@ export default {
         },
         goMyBank() {
             this.$router.push('memb/my/bank')
-        }
+        },
+        getcustomPhone(){
+            this.$http({
+                methods:'get',
+                url:'index/customerMobile'
+            })
+            .then((data) => {
+                if (data.data.data != null) {
+                    this.customPhone = data.data.data.mobile
+                }
+            })
+        },
     }
 }
 </script>
