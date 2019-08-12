@@ -6,9 +6,9 @@
         <img class="icon-logo" src="../images/logo.png" alt="">
         <div>{{$appName}}</div>
         <p class="vesion-center">版本信息V{{version}}</p>
-        <!--<div>-->
-          <!--本产品是针对有稳定工作且信用状况良好的自然人，提供小额信用借款的咨询服务平台，满足该类人群的短期资金需求，属于无抵押无担保的信用型借款产品。本产品提供1000-3000元不等的小额借款，7天借款周期，具有随借随还的灵活便捷性特点。本产品采用互联网大数据风控审核系统，快速审核，到账速度快-->
-        <!--</div>-->
+        <div class="details">
+          本公司没有微信公众号，如果逾期客户有催收部门联系，可以联系APP客服确认是否本公司人员，防止被骗！客服唯一QQ：2507070067
+        </div>
       </div>
       <!-- logo -->
     </div>
@@ -62,18 +62,23 @@
         text-align: center;
       }
       .logo{
-        width: Px(200);
-        margin: auto;
+        // width: Px(200);
+        margin: Px(40);
         text-align: center;
         font-size: Px(24);
         color: #000000;
         text-align: center;
         img{
-          width: 100%;
-          margin-bottom: .2rem;
+          width: Px(200);
+          margin: 0 auto .2rem;
           height: auto;
           box-shadow: 0 0 .2rem 1px rgba(#000, .1);
           border-radius: .5rem;
+        }
+        .details{
+          margin-top: Px(30);
+          text-align: left;
+          color: #999;
         }
       }
       .app-name{
