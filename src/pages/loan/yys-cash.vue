@@ -8,16 +8,20 @@
           <div class="item-xin"><span></span>{{quota}}</div>
         </div>
         <div class="body-content-items">
-          <div class="item-left">到期金额</div>
+          <div class="item-left">到手金额</div>
           <div class="item-right"><span>￥</span>{{quota}}</div>
         </div>
-        <!--<div class="body-content-item">-->
-          <!--<div class="item-left">固定周期</div>-->
-          <!--<div class="item-right">{{days}}天</div>-->
-        <!--</div>-->
         <div class="body-content-item">
-          <div class="item-left">利息</div>
+          <div class="item-left">借款利息</div>
           <div class="item-right">{{interest}}元</div>
+        </div>
+        <div class="body-content-item">
+          <div class="item-left">借款天数</div>
+          <div class="item-right">{{days}}天</div>
+        </div>
+        <div class="body-content-item">
+          <div class="item-left">服务费</div>
+          <div class="item-right">{{interests}}元</div>
         </div>
         <div class="body-content-item">
           <div class="item-left">
@@ -83,6 +87,7 @@
         card_id: '', // 银行卡id
         changeWX: true,
         isAgree: true,
+        interests:0
       }
     },
     created() {
@@ -172,45 +177,6 @@
           that.$vux.loading.hide()
         })
       },
-      // 新颜
-      yysAuthXY() {
-        let that = this
-        that.$vux.loading.show({
-          text: '加载中'
-        })
-        this.$http({
-          url:'auth/operatorConf?type=xinyan',
-          methods: 'get',
-        }).then((data) => {
-          that.$vux.loading.hide()
-          that.$store.commit('SET-YYS-AUTH', '')
-          if(data.data.status === 0){
-            const url = data.data.data.url // 	string	api钥匙
-            const phone = data.data.data.phone // 	string	手机号
-            const idCardNum = data.data.data.idCardNum // 	string	身份证
-            const name = data.data.data.name // 	string	姓名
-            const idCardNumState = data.data.data.idCardNumState // 	string	姓名
-            const nameState = data.data.data.nameState // 	string	姓名
-            const phoneState = data.data.data.phoneState // 	string	姓名
-
-            const jumpUrl = encodeURIComponent(window.location.protocol + '//' + window.location.host + '/m.html#/index?authing=1') // 运营商认证返回链接
-            // jumpUrl = https://qz.xinyan.com/auth/{apiUser}/{apiEnc}/{timeMark}/{apiName}/{taskId}?jumpUrl={jumpUrl}
-            // const jumpUrl = encodeURIComponent(window.location.protocol + '//' + window.location.host + '/m.html#/?authing=1') // 运营商认证返回链接
-            const xinyanUrl = `${url}?jumpUrl=${jumpUrl}&name=${name}&phone=${phone}&idCardNum=${idCardNum}&idCardNumState=${idCardNumState}&nameState=${nameState}&phoneState=${phoneState}`
-            window.location.href = xinyanUrl
-            return;
-            this.$web2app('openWebPage', {
-              showLoadVIew: 1,
-              useStatusBar: 1,
-              showNavigation: 1, // 导航栏
-              title: '运营商认证',
-              url: xinyanUrl,
-            });
-          }
-        }).catch(() => {
-          that.$vux.loading.hide()
-        })
-      },
       // 获取运营商认证方式
       getYysWay() {
         let that = this
@@ -227,9 +193,6 @@
             // 魔蝎
             if (data.data.data.config == 'scorpion') {
               that.yysAuthMX()
-            } else if (data.data.data.config == 'xinyan') {
-              // 新颜
-              that.yysAuthXY()
             } else{
               // 魔盒
               that.yysAuthMH()
@@ -292,6 +255,8 @@
                 // 本金 + 利息
                 that.account = Number(data.quota) + Number(that.interest);
                 that.account = that.account.toFixed(2);
+              that.interests =data.quota *+ data.manageRate;
+              that.interests =that.interests.toFixed(2);
             } else {
                 // 后置  还款时再扣服务费
                 that.quota = data.quota;
@@ -301,6 +266,8 @@
                 that.account = Number(data.quota) + data.quota *+ data.manageRate + Number(that.interest);
                 console.log(that.account)
                 that.account = that.account.toFixed(2);
+                that.interests =data.quota *+ data.manageRate;
+                that.interests =that.interests.toFixed(2);
             }
           } else {
             // this.$vux.alert({
