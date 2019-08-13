@@ -54,7 +54,7 @@ export default {
       }).then((res)=>{
         if (res.data.status === 0) {
           this.bankList = res.data.data.bank
-          this.currentBankCardId = this.bankList[0].card_id
+          // this.currentBankCardId = this.bankList[0].card_id
         }
       })
     },

@@ -29,14 +29,15 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8094,
+    port: 8095,
     autoOpenBrowser: false,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     autoOpenBrowser: true,
     proxyTable: {
       '/web': {
-        target: 'https://frx.chengde.cm',
+        // target: 'https://frx.chengde.cm',
+        target: 'http://moshenapi.nn1n.com',
         changeOrigin: true,
         pathRewrite: {
           '^/web': '/'
