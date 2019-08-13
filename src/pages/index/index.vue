@@ -24,7 +24,7 @@
               <div class="title" :style="`padding-top:${native.statusBarHeight + 10}px`">
                 <!--<a @click="$router.push('/my')">-->
                 <group title="set position">
-                <a title="left(56% width)"@click="show8s" v-model="show8"></a>
+                <a title="left(56% width)"@click="show8s"></a>
                 </group>
                  <a @click="$router.push('/set')"></a>
               </div>
