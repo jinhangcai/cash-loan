@@ -8,16 +8,20 @@
           <div class="item-xin"><span></span>{{quota}}</div>
         </div>
         <div class="body-content-items">
-          <div class="item-left">到期金额</div>
+          <div class="item-left">到手金额</div>
           <div class="item-right"><span>￥</span>{{quota}}</div>
         </div>
-        <!--<div class="body-content-item">-->
-          <!--<div class="item-left">固定周期</div>-->
-          <!--<div class="item-right">{{days}}天</div>-->
-        <!--</div>-->
         <div class="body-content-item">
-          <div class="item-left">利息</div>
+          <div class="item-left">借款利息</div>
           <div class="item-right">{{interest}}元</div>
+        </div>
+        <div class="body-content-item">
+          <div class="item-left">借款天数</div>
+          <div class="item-right">{{days}}天</div>
+        </div>
+        <div class="body-content-item">
+          <div class="item-left">服务费</div>
+          <div class="item-right">{{interests}}元</div>
         </div>
         <div class="body-content-item">
           <div class="item-left">
@@ -55,13 +59,12 @@
       </div>
     </div>
     <div class="cash-footer">
-      <button class="cash-btn" @click="contract">点击签《三方借款合同》并提交审核</button>
+      <button class="cash-btn" @click="contract">立即领取</button>
     </div>
   </div>
 </template>
 
 <script>
-  import {AlertModule} from 'vux'
   export default {
     data() {
       return {
@@ -73,20 +76,17 @@
         bank: '', // 银行卡信息
         bankList: [], // 银行卡列表
         card_id: '', // 银行卡id
-        changeWX: true
+        changeWX: true,
+        interests:0
       }
     },
     created() {
-
       this.getCardList()
     },
-    activated() {
-      console.log(1)
-    },
     mounted() {
-      // this.$vux.loading.show({
-      //   text: 'Loading'
-      // });
+      this.$vux.loading.show({
+        text: 'Loading'
+      });
       this.getList();
     },
     methods: {
@@ -141,21 +141,25 @@
             that.bank = data.bank;
             // 前置   先扣服务费
             if (data.entryMode != 1) {
-                that.quota = data.quota - data.quota * + data.manageRate;
-                that.interest = data.quota * + data.interestRate / 365 * that.days;
-                that.interest = that.interest.toFixed(2);
-                // 本金 + 利息
-                that.account = Number(data.quota) + Number(that.interest);
-                that.account = that.account.toFixed(2);
+              that.quota = data.quota - data.quota * + data.manageRate;
+              that.interest = data.quota * + data.interestRate / 365 * that.days;
+              that.interest = that.interest.toFixed(2);
+              // 本金 + 利息
+              that.account = Number(data.quota) + Number(that.interest);
+              that.account = that.account.toFixed(2);
+              that.interests =data.quota *+ data.manageRate;
+              that.interests =that.interests.toFixed(2);
             } else {
-                // 后置  还款时再扣服务费
-                that.quota = data.quota;
-                that.interest = data.quota * +data.interestRate / 365 * that.days;
-                that.interest = that.interest.toFixed(2);
-                // 本金 + 服务费 + 利息
-                that.account = Number(data.quota) + data.quota *+ data.manageRate + Number(that.interest);
-                console.log(that.account)
-                that.account = that.account.toFixed(2);
+              // 后置  还款时再扣服务费
+              that.quota = data.quota;
+              that.interest = data.quota * +data.interestRate / 365 * that.days;
+              that.interest = that.interest.toFixed(2);
+              // 本金 + 服务费 + 利息
+              that.account = Number(data.quota) + data.quota *+ data.manageRate + Number(that.interest);
+              console.log(that.account)
+              that.account = that.account.toFixed(2);
+              that.interests =data.quota *+ data.manageRate;
+              that.interests =that.interests.toFixed(2);
             }
           } else {
             // this.$vux.alert({
