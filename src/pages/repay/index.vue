@@ -160,13 +160,11 @@
             
           } else {
             // that.$tips(res.data.msg);
-        
           }
           that.$vux.loading.hide()
         },(error) =>{
           that.$vux.loading.hide()
           // that.$tips('数据获取失败(loan/duesList)');
-       
         })
       }
     }
