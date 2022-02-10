@@ -52,7 +52,7 @@
     "mobile-detect": "^1.4.3",
     "mocha": "^3.5.0",
     "net": "^1.0.2",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.0",
     "phantomjs-prebuilt": "^2.1.14",
     "promise": "^8.0.1",
     "qs": "^6.5.1",
