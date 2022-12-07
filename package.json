@@ -158,7 +158,7 @@
     "scss-loader": "0.0.1",
     "semver": "^5.4.1",
     "send": "^0.15.4",
-    "simple-git": "^1.84.0",
+    "simple-git": "^3.15.0",
     "sinon": "^3.3.0",
     "sinon-chai": "^2.13.0",
     "source-list-map": "^2.0.0",
